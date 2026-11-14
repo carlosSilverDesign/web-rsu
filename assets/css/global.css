@@ -1,0 +1,260 @@
+/**
+ * ESTILOS GLOBALES & LAYOUT BASE
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Fuentes de verdad: Design.md y PROMPT_FRONTEND_RSU.md
+ */
+
+/* ==========================================================================
+   1. CONFIGURACIÓN DEL BODY & TIPOGRAFÍA BASE
+   ========================================================================== */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-body);
+  position: relative;
+}
+
+/* Encabezados Institucionales (Lato) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-dark);
+  line-height: var(--line-height-snug);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem); /* 36px a 60px */
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* 28px a 40px */
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* 20px a 28px */
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  color: var(--color-text-gray);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+}
+
+strong, b {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   2. LENIS SMOOTH SCROLL (Sincronización con motor de inercia)
+   ========================================================================== */
+html.lenis,
+html.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   3. CONTENEDORES Y ESTRUCTURA DE PÁGINA
+   ========================================================================== */
+.container,
+.main-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-intranet-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Espaciado vertical estándar de secciones */
+.section-wrap {
+  position: relative;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+@media (max-width: 992px) {
+  .section-wrap {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+}
+
+@media (max-width: 576px) {
+  .section-wrap {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+}
+
+/* ==========================================================================
+   4. SISTEMA DE REJILLA RESPONSIVE (FLEX & CSS GRID)
+   ========================================================================== */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-12,
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-base);
+  }
+}
+
+/* ==========================================================================
+   5. MOTOR DE SCROLL REVEAL (Estilo ANZSOG)
+   ========================================================================== */
+.c-transition-in {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition-property: opacity, transform;
+  transition-duration: var(--duration-reveal);
+  transition-timing-function: var(--ease-out-quad);
+  transition-delay: var(--transition-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.c-transition-in.state-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Retardos escalonados para elementos hijos en cuadrículas */
+.stagger-1 { --transition-delay: 0.1s; }
+.stagger-2 { --transition-delay: 0.2s; }
+.stagger-3 { --transition-delay: 0.3s; }
+.stagger-4 { --transition-delay: 0.4s; }
+.stagger-5 { --transition-delay: 0.5s; }
+.stagger-6 { --transition-delay: 0.6s; }
+
+/* Cascada automática para rejillas */
+.c-grid-stagger > .c-transition-in:nth-child(1) { --transition-delay: 0s; }
+.c-grid-stagger > .c-transition-in:nth-child(2) { --transition-delay: 0.1s; }
+.c-grid-stagger > .c-transition-in:nth-child(3) { --transition-delay: 0.2s; }
+.c-grid-stagger > .c-transition-in:nth-child(4) { --transition-delay: 0.3s; }
+.c-grid-stagger > .c-transition-in:nth-child(5) { --transition-delay: 0.4s; }
+.c-grid-stagger > .c-transition-in:nth-child(6) { --transition-delay: 0.5s; }
+
+/* ==========================================================================
+   6. UTILITARIOS DE ACCESIBILIDAD (A11y / WCAG AA)
+   ========================================================================== */
+/* Enlace accesible para saltar directo al contenido */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background-color: var(--color-primary-teal);
+  color: var(--color-text-inverse);
+  padding: var(--space-sm) var(--space-base);
+  border-radius: var(--radius-btn);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  z-index: var(--z-fixed-floating);
+  transition: top var(--duration-fast) ease;
+  box-shadow: var(--shadow-md);
+}
+
+.skip-link:focus {
+  top: 1.5rem;
+}
+
+/* Solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   7. UTILITARIOS GENERALES
+   ========================================================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.overflow-hidden { overflow: hidden; }
+.position-relative { position: relative; }
