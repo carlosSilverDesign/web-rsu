@@ -1,0 +1,465 @@
+<!-- ==========================================================================
+     HEADER & MEGA MENÚ (SECCIÓN 1)
+     Proyecto: Web RSU - Universidad Norbert Wiener
+     Efectos: Sticky inteligente, blur, cortina clip-path, accesibilidad AA
+     ========================================================================== -->
+<header id="site-header" class="c-header" role="banner">
+  <div class="container c-header__container">
+
+    <!-- 1. IDENTIDAD DE MARCA (LOGO UNW + DIVISOR + DIRECCIÓN RSU) -->
+    <a href="index.html" class="c-header__brand"
+      aria-label="Página de inicio - Dirección de Responsabilidad Social Wiener">
+      <img src="assets/images/logo-wiener-h.svg" alt="Universidad Norbert Wiener" class="c-header__logo" width="171"
+        height="32">
+      <span class="c-header__divider" aria-hidden="true"></span>
+      <!-- <div class="c-header__tagline">
+        <span class="c-header__subname">DIRECCIÓN DE</span>
+        <span class="c-header__dept">Responsabilidad Social</span>
+      </div> -->
+    </a>
+
+    <!-- 2. NAVEGACIÓN PRINCIPAL DESKTOP -->
+    <nav id="primary-navigation" class="c-nav" aria-label="Navegación principal">
+      <ul class="c-nav__list">
+
+        <!-- Ítem 1: Inicio -->
+        <li class="c-nav__item">
+          <a href="index.html" class="c-nav__link is-active">Inicio</a>
+        </li>
+
+        <!-- Ítem 2: Quiénes somos (Dropdown) -->
+        <li class="c-nav__item has-dropdown" data-dropdown="quienes-somos">
+          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+            aria-controls="dropdown-quienes-somos">
+            Quiénes somos
+            <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="dropdown-quienes-somos" class="c-dropdown-pane" role="region" aria-label="Submenú Quiénes somos">
+            <div class="container c-dropdown-pane__inner c-dropdown-pane__inner--compact">
+              <ul class="c-dropdown-list">
+                <li class="c-dropdown-list__item" style="--item-idx: 0;">
+                  <a href="#modelo-rsu" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Dirección de RSU</span>
+                      <p class="c-dropdown-item__desc">Gestión ética, propósitos misionales y equipo directivo.</p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-dropdown-list__item" style="--item-idx: 1;">
+                  <a href="#modelo-rsu" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Nuestro Modelo RSU</span>
+                      <p class="c-dropdown-item__desc">Los 4 pilares: Gestión, Formación, Proyección e Investigación.
+                      </p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-dropdown-list__item" style="--item-idx: 2;">
+                  <a href="#modelo-rsu" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Políticas Institucionales</span>
+                      <p class="c-dropdown-item__desc">Política de Responsabilidad Social y Protección Ambiental.</p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- Ítem 3: Proyectos (MEGA MENÚ ESTILO ANZSOG: Lista + Tarjetas destacadas) -->
+        <li class="c-nav__item has-dropdown has-megamenu" data-dropdown="proyectos">
+          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+            aria-controls="dropdown-proyectos">
+            Proyectos
+            <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="dropdown-proyectos" class="c-dropdown-pane c-dropdown-pane--megamenu" role="region"
+            aria-label="Mega Menú Proyectos">
+            <div class="container c-dropdown-pane__inner">
+              <div class="c-megamenu-grid">
+
+                <!-- Columna Izquierda: Enlaces Principales -->
+                <div class="c-megamenu-col c-megamenu-col--nav">
+                  <span class="c-megamenu-col__label">ÁREAS DE INTERVENCIÓN</span>
+                  <ul class="c-dropdown-list">
+                    <li class="c-dropdown-list__item" style="--item-idx: 0;">
+                      <a href="#proyectos-emblematicos" class="c-dropdown-item">
+                        <div class="c-dropdown-item__content">
+                          <span class="c-dropdown-item__title">Proyectos Emblemáticos</span>
+                          <p class="c-dropdown-item__desc">Iniciativas multidisciplinarias y sostenibles de alto
+                            impacto.</p>
+                        </div>
+                        <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="c-dropdown-list__item" style="--item-idx: 1;">
+                      <a href="#proyectos-emblematicos" class="c-dropdown-item">
+                        <div class="c-dropdown-item__content">
+                          <span class="c-dropdown-item__title">Proyectos de Programas Académicos</span>
+                          <p class="c-dropdown-item__desc">Metodología Aprendizaje - Servicio en salud, derecho y
+                            gestión.</p>
+                        </div>
+                        <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="c-dropdown-list__item" style="--item-idx: 2;">
+                      <a href="#proyectos-emblematicos" class="c-dropdown-item">
+                        <div class="c-dropdown-item__content">
+                          <span class="c-dropdown-item__title">Contribución con los ODS</span>
+                          <p class="c-dropdown-item__desc">Salud, educación, acción climática y reducción de
+                            desigualdades.</p>
+                        </div>
+                        <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Columna Derecha: Tarjetas Destacadas (Pattern ANZSOG con diseño Wiener) -->
+                <div class="c-megamenu-col c-megamenu-col--featured">
+                  <span class="c-megamenu-col__label">INICIATIVAS EMBLEMÁTICAS</span>
+                  <div class="c-megamenu-cards">
+
+                    <!-- Tarjeta 1: Bienestar en mi barrio -->
+                    <a href="#proyectos-emblematicos" class="c-megamenu-card c-megamenu-card--teal"
+                      style="--item-idx: 3;">
+                      <div class="c-megamenu-card__badge">
+                        <span class="c-badge c-badge--teal">Salud & Comunidad</span>
+                      </div>
+                      <h4 class="c-megamenu-card__title">Bienestar en mi barrio</h4>
+                      <p class="c-megamenu-card__desc">Campañas de prevención, atención odontológica y orientación
+                        médica en zonas vulnerables.</p>
+                      <span class="c-megamenu-card__link">
+                        Conocer iniciativa
+                        <svg class="c-btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
+                    </a>
+
+                    <!-- Tarjeta 2: Escuela de Mujeres Emprendedoras -->
+                    <a href="#proyectos-emblematicos" class="c-megamenu-card c-megamenu-card--dark"
+                      style="--item-idx: 4;">
+                      <div class="c-megamenu-card__badge">
+                        <span class="c-badge c-badge--orange">Emprendimiento</span>
+                      </div>
+                      <h4 class="c-megamenu-card__title">Escuela de Mujeres Emprendedoras</h4>
+                      <p class="c-megamenu-card__desc">Capacitación integral en gestión de negocios y finanzas para
+                        lideresas comunitarias.</p>
+                      <span class="c-megamenu-card__link">
+                        Conocer iniciativa
+                        <svg class="c-btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                          stroke="currentColor" stroke-width="2">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </span>
+                    </a>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Ítem 4: Voluntariado (Dropdown) -->
+        <li class="c-nav__item has-dropdown" data-dropdown="voluntariado">
+          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+            aria-controls="dropdown-voluntariado">
+            Voluntariado
+            <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="dropdown-voluntariado" class="c-dropdown-pane" role="region" aria-label="Submenú Voluntariado">
+            <div class="container c-dropdown-pane__inner c-dropdown-pane__inner--compact">
+              <ul class="c-dropdown-list">
+                <li class="c-dropdown-list__item" style="--item-idx: 0;">
+                  <a href="#campus-voluntariado" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Voluntariado Wiener</span>
+                      <p class="c-dropdown-item__desc">Programas en educación, salud, intercambio cultural y ambiente.
+                      </p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-dropdown-list__item" style="--item-idx: 1;">
+                  <a href="#campus-voluntariado" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Brigada Ambiental Wiener</span>
+                      <p class="c-dropdown-item__desc">Liderazgo estudiantil, recuperación de áreas y réplica escolar.
+                      </p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- Ítem 5: Campus Sostenible (Dropdown) -->
+        <li class="c-nav__item has-dropdown" data-dropdown="campus-sostenible">
+          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+            aria-controls="dropdown-campus-sostenible">
+            Campus sostenible
+            <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <div id="dropdown-campus-sostenible" class="c-dropdown-pane" role="region"
+            aria-label="Submenú Campus Sostenible">
+            <div class="container c-dropdown-pane__inner c-dropdown-pane__inner--compact">
+              <ul class="c-dropdown-list">
+                <li class="c-dropdown-list__item" style="--item-idx: 0;">
+                  <a href="#campus-voluntariado" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Campañas de Convivencia y Ambiente</span>
+                      <p class="c-dropdown-item__desc">Ecoeficiencia, segregación, inclusión y libre de humo.</p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-dropdown-list__item" style="--item-idx: 1;">
+                  <a href="#campus-voluntariado" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Biciwiener & Movilidad Sostenible</span>
+                      <p class="c-dropdown-item__desc">Estacionamientos y fomento del transporte no motorizado.</p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-dropdown-list__item" style="--item-idx: 2;">
+                  <a href="#campus-voluntariado" class="c-dropdown-item">
+                    <div class="c-dropdown-item__content">
+                      <span class="c-dropdown-item__title">Huella de Carbono Institucional</span>
+                      <p class="c-dropdown-item__desc">Cálculo y reducción de emisiones (1 estrella Huella de Carbono
+                        Perú).</p>
+                    </div>
+                    <svg class="c-dropdown-item__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- Ítem 6: Semana de la Sostenibilidad (Directo) -->
+        <li class="c-nav__item">
+          <a href="#semana-sostenibilidad" class="c-nav__link">Semana Sostenibilidad</a>
+        </li>
+
+        <!-- Ítem 7: Noticias (Directo) -->
+        <li class="c-nav__item">
+          <a href="#noticias" class="c-nav__link">Noticias</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- 3. ACCIONES DE CABECERA & TOGGLE MOBILE -->
+    <div class="c-header__actions">
+      <a href="#campus-voluntariado" class="c-btn c-btn--primary c-btn--sm c-header__cta">
+        <span>Sumarse</span>
+        <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Botón Hamburguesa Mobile -->
+      <button type="button" class="c-nav-toggle" id="nav-toggle" aria-controls="mobile-navigation" aria-expanded="false"
+        aria-label="Abrir menú de navegación">
+        <span class="c-nav-toggle__bar"></span>
+        <span class="c-nav-toggle__bar"></span>
+        <span class="c-nav-toggle__bar"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ==========================================================================
+       4. CAJÓN DE NAVEGACIÓN MOBILE (DRAWER RESPONSIVE)
+       ========================================================================== -->
+  <div id="mobile-navigation" class="c-mobile-nav" role="dialog" aria-modal="true" aria-label="Menú de navegación móvil"
+    hidden>
+    <div class="c-mobile-nav__backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+    <div class="c-mobile-nav__drawer">
+
+      <!-- Cabecera del Drawer -->
+      <div class="c-mobile-nav__header">
+        <div class="c-mobile-nav__brand">
+          <img src="assets/images/logo-wiener-h.svg" alt="Universidad Norbert Wiener" width="130" height="24">
+          <span class="c-mobile-nav__tag">RSU</span>
+        </div>
+        <button type="button" class="c-mobile-nav__close" id="mobile-nav-close" aria-label="Cerrar menú">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Acordeón de Navegación Mobile -->
+      <nav class="c-mobile-nav__content">
+        <ul class="c-mobile-nav__list">
+
+          <li class="c-mobile-nav__item">
+            <a href="index.html" class="c-mobile-nav__link is-active">Inicio</a>
+          </li>
+
+          <!-- Acordeón: Quiénes somos -->
+          <li class="c-mobile-nav__item c-mobile-accordion">
+            <button type="button" class="c-mobile-accordion__trigger" aria-expanded="false">
+              Quiénes somos
+              <svg class="c-mobile-accordion__icon" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="c-mobile-accordion__body">
+              <ul class="c-mobile-accordion__sublist">
+                <li><a href="#modelo-rsu">Dirección de RSU</a></li>
+                <li><a href="#modelo-rsu">Nuestro Modelo RSU (4 Pilares)</a></li>
+                <li><a href="#modelo-rsu">Políticas Institucionales</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Acordeón: Proyectos -->
+          <li class="c-mobile-nav__item c-mobile-accordion">
+            <button type="button" class="c-mobile-accordion__trigger" aria-expanded="false">
+              Proyectos
+              <svg class="c-mobile-accordion__icon" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="c-mobile-accordion__body">
+              <ul class="c-mobile-accordion__sublist">
+                <li><a href="#proyectos-emblematicos">Proyectos Emblemáticos</a></li>
+                <li><a href="#proyectos-emblematicos">Proyectos Académicos</a></li>
+                <li><a href="#proyectos-emblematicos">Bienestar en mi barrio</a></li>
+                <li><a href="#proyectos-emblematicos">Escuela de Mujeres Emprendedoras</a></li>
+                <li><a href="#proyectos-emblematicos">Consultorio Jurídico</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Acordeón: Voluntariado -->
+          <li class="c-mobile-nav__item c-mobile-accordion">
+            <button type="button" class="c-mobile-accordion__trigger" aria-expanded="false">
+              Voluntariado
+              <svg class="c-mobile-accordion__icon" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="c-mobile-accordion__body">
+              <ul class="c-mobile-accordion__sublist">
+                <li><a href="#campus-voluntariado">Voluntariado Wiener</a></li>
+                <li><a href="#campus-voluntariado">Brigada Ambiental Wiener</a></li>
+                <li><a href="#campus-voluntariado">Líneas de Voluntariado</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Acordeón: Campus Sostenible -->
+          <li class="c-mobile-nav__item c-mobile-accordion">
+            <button type="button" class="c-mobile-accordion__trigger" aria-expanded="false">
+              Campus sostenible
+              <svg class="c-mobile-accordion__icon" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="c-mobile-accordion__body">
+              <ul class="c-mobile-accordion__sublist">
+                <li><a href="#campus-voluntariado">Campañas Ambientales</a></li>
+                <li><a href="#campus-voluntariado">Biciwiener & Movilidad</a></li>
+                <li><a href="#campus-voluntariado">Huella de Carbono Perú</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="c-mobile-nav__item">
+            <a href="#semana-sostenibilidad" class="c-mobile-nav__link">Semana Sostenibilidad</a>
+          </li>
+
+          <li class="c-mobile-nav__item">
+            <a href="#noticias" class="c-mobile-nav__link">Noticias</a>
+          </li>
+
+        </ul>
+
+        <!-- Acciones en el pie del Drawer Mobile -->
+        <div class="c-mobile-nav__footer">
+          <a href="#campus-voluntariado" class="c-btn c-btn--primary w-100">
+            <span>Sumarme al Voluntariado</span>
+            <svg class="c-btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+          <p class="c-mobile-nav__contact">Consultas: <a
+              href="mailto:responsabilidad.social@uwiener.edu.pe">responsabilidad.social@uwiener.edu.pe</a></p>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+</header>

@@ -1,0 +1,685 @@
+/**
+ * HEADER & MEGA MENÚ - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Características: Sticky inteligente, blur, cortina clip-path, animaciones escalonadas
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR PRINCIPAL DEL HEADER
+   ========================================================================== */
+.c-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(198, 207, 215, 0.6);
+  z-index: var(--z-sticky-header);
+  transition: transform 0.35s var(--ease-out-cubic),
+              height 0.3s ease,
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+  will-change: transform, height;
+}
+
+/* Estado compacto al hacer scroll */
+.c-header.c-header--scrolled {
+  height: 68px;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-header);
+}
+
+/* Estado oculto al hacer scroll hacia abajo */
+.c-header.c-header--hidden {
+  transform: translateY(-100%);
+}
+
+.c-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-base);
+}
+
+/* ==========================================================================
+   2. IDENTIDAD INSTITUCIONAL (LOGO + TEXTO RSU)
+   ========================================================================== */
+.c-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.c-header__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.c-header__divider {
+  display: block;
+  width: 1px;
+  height: 28px;
+  background-color: var(--color-border-default);
+}
+
+.c-header__tagline {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.c-header__subname {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  color: var(--color-primary-teal);
+  text-transform: uppercase;
+}
+
+.c-header__dept {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-dark);
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   3. NAVEGACIÓN DESKTOP
+   ========================================================================== */
+.c-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.c-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  height: 100%;
+}
+
+.c-nav__item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.c-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  padding: 0 var(--space-md);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-dark);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--duration-fast) var(--ease-in-out-quad);
+  white-space: nowrap;
+}
+
+/* Subrayado animado al estilo ANZSOG */
+.c-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--space-md);
+  right: var(--space-md);
+  height: 3px;
+  background-color: var(--color-primary-teal);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-fast) var(--ease-in-out-quad);
+}
+
+.c-nav__link:hover,
+.c-nav__item.is-open .c-nav__link,
+.c-nav__link.is-active {
+  color: var(--color-primary-teal);
+}
+
+.c-nav__link:hover::after,
+.c-nav__item.is-open .c-nav__link::after,
+.c-nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Flecha desplegable (Chevron con rotación 180°) */
+.c-nav__chevron {
+  transition: transform 0.25s var(--ease-out-cubic), stroke var(--duration-fast) ease;
+}
+
+.c-nav__item.is-open .c-nav__chevron {
+  transform: rotate(180deg);
+  stroke: var(--color-primary-teal);
+}
+
+/* ==========================================================================
+   4. DESPLEGABLES & MEGA MENÚ (CORTINA CON CLIP-PATH)
+   ========================================================================== */
+.c-dropdown-pane {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-border-default);
+  box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  
+  /* Efecto cortina clip-path réplica ANZSOG */
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: clip-path var(--duration-nav) var(--ease-out-quart),
+              opacity var(--duration-nav) ease,
+              visibility 0s linear var(--duration-nav);
+  will-change: clip-path, opacity;
+  z-index: var(--z-dropdown);
+}
+
+/* El header actúa como punto de origen de los dropdowns full-width */
+.c-nav__item.has-dropdown {
+  position: static;
+}
+
+/* Estado abierto */
+.c-nav__item.is-open .c-dropdown-pane {
+  clip-path: inset(0 0 0% 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: clip-path var(--duration-nav) var(--ease-out-quart),
+              opacity var(--duration-nav) ease,
+              visibility 0s linear 0s;
+}
+
+.c-dropdown-pane__inner {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.c-dropdown-pane__inner--compact {
+  max-width: 600px;
+  margin-left: max(2rem, calc((100vw - var(--container-max-width)) / 2 + 10rem));
+}
+
+/* Listado de enlaces dentro del dropdown */
+.c-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.c-dropdown-list__item {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.35s var(--ease-out-cubic);
+}
+
+/* Cascada de revelado escalonado de enlaces hijos */
+.c-nav__item.is-open .c-dropdown-list__item {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--item-idx, 0) * 60ms);
+}
+
+.c-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: var(--color-text-dark);
+  transition: background-color var(--duration-fast) var(--ease-in-out-quad);
+}
+
+.c-dropdown-item:hover {
+  background-color: var(--color-primary-light);
+}
+
+.c-dropdown-item__title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: 2px;
+  transition: color var(--duration-fast) ease;
+}
+
+.c-dropdown-item:hover .c-dropdown-item__title {
+  color: var(--color-primary-teal);
+}
+
+.c-dropdown-item__desc {
+  font-size: 12.5px;
+  color: var(--color-text-gray);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.c-dropdown-item__arrow {
+  color: var(--color-text-light);
+  flex-shrink: 0;
+  margin-left: var(--space-md);
+  transition: transform var(--duration-fast) var(--ease-in-out-quad),
+              color var(--duration-fast) var(--ease-in-out-quad);
+}
+
+.c-dropdown-item:hover .c-dropdown-item__arrow {
+  transform: translateX(4px);
+  color: var(--color-primary-teal);
+}
+
+/* ==========================================================================
+   5. MEGA MENÚ ESPECÍFICO (2 COLUMNAS: ENLACES + TARJETAS DESTACADAS)
+   ========================================================================== */
+.c-megamenu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.c-megamenu-col__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-gray);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.c-megamenu-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.c-megamenu-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-base);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-bg-card);
+  text-decoration: none;
+  transition: transform var(--duration-hover) var(--ease-in-out-quad),
+              box-shadow var(--duration-hover) var(--ease-in-out-quad),
+              border-color var(--duration-hover) var(--ease-in-out-quad);
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.c-nav__item.is-open .c-megamenu-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--item-idx, 0) * 60ms);
+}
+
+.c-megamenu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover-card);
+  border-color: var(--color-primary-teal);
+}
+
+.c-megamenu-card--teal {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0FAFA 100%);
+}
+
+.c-megamenu-card--dark {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+}
+
+.c-megamenu-card__badge {
+  margin-bottom: var(--space-sm);
+}
+
+.c-megamenu-card__title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.c-megamenu-card__desc {
+  font-size: 12.5px;
+  color: var(--color-text-gray);
+  line-height: 1.45;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.c-megamenu-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-teal);
+}
+
+.c-megamenu-card:hover .c-btn__arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   6. ACCIONES DE CABECERA & BOTÓN HAMBURGUESA
+   ========================================================================== */
+.c-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* Botón Hamburguesa Mobile */
+.c-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  background: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease;
+}
+
+.c-nav-toggle:hover {
+  border-color: var(--color-primary-teal);
+  background-color: var(--color-primary-light);
+}
+
+.c-nav-toggle__bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-dark);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburguesa animada al abrir */
+.c-nav-toggle.is-active .c-nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.c-nav-toggle.is-active .c-nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.c-nav-toggle.is-active .c-nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   7. CAJÓN DE NAVEGACIÓN MOBILE (DRAWER)
+   ========================================================================== */
+.c-mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-drawer);
+  display: flex;
+  justify-content: flex-end;
+  visibility: hidden;
+  transition: visibility 0.35s ease;
+}
+
+.c-mobile-nav.is-open {
+  visibility: visible;
+}
+
+.c-mobile-nav__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.c-mobile-nav.is-open .c-mobile-nav__backdrop {
+  opacity: 1;
+}
+
+.c-mobile-nav__drawer {
+  position: relative;
+  width: min(380px, 88vw);
+  height: 100%;
+  background-color: #FFFFFF;
+  box-shadow: -8px 0 32px rgba(15, 23, 42, 0.16);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-out-cubic);
+  will-change: transform;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.c-mobile-nav.is-open .c-mobile-nav__drawer {
+  transform: translateX(0);
+}
+
+.c-mobile-nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-base) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.c-mobile-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.c-mobile-nav__tag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-teal);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.c-mobile-nav__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-btn);
+  color: var(--color-text-gray);
+  border: 1px solid var(--color-border-default);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.c-mobile-nav__close:hover {
+  color: var(--color-primary-teal);
+  border-color: var(--color-primary-teal);
+  background-color: var(--color-primary-light);
+}
+
+.c-mobile-nav__content {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-base) var(--space-lg);
+  flex-grow: 1;
+}
+
+.c-mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.c-mobile-nav__link {
+  display: block;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  text-decoration: none;
+  border-radius: var(--radius-card);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.c-mobile-nav__link:hover,
+.c-mobile-nav__link.is-active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-teal);
+}
+
+/* Acordeón Mobile */
+.c-mobile-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-mobile-accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  border-radius: var(--radius-card);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.c-mobile-accordion__trigger:hover,
+.c-mobile-accordion.is-open .c-mobile-accordion__trigger {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-teal);
+}
+
+.c-mobile-accordion__icon {
+  transition: transform 0.3s var(--ease-out-cubic);
+}
+
+.c-mobile-accordion.is-open .c-mobile-accordion__icon {
+  transform: rotate(180deg);
+}
+
+.c-mobile-accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease-out-cubic);
+}
+
+.c-mobile-accordion.is-open .c-mobile-accordion__body {
+  max-height: 380px;
+}
+
+.c-mobile-accordion__sublist {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0 8px 16px;
+  gap: 2px;
+}
+
+.c-mobile-accordion__sublist a {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--color-text-gray);
+  text-decoration: none;
+  border-radius: var(--radius-card);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.c-mobile-accordion__sublist a:hover {
+  color: var(--color-primary-teal);
+  background-color: #F8FAFC;
+}
+
+.c-mobile-nav__footer {
+  margin-top: auto;
+  padding-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.c-mobile-nav__contact {
+  font-size: 12px;
+  color: var(--color-text-gray);
+  text-align: center;
+}
+
+.c-mobile-nav__contact a {
+  color: var(--color-primary-teal);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. ADAPTACIONES RESPONSIVE (BREAKPOINTS)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .c-nav {
+    display: none; /* Oculta navegación desktop */
+  }
+
+  .c-nav-toggle {
+    display: flex; /* Muestra botón hamburguesa */
+  }
+
+  .c-header__cta {
+    display: none; /* Se traslada al drawer mobile */
+  }
+
+  .c-header__subname {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .c-header {
+    height: 68px;
+  }
+
+  .c-header__divider {
+    display: none;
+  }
+
+  .c-header__tagline {
+    display: none;
+  }
+}

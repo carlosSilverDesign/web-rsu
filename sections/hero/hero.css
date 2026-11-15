@@ -1,0 +1,314 @@
+/**
+ * HERO BANNER - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Características: Slider Parallax, capas de degradé institucional, controles circulares estilo ANZSOG
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR HERO
+   ========================================================================== */
+.c-hero {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-slate-dark);
+  color: var(--color-text-inverse);
+  overflow: hidden;
+}
+
+.c-hero-slider {
+  width: 100%;
+  height: 100%;
+  min-height: 84vh;
+}
+
+/* ==========================================================================
+   2. DIAPOSITIVA (SLIDE) & CAPAS DE FONDO PARALLAX
+   ========================================================================== */
+.c-hero-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 84vh;
+  box-sizing: border-box;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.c-hero-slide__bg-wrap {
+  position: absolute;
+  top: -8%;
+  left: 0;
+  width: 100%;
+  height: 116%;
+  z-index: 1;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Espacio reservado para imagen (Placeholder gris institucional) */
+.c-hero-slide__bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  background-color: #334155;
+  color: #94A3B8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.c-hero-slide__bg svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.4;
+}
+
+/* Capa de degradé corporativo para garantizar máxima legibilidad */
+.c-hero-slide__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.94) 0%,
+    rgba(15, 23, 42, 0.85) 45%,
+    rgba(15, 132, 143, 0.55) 85%,
+    rgba(15, 23, 42, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* ==========================================================================
+   3. CONTENIDO EDITORIAL DE LA DIAPOSITIVA
+   ========================================================================== */
+.c-hero-slide__container {
+  position: relative;
+  z-index: 3;
+}
+
+.c-hero-slide__content {
+  max-width: 760px;
+}
+
+.c-hero-slide__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  color: #2EE5F0; /* Teal brillante para contraste sobre fondo oscuro */
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.c-hero-slide__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: var(--font-weight-black);
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: var(--space-base);
+  letter-spacing: -0.02em;
+}
+
+/* Segunda parte enfatizada */
+.c-hero-slide__title .c-text-emphasis {
+  color: #2EE5F0;
+  display: block;
+}
+
+.c-hero-slide__text {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-xl);
+  max-width: 660px;
+}
+
+.c-hero-slide__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-base);
+}
+
+/* Botón fantasma outline para hero */
+.c-hero-slide__btn-ghost {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #FFFFFF;
+}
+
+.c-hero-slide__btn-ghost:hover {
+  background-color: #FFFFFF;
+  color: var(--color-dark);
+  border-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4. ANIMACIONES AL CAMBIAR DE SLIDE (STAGGER ENTRADA)
+   ========================================================================== */
+.c-hero-slide .c-hero-slide__eyebrow,
+.c-hero-slide .c-hero-slide__title,
+.c-hero-slide .c-hero-slide__text,
+.c-hero-slide .c-hero-slide__actions {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-reveal) var(--ease-out-quad),
+              transform var(--duration-reveal) var(--ease-out-quad);
+}
+
+/* Cascada cuando el slide está activo */
+.c-hero-slide.swiper-slide-active .c-hero-slide__eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.c-hero-slide.swiper-slide-active .c-hero-slide__title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.c-hero-slide.swiper-slide-active .c-hero-slide__text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.c-hero-slide.swiper-slide-active .c-hero-slide__actions {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+/* ==========================================================================
+   5. CONTROLES DEL BANNER (PAGINACIÓN & FLECHAS CIRCULARES)
+   ========================================================================== */
+.c-hero-slider__controls-wrap {
+  position: absolute;
+  bottom: var(--space-2xl);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.c-hero-slider__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  pointer-events: auto;
+}
+
+/* Paginación con bullets personalizados */
+.c-hero-slider__pagination {
+  position: static !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  width: auto !important;
+}
+
+.c-hero-slider__pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  border-radius: var(--radius-pill);
+  transition: width 0.3s var(--ease-out-cubic), background-color 0.3s ease;
+  margin: 0 !important;
+}
+
+.c-hero-slider__pagination .swiper-pagination-bullet-active {
+  width: 32px;
+  background-color: #2EE5F0;
+}
+
+/* Flechas de navegación circular estilo ANZSOG */
+.c-hero-slider__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.c-hero-slider__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background-color var(--duration-fast) ease,
+              border-color var(--duration-fast) ease,
+              transform var(--duration-fast) ease;
+}
+
+.c-hero-slider__btn:hover {
+  background-color: var(--color-primary-teal);
+  border-color: var(--color-primary-teal);
+  transform: scale(1.05);
+}
+
+.c-hero-slider__btn:active {
+  transform: scale(0.95);
+}
+
+.c-hero-slider__btn.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .c-hero-slide {
+    min-height: 75vh;
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .c-hero-slide__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.88) 60%,
+      rgba(15, 132, 143, 0.7) 100%
+    );
+  }
+}
+
+@media (max-width: 576px) {
+  .c-hero-slide {
+    min-height: auto;
+    padding-top: var(--space-xl);
+    padding-bottom: calc(var(--space-4xl) + 20px);
+  }
+
+  .c-hero-slide__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .c-hero-slide__actions .c-btn {
+    width: 100%;
+  }
+
+  .c-hero-slider__controls {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+}
