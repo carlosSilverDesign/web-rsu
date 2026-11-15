@@ -1,0 +1,558 @@
+/* ==========================================================================
+   SECCIÓN: CAMPUS SOSTENIBLE (CAMPAÑAS & HUELLA DE CARBONO)
+   Proyecto: Web RSU - Universidad Norbert Wiener
+   Brief Oficial: Sección 8.5
+   Estilo: ANZSOG Institutional Modern, Slate (#16202E), Teal (#0F848F)
+   ========================================================================== */
+
+.c-campus-section {
+  position: relative;
+  background-color: var(--color-bg-light, #F8FAFC);
+  padding: 80px 0;
+  overflow-x: clip;
+}
+
+@media (max-width: 768px) {
+  .c-campus-section {
+    padding: 48px 0;
+  }
+}
+
+.c-campus-lead {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #475569);
+}
+
+/* --------------------------------------------------------------------------
+   1. INDICADORES CLAVE DE GESTIÓN (Metrics Bar)
+   -------------------------------------------------------------------------- */
+.c-campus-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 48px 0 64px;
+}
+
+@media (max-width: 992px) {
+  .c-campus-metrics-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .c-campus-metrics-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.c-campus-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-card, 8px);
+  padding: 20px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-fast, 0.25s ease), box-shadow var(--transition-fast, 0.25s ease);
+}
+
+.c-campus-metric-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.c-campus-metric-item__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-campus-metric-item__icon--teal {
+  background: rgba(15, 132, 143, 0.1);
+  color: var(--color-teal, #0F848F);
+}
+
+.c-campus-metric-item__icon--green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+.c-campus-metric-item__icon--blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563EB;
+}
+
+.c-campus-metric-item__icon--orange {
+  background: rgba(245, 158, 11, 0.12);
+  color: #D97706;
+}
+
+.c-campus-metric-item__title {
+  display: block;
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.c-campus-metric-item__sub {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #64748B);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   2. GRID EDITORIAL DE CAMPAÑAS (Brief Oficial)
+   -------------------------------------------------------------------------- */
+.c-campaigns-block {
+  margin-top: 24px;
+}
+
+.c-campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 36px;
+}
+
+@media (max-width: 1024px) {
+  .c-campaigns-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .c-campaigns-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.c-campaign-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-card, 8px);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.c-campaign-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 132, 143, 0.1);
+  border-color: var(--color-teal, #0F848F);
+}
+
+.c-campaign-card__media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #E2E8F0;
+  overflow: hidden;
+}
+
+.c-campaign-card__media {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #E2E8F0;
+  color: #64748B;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 16px;
+}
+
+.c-campaign-card__media svg {
+  width: 36px;
+  height: 36px;
+  color: #94A3B8;
+}
+
+.c-campaign-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.c-campaign-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.c-campaign-card__meta {
+  margin-bottom: 12px;
+}
+
+.c-campaign-card__title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.c-campaign-card__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary, #475569);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.c-campaign-card__points {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px dashed var(--color-border, #E2E8F0);
+  padding-top: 16px;
+}
+
+.c-campaign-card__points span {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.84rem;
+  color: var(--color-text-muted, #64748B);
+  line-height: 1.45;
+}
+
+.c-campaign-card__points span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-teal, #0F848F);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN ESPECIAL: BICIWIENER (#biciwiener)
+   -------------------------------------------------------------------------- */
+.c-biciwiener-block {
+  margin-top: 72px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: 12px;
+  padding: 44px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .c-biciwiener-block {
+    padding: 24px;
+    margin-top: 48px;
+  }
+}
+
+.c-biciwiener-block__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .c-biciwiener-block__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.c-biciwiener-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .c-biciwiener-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.c-biciwiener-photo {
+  aspect-ratio: 4 / 3;
+  background: #E2E8F0;
+  border-radius: var(--radius-card, 8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px;
+  text-align: center;
+  color: #64748B;
+  border: 1px dashed #CBD5E1;
+  transition: transform 0.25s ease;
+}
+
+.c-biciwiener-photo:hover {
+  transform: translateY(-2px);
+  background-color: #E6EDF5;
+}
+
+.c-biciwiener-photo svg {
+  width: 32px;
+  height: 32px;
+  color: #94A3B8;
+}
+
+.c-biciwiener-photo__title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+}
+
+.c-biciwiener-photo__sub {
+  font-size: 0.725rem;
+  color: var(--color-text-muted, #64748B);
+}
+
+.c-biciwiener-content__badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.c-biciwiener-content__title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .c-biciwiener-content__title {
+    font-size: 1.4rem;
+  }
+}
+
+.c-biciwiener-content__desc {
+  font-size: 1rem;
+  color: var(--color-text-secondary, #475569);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.c-biciwiener-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.c-biciwiener-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary, #475569);
+  line-height: 1.5;
+}
+
+.c-biciwiener-feature__icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #059669;
+}
+
+.c-biciwiener-feature strong {
+  color: var(--color-slate, #16202E);
+}
+
+/* --------------------------------------------------------------------------
+   4. HUELLA DE CARBONO PERÚ - MINAM (#huella-carbono)
+   -------------------------------------------------------------------------- */
+.c-carbon-banner {
+  margin-top: 72px;
+  background: linear-gradient(135deg, #16202E 0%, #0D141F 100%);
+  border-radius: 12px;
+  color: #FFFFFF;
+  padding: 56px 48px;
+  box-shadow: 0 12px 36px rgba(14, 23, 36, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.c-carbon-banner::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(15, 132, 143, 0.22) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .c-carbon-banner {
+    padding: 32px 20px;
+    margin-top: 48px;
+  }
+}
+
+.c-carbon-banner__container {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .c-carbon-banner__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.c-carbon-banner__badge-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.c-carbon-banner__title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .c-carbon-banner__title {
+    font-size: 1.5rem;
+  }
+}
+
+.c-carbon-banner__desc {
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.c-carbon-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 576px) {
+  .c-carbon-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.c-carbon-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 18px 20px;
+  backdrop-filter: blur(8px);
+}
+
+.c-carbon-stat__num {
+  display: block;
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2EE5F0;
+  margin-bottom: 6px;
+}
+
+.c-carbon-stat__label {
+  display: block;
+  font-size: 0.8125rem;
+  color: #94A3B8;
+  line-height: 1.45;
+}
+
+.c-carbon-badge-card {
+  display: flex;
+  justify-content: center;
+}
+
+.c-carbon-logo-photo {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px dashed rgba(46, 229, 240, 0.4);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.c-carbon-logo-photo:hover {
+  transform: translateY(-4px);
+  border-color: #2EE5F0;
+}
+
+.c-carbon-logo-photo__star {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #2EE5F0;
+  color: #0E1724;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: 9999px;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+.c-carbon-logo-photo__name {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.c-carbon-logo-photo__auth {
+  font-size: 0.8125rem;
+  color: #94A3B8;
+}

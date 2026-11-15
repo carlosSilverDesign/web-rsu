@@ -1,0 +1,251 @@
+/**
+ * FOOTER INSTITUCIONAL - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Características: Directorio institucional, enlaces accesibles y botón scroll-to-top
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR DEL FOOTER
+   ========================================================================== */
+.c-footer {
+  background-color: #0F172A; /* Slate muy oscuro institucional */
+  color: #FFFFFF;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   2. REJILLA DE 4 COLUMNAS
+   ========================================================================== */
+.c-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+}
+
+/* Columna de Marca */
+.c-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  text-decoration: none;
+  margin-bottom: var(--space-md);
+}
+
+.c-footer__logo {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Logo blanco sobre fondo oscuro */
+}
+
+.c-footer__tagline {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: var(--space-md);
+}
+
+.c-footer__subname {
+  font-family: var(--font-body);
+  font-size: 8.5px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12em;
+  color: #2EE5F0;
+  text-transform: uppercase;
+}
+
+.c-footer__dept {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: var(--font-weight-black);
+  color: #FFFFFF;
+}
+
+.c-footer__desc {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  max-width: 320px;
+}
+
+.c-footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.c-footer__contact-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.c-footer__contact-list svg {
+  color: #2EE5F0;
+  flex-shrink: 0;
+}
+
+.c-footer__contact-list a:hover {
+  color: #2EE5F0;
+  text-decoration: underline;
+}
+
+/* Columnas de Navegación */
+.c-footer__col-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: var(--space-xs);
+}
+
+.c-footer__col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #2EE5F0;
+}
+
+.c-footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.c-footer__nav-list a {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color var(--duration-fast) ease;
+}
+
+.c-footer__nav-list a:hover {
+  color: #2EE5F0;
+}
+
+.c-footer__accreditation-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.55;
+  margin-bottom: var(--space-lg);
+}
+
+/* Redes Sociales */
+.c-footer__social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.c-footer__social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-btn);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  transition: background-color var(--duration-fast) ease,
+              border-color var(--duration-fast) ease,
+              color var(--duration-fast) ease,
+              transform var(--duration-fast) ease;
+}
+
+.c-footer__social-links a:hover {
+  background-color: var(--color-primary-teal);
+  border-color: var(--color-primary-teal);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   3. BARRA INFERIOR DE COPYRIGHT Y VOLVER ARRIBA
+   ========================================================================== */
+.c-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-base);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.c-footer__copyright {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.c-footer__back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 14px;
+  border-radius: var(--radius-btn);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12.5px;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease,
+              border-color var(--duration-fast) ease,
+              color var(--duration-fast) ease;
+}
+
+.c-footer__back-to-top:hover {
+  background-color: var(--color-primary-teal);
+  border-color: var(--color-primary-teal);
+  color: #FFFFFF;
+}
+
+.c-footer__back-to-top svg {
+  transition: transform var(--duration-fast) ease;
+}
+
+.c-footer__back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .c-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .c-footer {
+    padding-top: var(--space-3xl);
+  }
+
+  .c-footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .c-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+}

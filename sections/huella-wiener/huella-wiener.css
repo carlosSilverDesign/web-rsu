@@ -1,0 +1,236 @@
+/**
+ * HUELLA WIENER (MÉTRICAS DE IMPACTO) - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Características: Bloque en contraste oscuro, tarjetas translúcidas y contadores masivos
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR EN CONTRASTE INSTITUCIONAL (SLATE OSCURO)
+   ========================================================================== */
+.c-huella-wiener {
+  position: relative;
+  background-color: #16202E; /* Slate oscuro para alternancia rítmica editorial */
+  color: #FFFFFF;
+  overflow: hidden;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+/* Efectos sutiles de luminosidad ambiental de fondo */
+.c-huella-wiener::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 132, 143, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c-huella-wiener::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(46, 229, 240, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c-huella-wiener .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   2. TEXTOS Y ENCABEZADOS EN MODO OSCURO
+   ========================================================================== */
+.c-eyebrow--cyan {
+  color: #2EE5F0 !important;
+}
+
+.c-section-title--light {
+  color: #FFFFFF !important;
+}
+
+.c-text-emphasis--cyan {
+  color: #2EE5F0 !important;
+  font-weight: var(--font-weight-black);
+}
+
+.c-section-subtitle--light {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ==========================================================================
+   3. REJILLA DE TARJETAS DE IMPACTO
+   ========================================================================== */
+.c-huella-wiener__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+/* Tarjeta de Métrica (.c-stat-card) */
+.c-stat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 26px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform var(--duration-hover) var(--ease-in-out-quad),
+              border-color var(--duration-hover) var(--ease-in-out-quad),
+              box-shadow var(--duration-hover) var(--ease-in-out-quad),
+              background-color var(--duration-hover) ease;
+}
+
+.c-stat-card:hover {
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: #2EE5F0;
+  box-shadow: 0 16px 36px -4px rgba(15, 132, 143, 0.28);
+}
+
+/* Icono Vectorial en Contenedor */
+.c-stat-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background-color: rgba(15, 132, 143, 0.2);
+  border: 1px solid rgba(46, 229, 240, 0.25);
+  color: #2EE5F0;
+  margin-bottom: var(--space-lg);
+  flex-shrink: 0;
+  transition: transform var(--duration-hover) var(--ease-out-cubic);
+}
+
+.c-stat-card:hover .c-stat-card__icon-wrap {
+  transform: scale(1.08);
+}
+
+/* Números y Cifras Masivas */
+.c-stat-card__metric {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: var(--space-xs);
+}
+
+.c-stat-card__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.35rem, 3.8vw, 3.5rem);
+  font-weight: var(--font-weight-black);
+  color: #FFFFFF;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.c-stat-card__symbol {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3vw, 2.75rem);
+  font-weight: var(--font-weight-bold);
+  color: #2EE5F0;
+  margin-left: 3px;
+  line-height: 1;
+}
+
+/* Etiquetas y Descripciones */
+.c-stat-card__label {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: var(--font-weight-bold);
+  color: #FFFFFF;
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.c-stat-card__desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. CINTILLO INFERIOR DE TRANSPARENCIA Y ENLACES
+   ========================================================================== */
+.c-huella-wiener__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-base);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.c-huella-wiener__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.c-huella-wiener__badge svg {
+  color: #2EE5F0;
+  flex-shrink: 0;
+}
+
+.c-huella-wiener__link {
+  color: #2EE5F0;
+  font-size: 14px;
+}
+
+.c-huella-wiener__link::after {
+  background-color: #2EE5F0;
+}
+
+.c-huella-wiener__link:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .c-huella-wiener__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .c-huella-wiener {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .c-huella-wiener__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-base);
+  }
+
+  .c-stat-card {
+    padding: 28px 20px;
+  }
+
+  .c-huella-wiener__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+}

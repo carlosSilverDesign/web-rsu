@@ -254,7 +254,7 @@ A continuación se detalla la especificación para cada módulo según el Brief 
 ├────────────────────────────────────────────────────────────────────────┤
 │ 5. NUESTRO MODELO RSU (4 Pilares: Gestión, Formación, Proyección, I+D) │
 ├────────────────────────────────────────────────────────────────────────┤
-│ 6. PROYECTOS EMBLEMÁTICOS (Carrusel Swiper interactivo + progressbar)   │
+│ 6. PROYECTOS EMBLEMÁTICOS (Carrusel Swiper interactivo + progressbar)  │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 7. CAMPUS SOSTENIBLE Y VOLUNTARIADO (Grid interactivo con filtros)     │
 ├────────────────────────────────────────────────────────────────────────┤

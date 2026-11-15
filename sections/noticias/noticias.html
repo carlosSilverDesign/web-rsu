@@ -1,0 +1,586 @@
+<!-- ==========================================================================
+     SECCIÓN: NOTICIAS RSU (FEED EDITORIAL ESTILO MAGAZINE - LOOK & FEEL VULTURE)
+     Proyecto: Web RSU - Universidad Norbert Wiener
+     Brief Oficial:
+     - Sección dinámica en orden cronológico
+     - Filtros por etiquetas: Voluntariado, Proyectos, Reconocimientos, Eventos
+     - 16 Notas de prensa elaboradas con enlaces oficiales
+     - Grid magazine con Lead Story prominente + Feed editorial
+     ========================================================================== -->
+
+<section id="noticias-section" class="c-noticias-section section-wrap" aria-label="Noticias e Información RSU">
+  <div class="container">
+
+    <!-- ========================================================================
+         1. CABECERA EDITORIAL INSTITUCIONAL
+         ======================================================================== -->
+    <header class="c-section-header text-center c-transition-in">
+      <span class="c-eyebrow">ACTUALIDAD, COMUNIDAD & SOSTENIBILIDAD</span>
+      <h2 class="c-section-title">
+        Noticias de <span class="c-text-emphasis">Responsabilidad Social</span>
+      </h2>
+      <p class="c-section-subtitle c-noticias-lead">
+        Conoce las últimas notas informativas, coberturas de voluntariado, reconocimientos y avances en los proyectos que transforman vidas y comunidades en el Perú.
+      </p>
+    </header>
+
+    <!-- ========================================================================
+         2. BARRA DE FILTROS POR ETIQUETAS (Magazine Filter Tabs)
+         ======================================================================== -->
+    <div class="c-noticias-filter-wrap c-transition-in">
+      <div class="c-noticias-filter-bar" role="tablist" aria-label="Filtrar notas de prensa por temática">
+        <button type="button" class="c-noticias-filter-btn is-active" data-noticias-filter="all" role="tab" aria-selected="true">
+          <span>Todas las notas</span>
+          <span class="c-filter-count">16</span>
+        </button>
+        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="voluntariado" role="tab" aria-selected="false">
+          <span class="c-filter-dot c-filter-dot--teal"></span>
+          <span>Voluntariado</span>
+          <span class="c-filter-count">5</span>
+        </button>
+        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="proyectos" role="tab" aria-selected="false">
+          <span class="c-filter-dot c-filter-dot--orange"></span>
+          <span>Proyectos</span>
+          <span class="c-filter-count">4</span>
+        </button>
+        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="reconocimientos" role="tab" aria-selected="false">
+          <span class="c-filter-dot c-filter-dot--gold"></span>
+          <span>Reconocimientos</span>
+          <span class="c-filter-count">4</span>
+        </button>
+        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="eventos" role="tab" aria-selected="false">
+          <span class="c-filter-dot c-filter-dot--blue"></span>
+          <span>Eventos</span>
+          <span class="c-filter-count">3</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         3. MAGAZINE HERO FEATURED BLOCK (ESTILO VULTURE LEAD)
+         1 Noticia Principal Gigante + 2 Sub-destacadas en Columna Lateral
+         ======================================================================== -->
+    <div class="c-vulture-lead-block c-transition-in" id="noticias-destacadas">
+      <div class="c-vulture-lead-grid">
+        
+        <!-- NOTICIA 1: LEAD HERO PRINCIPAL -->
+        <article class="c-vulture-main-card c-noticia-item" data-category="voluntariado">
+          <a href="https://www.uwiener.edu.pe/noticias/voluntarios-de-la-universidad-norbert-wiener-participaron-en-campana-de-responsabilidad-social-organizada-por-el-congreso-de-la-republica-en-coordinacion-con-nuestra-casa-de-estudios-y-el-inabif/" target="_blank" rel="noopener noreferrer" class="c-vulture-main-card__media-link" aria-label="Leer nota: Voluntarios de la Universidad Norbert Wiener participaron en campaña de responsabilidad social organizada por el Congreso de la República y el INABIF">
+            <div class="c-img-placeholder c-vulture-main-card__media" data-placeholder-label="Fotografía: Voluntarios Wiener en campaña de RSU con el Congreso e INABIF">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Foto: Campaña RSU con Congreso e INABIF</span>
+            </div>
+            <span class="c-vulture-lead-tag">DESTACADO DE PORTADA</span>
+          </a>
+
+          <div class="c-vulture-main-card__content">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--teal">Voluntariado</span>
+              <time class="c-noticia-meta__date" datetime="2026-11-12">12 de noviembre, 2026</time>
+              <span class="c-noticia-meta__read">4 min de lectura</span>
+            </div>
+
+            <h3 class="c-vulture-main-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/voluntarios-de-la-universidad-norbert-wiener-participaron-en-campana-de-responsabilidad-social-organizada-por-el-congreso-de-la-republica-en-coordinacion-con-nuestra-casa-de-estudios-y-el-inabif/" target="_blank" rel="noopener noreferrer">
+                Voluntarios de la Universidad Norbert Wiener participaron en campaña de responsabilidad social organizada por el Congreso de la República en coordinación con nuestra casa de estudios y el INABIF
+              </a>
+            </h3>
+
+            <p class="c-vulture-main-card__excerpt">
+              Estudiantes y docentes de diversas facultades brindaron atención integral, orientación en salud preventiva y soporte pedagógico a más de 800 familias en situación de vulnerabilidad en una acción articulada con el Estado.
+            </p>
+
+            <a href="https://www.uwiener.edu.pe/noticias/voluntarios-de-la-universidad-norbert-wiener-participaron-en-campana-de-responsabilidad-social-organizada-por-el-congreso-de-la-republica-en-coordinacion-con-nuestra-casa-de-estudios-y-el-inabif/" target="_blank" rel="noopener noreferrer" class="c-link-arrow">
+              <span>Leer nota completa en el portal oficial</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- COLUMNA LATERAL CON 2 NOTICIAS SUB-DESTACADAS -->
+        <div class="c-vulture-side-stack">
+
+          <!-- NOTICIA 2: RECONOCIMIENTO PERÚ POR LOS ODS -->
+          <article class="c-vulture-side-card c-noticia-item" data-category="reconocimientos">
+            <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-obtuvo-el-reconocimiento-peru-por-los-ods-2026-en-la-categoria-personas-por-la-labor-de-su-centro-odontologico/" target="_blank" rel="noopener noreferrer" class="c-vulture-side-card__media-link" aria-label="Leer nota: Reconocimiento Perú por los ODS 2026 al Centro Odontológico">
+              <div class="c-img-placeholder c-vulture-side-card__media" data-placeholder-label="Fotografía: Reconocimiento Perú por los ODS 2026 - Centro Odontológico">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+                <span>Foto: Premio Perú por los ODS 2026</span>
+              </div>
+            </a>
+
+            <div class="c-vulture-side-card__content">
+              <div class="c-noticia-meta">
+                <span class="c-badge c-badge--orange">Reconocimientos</span>
+                <time class="c-noticia-meta__date" datetime="2026-10-02">02 de octubre, 2026</time>
+              </div>
+
+              <h4 class="c-vulture-side-card__title">
+                <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-obtuvo-el-reconocimiento-peru-por-los-ods-2026-en-la-categoria-personas-por-la-labor-de-su-centro-odontologico/" target="_blank" rel="noopener noreferrer">
+                  Universidad Norbert Wiener obtuvo el reconocimiento Perú por los ODS 2026 en la categoría Personas por la labor de su Centro Odontológico
+                </a>
+              </h4>
+
+              <p class="c-vulture-side-card__excerpt">
+                Distinción nacional otorgada por su programa social «Salud bucal para todos», que acerca tratamientos odontológicos integrales a poblaciones vulnerables.
+              </p>
+            </div>
+          </article>
+
+          <!-- NOTICIA 3: SEMANA DE LA SOSTENIBILIDAD CONFERENCIAS -->
+          <article class="c-vulture-side-card c-noticia-item" data-category="eventos">
+            <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-organizo-la-semana-de-la-sostenibilidad-con-la-participacion-de-invitados-nacionales-e-internacionales/" target="_blank" rel="noopener noreferrer" class="c-vulture-side-card__media-link" aria-label="Leer nota: Semana de la Sostenibilidad con invitados nacionales e internacionales">
+              <div class="c-img-placeholder c-vulture-side-card__media" data-placeholder-label="Fotografía: Inauguración de la Semana de la Sostenibilidad con ponentes internacionales">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Foto: Semana de la Sostenibilidad</span>
+              </div>
+            </a>
+
+            <div class="c-vulture-side-card__content">
+              <div class="c-noticia-meta">
+                <span class="c-badge c-badge--teal">Eventos</span>
+                <time class="c-noticia-meta__date" datetime="2026-08-25">25 de agosto, 2026</time>
+              </div>
+
+              <h4 class="c-vulture-side-card__title">
+                <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-organizo-la-semana-de-la-sostenibilidad-con-la-participacion-de-invitados-nacionales-e-internacionales/" target="_blank" rel="noopener noreferrer">
+                  Universidad Norbert Wiener organizó la Semana de la Sostenibilidad con la participación de invitados nacionales e internacionales
+                </a>
+              </h4>
+
+              <p class="c-vulture-side-card__excerpt">
+                Cinco días continuos de mesas de debate, ferias de proyectos de impacto y conferencias de economía circular con expositores de Iberoamérica.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         4. MAGAZINE FEED GRID (NOTICIAS CRONOLÓGICAS)
+         Grid editorial de 3 columnas estilo Vulture Magazine Feed
+         ======================================================================== -->
+    <div class="c-noticias-feed-section">
+      
+      <div class="c-noticias-feed-header">
+        <h3 class="c-noticias-feed-header__title">Todas las notas informativas</h3>
+        <span class="c-noticias-feed-header__rule"></span>
+      </div>
+
+      <div class="c-noticias-feed-grid" id="noticias-grid">
+
+        <!-- NOTICIA 4: ECOSISTEMA LÍDER CONFERENCIA (Eventos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-1" data-category="eventos">
+          <a href="https://www.uwiener.edu.pe/noticias/creadora-del-ecosistema-lider-por-primera-vez-dicto-conferencia-magistral-en-la-universidad-norbert-wiener/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Creadora del Ecosistema Líder en UNW">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Conferencia magistral Ecosistema Líder en el auditorio Wiener">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Foto: Conferencia Ecosistema Líder</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--outline">Eventos</span>
+              <time class="c-noticia-meta__date" datetime="2026-10-28">28 oct 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/creadora-del-ecosistema-lider-por-primera-vez-dicto-conferencia-magistral-en-la-universidad-norbert-wiener/" target="_blank" rel="noopener noreferrer">
+                Creadora del Ecosistema Líder por primera vez dictó conferencia magistral en la Universidad Norbert Wiener
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Espacio reflexivo sobre liderazgo transformador, innovación de impacto social y herramientas para la gestión de proyectos de alto valor ciudadano.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">3 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 5: PREVENCIÓN EMBARAZO ADOLESCENTE OBSTETRICIA (Proyectos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-2" data-category="proyectos">
+          <a href="https://www.uwiener.edu.pe/noticias/programa-academico-de-obstetricia-de-la-universidad-norbert-wiener-organizo-campana-de-prevencion-del-embarazo-adolescente/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Campaña de prevención del embarazo adolescente">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Campaña de salud sexual y prevención del embarazo adolescente en colegios">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              <span>Foto: Obstetricia en Campaña</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Proyectos</span>
+              <time class="c-noticia-meta__date" datetime="2026-10-15">15 oct 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/programa-academico-de-obstetricia-de-la-universidad-norbert-wiener-organizo-campana-de-prevencion-del-embarazo-adolescente/" target="_blank" rel="noopener noreferrer">
+                Programa Académico de Obstetricia de la Universidad Norbert Wiener organizó campaña de prevención del embarazo adolescente
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Iniciativa de Aprendizaje-Servicio que capacitó a cientos de escolares de Lima Norte en salud sexual responsable y plan de vida.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 6: MUJERES EMPRENDEDORAS LINCE Y CONSULTORIOS JURÍDICOS (Proyectos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-3" data-category="proyectos">
+          <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-inicio-un-nuevo-taller-de-capacitacion-a-mujeres-emprendedoras-de-lince-y-atencion-en-sus-consultorios-juridicos/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Capacitación a mujeres emprendedoras de Lince">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Taller de finanzas y legal para mujeres emprendedoras de Lince">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Foto: Taller Emprendedoras Lince</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Proyectos</span>
+              <time class="c-noticia-meta__date" datetime="2026-09-22">22 sep 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-inicio-un-nuevo-taller-de-capacitacion-a-mujeres-emprendedoras-de-lince-y-atencion-en-sus-consultorios-juridicos/" target="_blank" rel="noopener noreferrer">
+                Universidad Norbert Wiener inició un nuevo taller de capacitación a mujeres emprendedoras de Lince y atención en sus consultorios jurídicos
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Acción colaborativa que combina asesoramiento tributario, marketing básico y asesoría jurídica gratuita para lideresas de negocios vecinales.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">5 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 7: VOLUNTARIADO PERIODO 2026-II (Voluntariado) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-1" data-category="voluntariado">
+          <a href="https://www.uwiener.edu.pe/noticias/voluntariado-wiener-inicia-el-periodo-2026-ii-con-acciones-de-responsabilidad-social/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Voluntariado Wiener inicia periodo 2026-II">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Inicio del periodo de voluntariado 2026-II con comunidad de estudiantes">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              <span>Foto: Voluntariado 2026-II</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--teal">Voluntariado</span>
+              <time class="c-noticia-meta__date" datetime="2026-09-08">08 sep 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/voluntariado-wiener-inicia-el-periodo-2026-ii-con-acciones-de-responsabilidad-social/" target="_blank" rel="noopener noreferrer">
+                Voluntariado Wiener inicia el periodo 2026-II con acciones de responsabilidad social
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Más de 600 brigadistas universitarios se integran a programas formativos y despliegues en distritos vulnerables de la capital.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">3 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 8: VOLUNTARIADO ESCOLARES INDEPENDENCIA MINEDU (Voluntariado) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-2" data-category="voluntariado">
+          <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-desarrollo-jornada-de-voluntariado-en-beneficio-de-escolares-del-distrito-de-independencia-en-alianza-con-el-minedu/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Jornada de voluntariado escolar en Independencia">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Reforzamiento escolar con estudiantes de primaria en Independencia">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>Foto: Voluntariado Minedu Independencia</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--teal">Voluntariado</span>
+              <time class="c-noticia-meta__date" datetime="2026-08-14">14 ago 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-desarrollo-jornada-de-voluntariado-en-beneficio-de-escolares-del-distrito-de-independencia-en-alianza-con-el-minedu/" target="_blank" rel="noopener noreferrer">
+                Universidad Norbert Wiener desarrolló jornada de voluntariado en beneficio de escolares del distrito de Independencia en alianza con el MINEDU
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Acompañamiento psicopedagógico y refuerzo en lectura y matemáticas para cerrar brechas educativas en escuelas públicas.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 9: SELLO METARED S IBEROAMÉRICA (Reconocimientos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-3" data-category="reconocimientos">
+          <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-obtuvo-el-sello-de-compromiso-con-la-sostenibilidad-de-metared-s-organizacion-que-agrupa-a-universidades-de-iberoamerica/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Sello de compromiso con la sostenibilidad MetaRed S">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Acreditación del Sello de Sostenibilidad MetaRed S Iberoamérica">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Foto: Sello MetaRed S Iberoamérica</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Reconocimientos</span>
+              <time class="c-noticia-meta__date" datetime="2026-07-20">20 jul 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-obtuvo-el-sello-de-compromiso-con-la-sostenibilidad-de-metared-s-organizacion-que-agrupa-a-universidades-de-iberoamerica/" target="_blank" rel="noopener noreferrer">
+                Universidad Norbert Wiener obtuvo el Sello de Compromiso con la Sostenibilidad de MetaRed S, organización que agrupa a universidades de Iberoamérica
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Reconocimiento internacional que avala los avances institucionales en gestión ambiental, igualdad e integración comunitaria.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 10: RECONOCIMIENTO CONGRESO A VOLUNTARIOS (Reconocimientos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-1" data-category="reconocimientos">
+          <a href="https://www.uwiener.edu.pe/noticias/oficina-de-participacion-ciudadana-del-congreso-de-la-republica-ofrece-reconocimiento-a-voluntarios-de-la-universidad-norbert-wiener/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Reconocimiento del Congreso a voluntarios de UNW">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Ceremonia de distinción en el Congreso de la República a voluntarios Wiener">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              <span>Foto: Distinción Congreso de la República</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Reconocimientos</span>
+              <time class="c-noticia-meta__date" datetime="2026-07-05">05 jul 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/oficina-de-participacion-ciudadana-del-congreso-de-la-republica-ofrece-reconocimiento-a-voluntarios-de-la-universidad-norbert-wiener/" target="_blank" rel="noopener noreferrer">
+                Oficina de Participación Ciudadana del Congreso de la República ofrece reconocimiento a voluntarios de la Universidad Norbert Wiener
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Homenaje al espíritu solidario y la constante labor social realizada en campañas cívicas por estudiantes de ciencias de la salud y derecho.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">3 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 11: CONSULTORIO JURÍDICO GRATUITO EN INDEPENDENCIA (Proyectos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-2" data-category="proyectos">
+          <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-brinda-atencion-gratuita-en-consultorio-juridico-instalado-en-la-municipalidad-de-independencia/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Atención gratuita en consultorio jurídico en Independencia">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Asesoría legal gratuita en el Consultorio Jurídico de Independencia">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              <span>Foto: Consultorio Jurídico Independencia</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Proyectos</span>
+              <time class="c-noticia-meta__date" datetime="2026-06-18">18 jun 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-brinda-atencion-gratuita-en-consultorio-juridico-instalado-en-la-municipalidad-de-independencia/" target="_blank" rel="noopener noreferrer">
+                Universidad Norbert Wiener brinda atención gratuita en consultorio jurídico instalado en la Municipalidad de Independencia
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Asistencia letrada en litigios familiares, alimentos y derechos ciudadanos a más de 1,200 vecinos de escasos recursos económicos.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 12: ESCUELA DE MUJERES EMPRENDEDORAS EDICIÓN 2026 (Proyectos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-3" data-category="proyectos">
+          <a href="https://www.uwiener.edu.pe/noticias/norbert-wiener-inicio-edicion-2026-de-su-programa-de-responsabilidad-social-escuela-de-mujeres-emprendedoras/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Inicio de la Escuela de Mujeres Emprendedoras 2026">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Lanzamiento de la edición 2026 de la Escuela de Mujeres Emprendedoras">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <span>Foto: Escuela Mujeres Emprendedoras 2026</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Proyectos</span>
+              <time class="c-noticia-meta__date" datetime="2026-06-02">02 jun 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/norbert-wiener-inicio-edicion-2026-de-su-programa-de-responsabilidad-social-escuela-de-mujeres-emprendedoras/" target="_blank" rel="noopener noreferrer">
+                Norbert Wiener inició edición 2026 de su programa de responsabilidad social Escuela de Mujeres Emprendedoras
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Capacitación especializada en digitalización, contabilidad básica y modelos sostenibles para lideresas de comedores y ollas comunes.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">5 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 13: ARBORIZACIÓN EN LA VICTORIA (Voluntariado) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-1" data-category="voluntariado">
+          <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-participo-en-campana-de-arborizacion-promovida-por-la-municipalidad-de-la-victoria-y-el-programa-de-voluntariado-ciudadano-del-congreso-de-la-republica/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Arborización en La Victoria con el Congreso">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Campaña de arborización y plantado de árboles en La Victoria">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a2 2 0 0 0-2-2h-1v-2a1 1 0 0 1 1-1h3a2 2 0 0 0 2-2V9.5a.5.5 0 0 1 .5-.5h.42A8.01 8.01 0 0 1 13 19.93z"></path></svg>
+              <span>Foto: Arborización La Victoria</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--teal">Voluntariado</span>
+              <time class="c-noticia-meta__date" datetime="2026-05-19">19 may 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-participo-en-campana-de-arborizacion-promovida-por-la-municipalidad-de-la-victoria-y-el-programa-de-voluntariado-ciudadano-del-congreso-de-la-republica/" target="_blank" rel="noopener noreferrer">
+                Universidad Norbert Wiener participó en campaña de arborización promovida por la Municipalidad de La Victoria y el programa de voluntariado ciudadano del Congreso de la República
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Jornada de reforestación urbana con más de 200 árboles plantados para contribuir a la captura de carbono y mejora del entorno vecinal.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">3 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 14: CONFERENCIAS INTERNACIONALES DE RSU ARGENTINA Y CHILE (Eventos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-2" data-category="eventos">
+          <a href="https://www.uwiener.edu.pe/noticias/especialistas-de-argentina-y-chile-ofrecieron-conferencias-sobre-responsabilidad-social-universitaria-dirigida-a-estudiantes-y-docentes-de-la-universidad-norbert-wiener/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Conferencias de especialistas de Argentina y Chile">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Panel con académicos especialistas de Argentina y Chile">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Foto: Ponencias Argentina y Chile</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--outline">Eventos</span>
+              <time class="c-noticia-meta__date" datetime="2026-04-28">28 abr 2026</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/especialistas-de-argentina-y-chile-ofrecieron-conferencias-sobre-responsabilidad-social-universitaria-dirigida-a-estudiantes-y-docentes-de-la-universidad-norbert-wiener/" target="_blank" rel="noopener noreferrer">
+                Especialistas de Argentina y Chile ofrecieron conferencias sobre responsabilidad social universitaria dirigida a estudiantes y docentes de la Universidad Norbert Wiener
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Intercambio de metodologías de Aprendizaje-Servicio e impacto comunitario en el ámbito universitario sudamericano.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 15: EMPRESAS QUE TRANSFORMAN 2025 (Reconocimientos) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-3" data-category="reconocimientos">
+          <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-recibio-reconocimiento-al-ser-elegida-como-una-de-las-empresas-que-transforman-2025/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Empresas que Transforman 2025">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Reconocimiento Empresas que Transforman IPAE 2025">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Foto: Empresas que Transforman 2025</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--orange">Reconocimientos</span>
+              <time class="c-noticia-meta__date" datetime="2025-11-15">15 nov 2025</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/universidad-norbert-wiener-recibio-reconocimiento-al-ser-elegida-como-una-de-las-empresas-que-transforman-2025/" target="_blank" rel="noopener noreferrer">
+                Universidad Norbert Wiener recibió reconocimiento al ser elegida como una de las «Empresas que Transforman 2025»
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Premio de valor compartido otorgado por IPAE Acción Empresarial y RPP por su labor médica y odontológica en sectores desfavorecidos.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- NOTICIA 16: BRIGADA WIENER EN LINCE AMBIENTAL (Voluntariado) -->
+        <article class="c-card c-noticia-card c-noticia-item c-transition-in stagger-1" data-category="voluntariado">
+          <a href="https://www.uwiener.edu.pe/noticias/estudiantes-de-la-primera-brigada-wiener-brindaron-orientacion-sobre-temas-ambientales-y-de-seguridad-ante-desastres-naturales-a-escolares-del-distrito-de-lince/" target="_blank" rel="noopener noreferrer" class="c-noticia-card__media-wrap" aria-label="Leer nota: Estudiantes de la primera Brigada Wiener en Lince">
+            <div class="c-img-placeholder c-noticia-card__media" data-placeholder-label="Fotografía: Brigada Ambiental Wiener enseñando prevención a escolares en Lince">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <span>Foto: Brigada Ambiental en Lince</span>
+            </div>
+          </a>
+          <div class="c-noticia-card__body">
+            <div class="c-noticia-meta">
+              <span class="c-badge c-badge--teal">Voluntariado</span>
+              <time class="c-noticia-meta__date" datetime="2025-10-20">20 oct 2025</time>
+            </div>
+            <h4 class="c-noticia-card__title">
+              <a href="https://www.uwiener.edu.pe/noticias/estudiantes-de-la-primera-brigada-wiener-brindaron-orientacion-sobre-temas-ambientales-y-de-seguridad-ante-desastres-naturales-a-escolares-del-distrito-de-lince/" target="_blank" rel="noopener noreferrer">
+                Estudiantes de la primera Brigada Wiener brindaron orientación sobre temas ambientales y de seguridad ante desastres naturales a escolares del distrito de Lince
+              </a>
+            </h4>
+            <p class="c-noticia-card__desc">
+              Capacitaciones escolares de gestión del riesgo de desastres, segregación diferenciada de residuos y preparación comunitaria.
+            </p>
+            <div class="c-noticia-card__footer">
+              <span class="c-noticia-source">Prensa Wiener</span>
+              <span class="c-noticia-read-time">3 min</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Barra de Estado / Paginación -->
+      <div class="c-noticias-pagination text-center">
+        <p class="c-noticias-counter" id="noticias-counter">Mostrando <strong id="visible-count">16</strong> de <strong>16</strong> notas informativas publicadas</p>
+        <button type="button" class="c-btn c-btn--outline c-btn--sm" id="btn-load-more" style="display: none;">
+          <span>Cargar más notas</span>
+          <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================
+         5. NEWSLETTER / SUSCRIPCIÓN INFORMATIVA RSU
+         ======================================================================== -->
+    <div class="c-noticias-newsletter-card c-transition-in">
+      <div class="c-noticias-newsletter-grid">
+        <div class="c-noticias-newsletter-content">
+          <span class="c-badge c-badge--teal" style="background: rgba(46, 229, 240, 0.15); color: #2EE5F0; border-color: rgba(46, 229, 240, 0.3);">
+            BOLETÍN INFORMATIVO RSU
+          </span>
+          <h3 class="c-noticias-newsletter-title">Recibe las últimas noticias y convocatorias comunitarias</h3>
+          <p class="c-noticias-newsletter-desc">
+            Publicamos periódicamente notas de prensa, testimonios de beneficiarios y fechas de inicio de nuevos programas de voluntariado e impacto social.
+          </p>
+        </div>
+        <div class="c-noticias-newsletter-actions">
+          <a href="mailto:responsabilidad.social@uwiener.edu.pe?subject=Suscripcion%20Boletin%20RSU" class="c-btn c-btn--primary">
+            <span>Contactar a la Dirección de RSU</span>
+            <svg class="c-btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

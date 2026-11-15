@@ -1,0 +1,578 @@
+/**
+ * HOJA DE ESTILOS: SECCIÓN PROYECTOS (EMBLEMÁTICOS & PROGRAMAS ACADÉMICOS)
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Brief: Sección 8.3
+ * Incluye:
+ * - 4 Áreas de intervención en grid responsive
+ * - Carrusel Swiper v11 interactivo con progressbar continua de 2px
+ * - Galería de 2 fotos por proyecto emblemático
+ * - Metodología Aprendizaje - Servicio y catálogo de 11 iniciativas académicas
+ * - Filtro interactivo por temática
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR GENERAL Y LEAD
+   ========================================================================== */
+.c-proyectos-section {
+  background-color: var(--color-bg-light, #F8FAFC);
+  padding: var(--space-4xl) 0;
+  position: relative;
+  overflow-x: clip;
+}
+
+.c-proyectos-lead {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--color-text-secondary, #64748B);
+}
+
+/* ==========================================================================
+   2. 4 ÁREAS DE INTERVENCIÓN (Brief Oficial)
+   ========================================================================== */
+.c-areas-intervencion {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-4xl);
+}
+
+.c-areas-intervencion__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-slate-dark, #1E293B);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.c-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .c-areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .c-areas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.c-area-card {
+  background: var(--color-card-bg, #FFFFFF);
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform var(--duration-fast, 0.2s) ease,
+              box-shadow var(--duration-fast, 0.2s) ease,
+              border-color var(--duration-fast, 0.2s) ease;
+}
+
+.c-area-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(15, 132, 143, 0.1);
+  border-color: var(--color-primary-teal, #0F848F);
+}
+
+.c-area-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.c-area-card__icon--teal {
+  background-color: rgba(15, 132, 143, 0.1);
+  color: var(--color-primary-teal, #0F848F);
+}
+
+.c-area-card__icon--blue {
+  background-color: rgba(2, 132, 199, 0.1);
+  color: #0284C7;
+}
+
+.c-area-card__icon--orange {
+  background-color: rgba(234, 88, 12, 0.1);
+  color: #EA580C;
+}
+
+.c-area-card__icon--green {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: #16A34A;
+}
+
+.c-area-card__name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-slate-dark, #1E293B);
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. SUBTÍTULO: PROYECTOS EMBLEMÁTICOS (CABECERA & CONTROLES)
+   ========================================================================== */
+.c-emblematicos-block {
+  scroll-margin-top: 100px;
+  margin-bottom: var(--space-4xl);
+  overflow-x: clip;
+}
+
+.c-emblematicos-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .c-emblematicos-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.c-subheading-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 900;
+  color: var(--color-slate-dark, #1E293B);
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.c-subheading-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary, #64748B);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Controles de Navegación del Carrusel */
+.c-slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.c-slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-card-bg, #FFFFFF);
+  border: 1.5px solid var(--color-border, #CBD5E1);
+  color: var(--color-slate-dark, #1E293B);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--duration-fast, 0.2s) ease;
+}
+
+.c-slider-btn:hover:not(:disabled) {
+  background: var(--color-primary-teal, #0F848F);
+  border-color: var(--color-primary-teal, #0F848F);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.c-slider-btn:disabled,
+.c-slider-btn.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   4. PROGRESSBAR CONTINUA (ANZSOG Style: 2px en Teal)
+   ========================================================================== */
+.c-swiper-progressbar-wrapper {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(15, 132, 143, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.c-swiper-progressbar-wrapper .swiper-pagination-progressbar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.c-swiper-progressbar-wrapper .swiper-pagination-progressbar-fill {
+  background-color: var(--color-primary-teal, #0F848F) !important;
+  height: 100%;
+  border-radius: 3px;
+  transition: transform var(--duration-slider, 0.3s) cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ==========================================================================
+   5. TARJETAS DEL CARRUSEL DE PROYECTOS EMBLEMÁTICOS
+   ========================================================================== */
+.c-proyectos-swiper {
+  overflow: hidden;
+  padding: 8px 4px 16px;
+  margin: -8px -4px -16px;
+}
+
+.c-proyecto-slide {
+  height: auto;
+}
+
+.c-proyecto-card {
+  background-color: var(--color-card-bg, #FFFFFF);
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: box-shadow var(--duration-normal, 0.3s) ease;
+}
+
+.c-proyecto-card:hover {
+  box-shadow: 0 12px 30px rgba(15, 132, 143, 0.08);
+}
+
+.c-proyecto-card__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .c-proyecto-card__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Galería de 2 Fotos por Proyecto */
+.c-proyecto-card__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  background-color: #F1F5F9;
+}
+
+@media (max-width: 580px) {
+  .c-proyecto-card__gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.c-proyecto-photo {
+  height: 260px;
+  border-radius: var(--radius-md, 8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  background-color: #E2E8F0;
+  border: 1.5px dashed #CBD5E1;
+  color: #64748B;
+  transition: transform var(--duration-fast, 0.2s) ease;
+}
+
+.c-proyecto-photo:hover {
+  transform: scale(1.02);
+}
+
+.c-proyecto-photo svg {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+  stroke: var(--color-primary-teal, #0F848F);
+  opacity: 0.7;
+}
+
+.c-proyecto-photo span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Cuerpo de Contenido del Proyecto */
+.c-proyecto-card__body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c-proyecto-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-sm);
+}
+
+.c-proyecto-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  font-weight: 800;
+  color: var(--color-slate-dark, #1E293B);
+  line-height: 1.3;
+  margin-bottom: var(--space-sm);
+}
+
+.c-proyecto-card__desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #64748B);
+  margin-bottom: var(--space-md);
+}
+
+.c-proyecto-card__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background-color: #F8FAFC;
+  border-radius: var(--radius-md, 8px);
+  border-left: 3px solid var(--color-primary-teal, #0F848F);
+}
+
+.c-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--color-slate-dark, #1E293B);
+  line-height: 1.4;
+}
+
+.c-highlight-item__icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  stroke: var(--color-primary-teal, #0F848F);
+}
+
+.c-proyecto-card__footer {
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   6. SUBTÍTULO: PROYECTOS DE PROGRAMAS ACADÉMICOS
+   ========================================================================== */
+.c-academicos-block {
+  scroll-margin-top: 100px;
+  padding-top: var(--space-xl);
+  overflow-x: clip;
+}
+
+.c-academicos-intro {
+  background-color: var(--color-card-bg, #FFFFFF);
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.c-academicos-intro__header {
+  margin-bottom: var(--space-md);
+}
+
+.c-academicos-intro__lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-slate-dark, #1E293B);
+  margin-bottom: var(--space-md);
+}
+
+.c-academicos-intro__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: rgba(15, 132, 143, 0.06);
+  border-left: 3px solid var(--color-primary-teal, #0F848F);
+  border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.c-academicos-intro__note svg {
+  flex-shrink: 0;
+  stroke: var(--color-primary-teal, #0F848F);
+  margin-top: 2px;
+}
+
+.c-academicos-intro__note p {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--color-slate-dark, #1E293B);
+  margin: 0;
+}
+
+/* Barra de Filtros de Iniciativas */
+.c-academicos-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border, #E2E8F0);
+}
+
+.c-academicos-filters__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-slate-dark, #1E293B);
+}
+
+.c-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.c-filter-btn {
+  padding: 6px 16px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-slate-dark, #1E293B);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border, #CBD5E1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all var(--duration-fast, 0.2s) ease;
+}
+
+.c-filter-btn:hover {
+  background-color: #F1F5F9;
+  border-color: var(--color-primary-teal, #0F848F);
+  color: var(--color-primary-teal, #0F848F);
+}
+
+.c-filter-btn.is-active {
+  background-color: var(--color-primary-teal, #0F848F);
+  border-color: var(--color-primary-teal, #0F848F);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   7. CUADRÍCULA DE 11 INICIATIVAS ACADÉMICAS DESTACADAS
+   ========================================================================== */
+.c-academicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .c-academicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .c-academicos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.c-academico-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-card-bg, #FFFFFF);
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  transition: transform var(--duration-fast, 0.2s) ease,
+              box-shadow var(--duration-fast, 0.2s) ease,
+              border-color var(--duration-fast, 0.2s) ease,
+              opacity 0.25s ease;
+}
+
+.c-academico-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-teal, #0F848F);
+  box-shadow: 0 10px 24px rgba(15, 132, 143, 0.08);
+}
+
+.c-academico-card.is-hidden {
+  display: none;
+}
+
+.c-academico-card__media {
+  height: 160px;
+  background-color: #E2E8F0;
+  border-bottom: 1px solid var(--color-border, #E2E8F0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  color: #64748B;
+}
+
+.c-academico-card__media svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-primary-teal, #0F848F);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.c-academico-card__media span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.c-academico-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.c-academico-card__body .c-badge {
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.c-academico-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-slate-dark, #1E293B);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.c-academico-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary, #64748B);
+  margin: 0;
+  margin-top: auto;
+}

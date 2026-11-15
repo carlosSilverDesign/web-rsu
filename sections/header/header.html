@@ -6,16 +6,11 @@
 <header id="site-header" class="c-header" role="banner">
   <div class="container c-header__container">
 
-    <!-- 1. IDENTIDAD DE MARCA (LOGO UNW + DIVISOR + DIRECCIÓN RSU) -->
+    <!-- 1. IDENTIDAD DE MARCA (LOGO UNW) -->
     <a href="index.html" class="c-header__brand"
-      aria-label="Página de inicio - Dirección de Responsabilidad Social Wiener">
+      aria-label="Página de inicio - Universidad Norbert Wiener">
       <img src="assets/images/logo-wiener-h.svg" alt="Universidad Norbert Wiener" class="c-header__logo" width="171"
         height="32">
-      <span class="c-header__divider" aria-hidden="true"></span>
-      <!-- <div class="c-header__tagline">
-        <span class="c-header__subname">DIRECCIÓN DE</span>
-        <span class="c-header__dept">Responsabilidad Social</span>
-      </div> -->
     </a>
 
     <!-- 2. NAVEGACIÓN PRINCIPAL DESKTOP -->
@@ -29,14 +24,14 @@
 
         <!-- Ítem 2: Quiénes somos (Dropdown) -->
         <li class="c-nav__item has-dropdown" data-dropdown="quienes-somos">
-          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+          <a href="quienes-somos.html" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
             aria-controls="dropdown-quienes-somos">
             Quiénes somos
             <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </button>
+          </a>
 
           <div id="dropdown-quienes-somos" class="c-dropdown-pane" role="region" aria-label="Submenú Quiénes somos">
             <div class="container c-dropdown-pane__inner c-dropdown-pane__inner--compact">
@@ -85,14 +80,14 @@
 
         <!-- Ítem 3: Proyectos (MEGA MENÚ ESTILO ANZSOG: Lista + Tarjetas destacadas) -->
         <li class="c-nav__item has-dropdown has-megamenu" data-dropdown="proyectos">
-          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+          <a href="proyectos.html" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
             aria-controls="dropdown-proyectos">
             Proyectos
             <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </button>
+          </a>
 
           <div id="dropdown-proyectos" class="c-dropdown-pane c-dropdown-pane--megamenu" role="region"
             aria-label="Mega Menú Proyectos">
@@ -104,7 +99,7 @@
                   <span class="c-megamenu-col__label">ÁREAS DE INTERVENCIÓN</span>
                   <ul class="c-dropdown-list">
                     <li class="c-dropdown-list__item" style="--item-idx: 0;">
-                      <a href="#proyectos-emblematicos" class="c-dropdown-item">
+                      <a href="proyectos.html#emblematicos" class="c-dropdown-item">
                         <div class="c-dropdown-item__content">
                           <span class="c-dropdown-item__title">Proyectos Emblemáticos</span>
                           <p class="c-dropdown-item__desc">Iniciativas multidisciplinarias y sostenibles de alto
@@ -117,7 +112,7 @@
                       </a>
                     </li>
                     <li class="c-dropdown-list__item" style="--item-idx: 1;">
-                      <a href="#proyectos-emblematicos" class="c-dropdown-item">
+                      <a href="proyectos.html#academicos" class="c-dropdown-item">
                         <div class="c-dropdown-item__content">
                           <span class="c-dropdown-item__title">Proyectos de Programas Académicos</span>
                           <p class="c-dropdown-item__desc">Metodología Aprendizaje - Servicio en salud, derecho y
@@ -130,7 +125,7 @@
                       </a>
                     </li>
                     <li class="c-dropdown-list__item" style="--item-idx: 2;">
-                      <a href="#proyectos-emblematicos" class="c-dropdown-item">
+                      <a href="proyectos.html#academicos" class="c-dropdown-item">
                         <div class="c-dropdown-item__content">
                           <span class="c-dropdown-item__title">Contribución con los ODS</span>
                           <p class="c-dropdown-item__desc">Salud, educación, acción climática y reducción de
@@ -151,7 +146,7 @@
                   <div class="c-megamenu-cards">
 
                     <!-- Tarjeta 1: Bienestar en mi barrio -->
-                    <a href="#proyectos-emblematicos" class="c-megamenu-card c-megamenu-card--teal"
+                    <a href="proyectos.html#emblematicos" class="c-megamenu-card c-megamenu-card--teal"
                       style="--item-idx: 3;">
                       <div class="c-megamenu-card__badge">
                         <span class="c-badge c-badge--teal">Salud & Comunidad</span>
@@ -169,7 +164,7 @@
                     </a>
 
                     <!-- Tarjeta 2: Escuela de Mujeres Emprendedoras -->
-                    <a href="#proyectos-emblematicos" class="c-megamenu-card c-megamenu-card--dark"
+                    <a href="proyectos.html#emblematicos" class="c-megamenu-card c-megamenu-card--dark"
                       style="--item-idx: 4;">
                       <div class="c-megamenu-card__badge">
                         <span class="c-badge c-badge--orange">Emprendimiento</span>
@@ -196,14 +191,14 @@
 
         <!-- Ítem 4: Voluntariado (Dropdown) -->
         <li class="c-nav__item has-dropdown" data-dropdown="voluntariado">
-          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+          <a href="voluntariado.html" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
             aria-controls="dropdown-voluntariado">
             Voluntariado
             <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </button>
+          </a>
 
           <div id="dropdown-voluntariado" class="c-dropdown-pane" role="region" aria-label="Submenú Voluntariado">
             <div class="container c-dropdown-pane__inner c-dropdown-pane__inner--compact">
@@ -241,14 +236,14 @@
 
         <!-- Ítem 5: Campus Sostenible (Dropdown) -->
         <li class="c-nav__item has-dropdown" data-dropdown="campus-sostenible">
-          <button type="button" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
+          <a href="campus-sostenible.html" class="c-nav__link c-nav__trigger" aria-expanded="false" aria-haspopup="true"
             aria-controls="dropdown-campus-sostenible">
             Campus sostenible
             <svg class="c-nav__chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </button>
+          </a>
 
           <div id="dropdown-campus-sostenible" class="c-dropdown-pane" role="region"
             aria-label="Submenú Campus Sostenible">
@@ -298,12 +293,12 @@
 
         <!-- Ítem 6: Semana de la Sostenibilidad (Directo) -->
         <li class="c-nav__item">
-          <a href="#semana-sostenibilidad" class="c-nav__link">Semana Sostenibilidad</a>
+          <a href="semana-sostenibilidad.html" class="c-nav__link">Semana Sostenibilidad</a>
         </li>
 
         <!-- Ítem 7: Noticias (Directo) -->
         <li class="c-nav__item">
-          <a href="#noticias" class="c-nav__link">Noticias</a>
+          <a href="noticias.html" class="c-nav__link">Noticias</a>
         </li>
 
       </ul>
@@ -311,7 +306,7 @@
 
     <!-- 3. ACCIONES DE CABECERA & TOGGLE MOBILE -->
     <div class="c-header__actions">
-      <a href="#campus-voluntariado" class="c-btn c-btn--primary c-btn--sm c-header__cta">
+      <a href="voluntariado.html#convocatoria" class="c-btn c-btn--primary c-btn--sm c-header__cta">
         <span>Sumarse</span>
         <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
           stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -329,6 +324,7 @@
     </div>
 
   </div>
+</header>
 
   <!-- ==========================================================================
        4. CAJÓN DE NAVEGACIÓN MOBILE (DRAWER RESPONSIVE)
@@ -461,5 +457,3 @@
 
     </div>
   </div>
-
-</header>

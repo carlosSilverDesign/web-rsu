@@ -1,0 +1,396 @@
+/* ==========================================================================
+   SECCIÓN: SEMANA DE LA SOSTENIBILIDAD
+   Proyecto: Web RSU - Universidad Norbert Wiener
+   Brief Oficial: Showcase con video oficial + 4 actividades con fotos y pies de foto
+   Estilo: ANZSOG Institutional Modern, Slate (#16202E), Teal (#0F848F)
+   ========================================================================== */
+
+.c-semana-section {
+  position: relative;
+  background-color: var(--color-bg-light, #F8FAFC);
+  padding: 80px 0;
+  overflow-x: clip;
+}
+
+@media (max-width: 768px) {
+  .c-semana-section {
+    padding: 48px 0;
+  }
+}
+
+.c-semana-lead {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #475569);
+}
+
+/* --------------------------------------------------------------------------
+   1. SHOWCASE DE VIDEO OFICIAL
+   -------------------------------------------------------------------------- */
+.c-semana-video-block {
+  margin-top: 48px;
+}
+
+.c-semana-video-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow var(--transition-fast, 0.25s ease);
+}
+
+.c-semana-video-card:hover {
+  box-shadow: 0 12px 32px rgba(15, 132, 143, 0.12);
+}
+
+.c-semana-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 540px;
+  background-color: #16202E;
+  overflow: hidden;
+}
+
+.c-semana-video-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.c-video-play-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: var(--color-teal, #0F848F);
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(15, 132, 143, 0.45);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  z-index: 3;
+}
+
+.c-video-play-btn svg {
+  margin-left: 4px;
+}
+
+.c-semana-video-placeholder:hover .c-video-play-btn {
+  transform: scale(1.1);
+  background-color: var(--color-teal-hover, #0B6770);
+  box-shadow: 0 12px 28px rgba(15, 132, 143, 0.6);
+}
+
+.c-video-meta-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.c-video-duration {
+  background: rgba(0, 0, 0, 0.65);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(4px);
+}
+
+.c-video-label-text {
+  position: absolute;
+  bottom: 20px;
+  color: #94A3B8;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.c-semana-video-info {
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background-color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .c-semana-video-info {
+    padding: 20px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.c-semana-video-info__title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+  margin-bottom: 6px;
+}
+
+.c-semana-video-info__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary, #475569);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.c-semana-video-info__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. PRINCIPALES ACTIVIDADES (Grid de 4 tarjetas con fotos y pies de foto)
+   -------------------------------------------------------------------------- */
+.c-semana-activities-block {
+  margin-top: 72px;
+}
+
+.c-subheading-title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+  margin-bottom: 8px;
+}
+
+.c-subheading-lead {
+  font-size: 1rem;
+  color: var(--color-text-secondary, #475569);
+  max-width: 680px;
+  margin: 0;
+}
+
+.c-semana-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 36px;
+}
+
+@media (max-width: 860px) {
+  .c-semana-activities-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.c-activity-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-card, 8px);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.c-activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 132, 143, 0.1);
+  border-color: var(--color-teal, #0F848F);
+}
+
+.c-activity-card__figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #E2E8F0;
+}
+
+.c-activity-card__media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+.c-activity-card__media {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #E2E8F0;
+  color: #64748B;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 16px;
+  text-align: center;
+}
+
+.c-activity-card__media svg {
+  width: 36px;
+  height: 36px;
+  color: #94A3B8;
+}
+
+.c-activity-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.c-activity-card__caption {
+  padding: 10px 16px;
+  background-color: #F1F5F9;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--color-slate, #16202E);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.c-activity-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.c-activity-card__title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-slate, #16202E);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.c-activity-card__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary, #475569);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.c-activity-card__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px dashed var(--color-border, #E2E8F0);
+  padding-top: 16px;
+}
+
+.c-activity-card__highlights span {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.84rem;
+  color: var(--color-text-muted, #64748B);
+  line-height: 1.45;
+}
+
+.c-activity-card__highlights span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-teal, #0F848F);
+}
+
+/* --------------------------------------------------------------------------
+   3. BANNER DE PARTICIPACIÓN / AGENDA (#agenda)
+   -------------------------------------------------------------------------- */
+.c-semana-cta-block {
+  margin-top: 72px;
+}
+
+.c-semana-cta-card {
+  background: linear-gradient(135deg, #16202E 0%, #0D141F 100%);
+  border-radius: 12px;
+  padding: 48px 40px;
+  color: #FFFFFF;
+  box-shadow: 0 12px 36px rgba(14, 23, 36, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.c-semana-cta-card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(15, 132, 143, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .c-semana-cta-card {
+    padding: 32px 20px;
+  }
+}
+
+.c-semana-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.c-semana-cta-title {
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin: 16px 0 14px;
+}
+
+@media (max-width: 768px) {
+  .c-semana-cta-title {
+    font-size: 1.35rem;
+  }
+}
+
+.c-semana-cta-desc {
+  font-size: 1rem;
+  color: #CBD5E1;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.c-semana-cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}

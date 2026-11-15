@@ -1,0 +1,139 @@
+/**
+ * RECONOCIMIENTOS OBTENIDOS - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener (Brief 8.1)
+ * Características: Cuadrícula institucional de galardones con logotipos, badges y microinteracciones
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR DE LA SECCIÓN
+   ========================================================================== */
+.c-reconocimientos {
+  background-color: #FFFFFF;
+  position: relative;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+/* ==========================================================================
+   2. REJILLA DE TARJETAS DE RECONOCIMIENTO
+   ========================================================================== */
+.c-reconocimientos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  align-items: stretch;
+}
+
+/* Tarjeta de Reconocimiento (.c-award-card) */
+.c-award-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform var(--duration-hover) var(--ease-in-out-quad),
+              box-shadow var(--duration-hover) var(--ease-in-out-quad),
+              border-color var(--duration-hover) var(--ease-in-out-quad);
+}
+
+.c-award-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover-card);
+  border-color: var(--color-primary-teal);
+}
+
+/* Contenedor del Logotipo / Sello */
+.c-award-card__logo-wrap {
+  width: 100%;
+  height: 120px;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.c-award-card__logo-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #F8FAFC;
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--color-primary-teal);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.c-award-card:hover .c-award-card__logo-placeholder {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-teal);
+}
+
+/* Cuerpo y Textos de la Tarjeta */
+.c-award-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.c-award-card__badge-row {
+  margin-bottom: var(--space-sm);
+}
+
+.c-award-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem; /* ~18.5px */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  line-height: 1.35;
+  margin-bottom: var(--space-xs);
+  min-height: 48px; /* Homogeneidad visual */
+}
+
+.c-award-card__desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--color-text-gray);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.c-award-card__desc strong {
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   3. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .c-reconocimientos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-base);
+  }
+
+  .c-award-card__title {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .c-reconocimientos {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .c-reconocimientos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .c-award-card {
+    padding: 24px 20px;
+  }
+}

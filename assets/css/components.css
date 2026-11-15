@@ -298,3 +298,37 @@
 .c-link-animated:hover::after {
   width: 100%;
 }
+
+/* ==========================================================================
+   7. CABECERA DE PÁGINAS INTERNAS (.c-page-header)
+   ========================================================================== */
+.c-page-header {
+  background-color: var(--color-slate-dark, #16202E);
+  color: var(--color-text-inverse, #FFFFFF);
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  overflow-x: clip;
+}
+
+.c-page-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 576px) {
+  .c-page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .c-page-header__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .c-page-header__actions .c-btn {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}

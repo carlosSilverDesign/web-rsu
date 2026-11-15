@@ -1,0 +1,130 @@
+/**
+ * ALIADOS ESTRATÉGICOS - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener (Brief 8.1)
+ * Características: Marquee continuo infinito de izquierda a derecha con pausa en hover
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR DE LA SECCIÓN
+   ========================================================================== */
+.c-aliados {
+  background-color: var(--color-bg-body);
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+/* ==========================================================================
+   2. MARQUEE / TICKER INFINITO (DE IZQUIERDA A DERECHA)
+   ========================================================================== */
+.c-marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-md) 0;
+  
+  /* Máscara de degradé lateral para desvanecimiento suave en los extremos */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.c-marquee {
+  display: flex;
+  width: max-content;
+  user-select: none;
+}
+
+/* Animación de desplazamiento hacia la derecha según especificación del brief */
+@keyframes marqueeMoveRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.c-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-right: var(--space-lg);
+  animation: marqueeMoveRight 36s linear infinite;
+  will-change: transform;
+}
+
+/* Pausa interactiva al posar el cursor encima */
+.c-marquee-wrap:hover .c-marquee__track {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   3. TARJETA DE LOGOTIPO DE ALIADO (.c-ally-logo)
+   ========================================================================== */
+.c-ally-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 74px;
+  min-width: 200px;
+  max-width: 260px;
+  padding: 0 var(--space-lg);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  text-align: center;
+  cursor: default;
+  transition: transform var(--duration-fast) var(--ease-in-out-quad),
+              border-color var(--duration-fast) var(--ease-in-out-quad),
+              box-shadow var(--duration-fast) var(--ease-in-out-quad),
+              background-color var(--duration-fast) var(--ease-in-out-quad);
+}
+
+.c-ally-logo:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-teal);
+  background-color: var(--color-primary-light);
+  box-shadow: 0 8px 20px -4px rgba(15, 132, 143, 0.16);
+}
+
+.c-ally-logo__text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  line-height: 1.25;
+  transition: color var(--duration-fast) ease;
+}
+
+.c-ally-logo:hover .c-ally-logo__text {
+  color: var(--color-primary-teal);
+}
+
+/* ==========================================================================
+   4. ACCESIBILIDAD Y REDUCCIÓN DE MOVIMIENTO
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .c-marquee-wrap {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .c-marquee__track {
+    animation: none;
+  }
+}

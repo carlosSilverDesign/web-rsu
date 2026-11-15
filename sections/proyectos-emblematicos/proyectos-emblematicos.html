@@ -1,0 +1,535 @@
+<!-- ==========================================================================
+     SECCIÓN 6: PROYECTOS (EMBLEMÁTICOS & PROGRAMAS ACADÉMICOS)
+     Proyecto: Web RSU - Universidad Norbert Wiener
+     Brief Oficial: Sección 8.3
+     Características:
+     - Presentación institucional y 4 Áreas de Intervención
+     - Subtítulo: Proyectos Emblemáticos con Carrusel Swiper interactivo + Progressbar 2px
+     - Galería de 2 fotos por proyecto (placeholders institucionales)
+     - Subtítulo: Proyectos de Programas Académicos (Metodología Aprendizaje - Servicio)
+     - Listado de iniciativas destacadas con filtros y tarjetas visuales
+     ========================================================================== -->
+
+<section id="proyectos-emblematicos" class="c-proyectos-section section-wrap" aria-label="Proyectos de Responsabilidad Social Universitaria">
+  <div class="container">
+
+    <!-- ========================================================================
+         1. CABECERA EDITORIAL & ÁREAS DE INTERVENCIÓN
+         ======================================================================== -->
+    <header class="c-section-header text-center c-transition-in">
+      <span class="c-eyebrow">COMPROMISO CON EL TERRITORIO</span>
+      <h2 class="c-section-title">
+        Proyectos de <span class="c-text-emphasis">Responsabilidad Social</span>
+      </h2>
+      <p class="c-section-subtitle c-proyectos-lead">
+        Promovemos el desarrollo de proyectos interdisciplinarios y específicos de los programas académicos, orientados a atender necesidades sociales del territorio, contribuir al desarrollo sostenible y fortalecer las competencias de nuestros estudiantes.
+      </p>
+    </header>
+
+    <!-- 4 ÁREAS DE INTERVENCIÓN (Brief Oficial) -->
+    <div class="c-areas-intervencion c-transition-in">
+      <h3 class="c-areas-intervencion__title">Nuestras áreas de intervención</h3>
+      <div class="c-areas-grid">
+        <!-- Área 1 -->
+        <div class="c-area-card">
+          <div class="c-area-card__icon c-area-card__icon--teal" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <polyline points="16 11 18 13 22 9"></polyline>
+            </svg>
+          </div>
+          <h4 class="c-area-card__name">Fortalecimiento de capacidades para el desarrollo</h4>
+        </div>
+
+        <!-- Área 2 -->
+        <div class="c-area-card">
+          <div class="c-area-card__icon c-area-card__icon--blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h4 class="c-area-card__name">Promoción y acceso a la salud</h4>
+        </div>
+
+        <!-- Área 3 -->
+        <div class="c-area-card">
+          <div class="c-area-card__icon c-area-card__icon--orange" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v18M3 9l9-6 9 6M3 9v4c0 5 9 8 9 8s9-3 9-8V9"></path>
+            </svg>
+          </div>
+          <h4 class="c-area-card__name">Acceso a la justicia y promoción de derechos</h4>
+        </div>
+
+        <!-- Área 4 -->
+        <div class="c-area-card">
+          <div class="c-area-card__icon c-area-card__icon--green" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a2 2 0 0 0-2-2h-1v-2a1 1 0 0 1 1-1h3a2 2 0 0 0 2-2V9.5a.5.5 0 0 1 .5-.5h.42A8.01 8.01 0 0 1 13 19.93z"></path>
+            </svg>
+          </div>
+          <h4 class="c-area-card__name">Acción frente al cambio climático</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         2. SUBTÍTULO: PROYECTOS EMBLEMÁTICOS (CARRUSEL SWIPER INTERACTIVO)
+         ======================================================================== -->
+    <div id="emblematicos" class="c-emblematicos-block">
+      <div class="c-emblematicos-header c-transition-in">
+        <div class="c-emblematicos-header__text">
+          <span class="c-eyebrow c-eyebrow--teal">ENFOQUE MULTIDISCIPLINARIO</span>
+          <h3 class="c-subheading-title">
+            Proyectos <span class="c-text-emphasis">Emblemáticos</span>
+          </h3>
+          <p class="c-subheading-desc">
+            Son proyectos sociales de impacto desarrollados bajo un enfoque multidisciplinario y sostenible.
+          </p>
+        </div>
+
+        <!-- Controles de Navegación del Slider -->
+        <div class="c-slider-controls" aria-label="Controles del carrusel de proyectos">
+          <button type="button" class="c-slider-btn c-slider-btn--prev js-proyectos-prev" aria-label="Ver proyecto anterior">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button type="button" class="c-slider-btn c-slider-btn--next js-proyectos-next" aria-label="Ver siguiente proyecto">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Progreso Continua (ANZSOG Style: 2px en Teal) -->
+      <div class="c-swiper-progressbar-wrapper">
+        <div class="swiper-pagination js-proyectos-progressbar"></div>
+      </div>
+
+      <!-- Contenedor Swiper v11 -->
+      <div class="swiper js-proyectos-swiper c-proyectos-swiper">
+        <div class="swiper-wrapper">
+
+          <!-- ================================================================
+               SLIDE 1: PROYECTO BIENESTAR EN MI BARRIO
+               ================================================================ -->
+          <div class="swiper-slide c-proyecto-slide">
+            <article class="c-card c-proyecto-card">
+              <div class="c-proyecto-card__grid">
+                
+                <!-- Galería de 2 Fotos del Proyecto -->
+                <div class="c-proyecto-card__gallery">
+                  <div class="c-img-placeholder c-proyecto-photo" data-placeholder-label="Proyecto Bienestar en mi barrio - Foto 1: Jornada de salud integral y atención comunitaria">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Foto 1: Campaña de Atención Médica</span>
+                  </div>
+                  <div class="c-img-placeholder c-proyecto-photo" data-placeholder-label="Proyecto Bienestar en mi barrio - Foto 2: Prevención de salud y educación para familias">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Foto 2: Educación y Promoción de Salud</span>
+                  </div>
+                </div>
+
+                <!-- Contenido Informativo y Metadatos -->
+                <div class="c-proyecto-card__body">
+                  <div class="c-proyecto-card__meta">
+                    <span class="c-badge c-badge--teal">Salud Comunitaria</span>
+                    <span class="c-badge c-badge--outline">ODS 3: Salud y Bienestar</span>
+                  </div>
+
+                  <h4 class="c-proyecto-card__title">Proyecto Bienestar en mi barrio</h4>
+                  
+                  <p class="c-proyecto-card__desc">
+                    Proyecto interdisciplinario que tiene como objetivo promover la salud y el bienestar de comunidades vulnerables mediante campañas de atención, prevención y educación en salud.
+                  </p>
+
+                  <div class="c-proyecto-card__highlights">
+                    <div class="c-highlight-item">
+                      <svg class="c-highlight-item__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Campañas integrales de atención y triaje gratuito.</span>
+                    </div>
+                    <div class="c-highlight-item">
+                      <svg class="c-highlight-item__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Talleres de prevención bucal, nutricional y física.</span>
+                    </div>
+                  </div>
+
+                  <div class="c-proyecto-card__footer">
+                    <a href="voluntariado.html" class="c-btn c-btn--primary c-btn--sm">
+                      <span>Sumarme como voluntario</span>
+                      <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </article>
+          </div>
+
+          <!-- ================================================================
+               SLIDE 2: PROYECTO ESCUELA DE MUJERES EMPRENDEDORAS
+               ================================================================ -->
+          <div class="swiper-slide c-proyecto-slide">
+            <article class="c-card c-proyecto-card">
+              <div class="c-proyecto-card__grid">
+                
+                <!-- Galería de 2 Fotos del Proyecto -->
+                <div class="c-proyecto-card__gallery">
+                  <div class="c-img-placeholder c-proyecto-photo" data-placeholder-label="Proyecto Escuela de Mujeres Emprendedoras - Foto 1: Taller de capacitación en modelos de negocio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Foto 1: Capacitaciones Especializadas</span>
+                  </div>
+                  <div class="c-img-placeholder c-proyecto-photo" data-placeholder-label="Proyecto Escuela de Mujeres Emprendedoras - Foto 2: Feria de emprendimiento y graduación de participantes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Foto 2: Emprendimientos Sostenibles</span>
+                  </div>
+                </div>
+
+                <!-- Contenido Informativo y Metadatos -->
+                <div class="c-proyecto-card__body">
+                  <div class="c-proyecto-card__meta">
+                    <span class="c-badge c-badge--orange">Emprendimiento Femenino</span>
+                    <span class="c-badge c-badge--outline">ODS 5 & ODS 8</span>
+                  </div>
+
+                  <h4 class="c-proyecto-card__title">Proyecto Escuela de Mujeres Emprendedoras</h4>
+                  
+                  <p class="c-proyecto-card__desc">
+                    El proyecto tiene como propósito fomentar y fortalecer el emprendimiento de mujeres a través de capacitaciones integrales y especializadas sobre herramientas, estrategias y habilidades para gestionar negocios duraderos.
+                  </p>
+
+                  <div class="c-proyecto-card__highlights">
+                    <div class="c-highlight-item">
+                      <svg class="c-highlight-item__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Educación financiera, marketing digital y finanzas básicas.</span>
+                    </div>
+                    <div class="c-highlight-item">
+                      <svg class="c-highlight-item__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Mentoría personalizada brindada por docentes y estudiantes UNW.</span>
+                    </div>
+                  </div>
+
+                  <div class="c-proyecto-card__footer">
+                    <a href="voluntariado.html" class="c-btn c-btn--primary c-btn--sm">
+                      <span>Sumarme como mentor</span>
+                      <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </article>
+          </div>
+
+          <!-- ================================================================
+               SLIDE 3: PROYECTO CONSULTORIO JURÍDICO
+               ================================================================ -->
+          <div class="swiper-slide c-proyecto-slide">
+            <article class="c-card c-proyecto-card">
+              <div class="c-proyecto-card__grid">
+                
+                <!-- Galería de 2 Fotos del Proyecto -->
+                <div class="c-proyecto-card__gallery">
+                  <div class="c-img-placeholder c-proyecto-photo" data-placeholder-label="Proyecto Consultorio Jurídico - Foto 1: Sesión de asesoría legal gratuita personalizada">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Foto 1: Asesoría Legal Gratuita</span>
+                  </div>
+                  <div class="c-img-placeholder c-proyecto-photo" data-placeholder-label="Proyecto Consultorio Jurídico - Foto 2: Charla comunitaria de educación en derechos ciudadanos">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Foto 2: Educación en Derechos y Ciudadanía</span>
+                  </div>
+                </div>
+
+                <!-- Contenido Informativo y Metadatos -->
+                <div class="c-proyecto-card__body">
+                  <div class="c-proyecto-card__meta">
+                    <span class="c-badge c-badge--blue">Justicia & Derechos</span>
+                    <span class="c-badge c-badge--outline">ODS 16: Paz y Justicia</span>
+                  </div>
+
+                  <h4 class="c-proyecto-card__title">Proyecto Consultorio Jurídico</h4>
+                  
+                  <p class="c-proyecto-card__desc">
+                    El proyecto tiene como propósito proporcionar asesoría legal gratuita y educación en derechos a las poblaciones vulnerables de Lima, fomentando la justicia social.
+                  </p>
+
+                  <div class="c-proyecto-card__highlights">
+                    <div class="c-highlight-item">
+                      <svg class="c-highlight-item__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Orientación jurídica en derecho de familia, laboral y civil.</span>
+                    </div>
+                    <div class="c-highlight-item">
+                      <svg class="c-highlight-item__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Difusión de deberes y derechos en comunidades populares.</span>
+                    </div>
+                  </div>
+
+                  <div class="c-proyecto-card__footer">
+                    <a href="voluntariado.html" class="c-btn c-btn--primary c-btn--sm">
+                      <span>Participar como voluntario</span>
+                      <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         3. SUBTÍTULO: PROYECTOS DE PROGRAMAS ACADÉMICOS
+         ======================================================================== -->
+    <div id="academicos" class="c-academicos-block">
+      
+      <!-- Introducción Metodológica -->
+      <div class="c-academicos-intro c-card c-transition-in">
+        <div class="c-academicos-intro__header">
+          <span class="c-eyebrow c-eyebrow--cyan">METODOLOGÍA APRENDIZAJE - SERVICIO</span>
+          <h3 class="c-subheading-title">
+            Proyectos de <span class="c-text-emphasis">Programas Académicos</span>
+          </h3>
+        </div>
+        <div class="c-academicos-intro__body">
+          <p class="c-academicos-intro__lead">
+            Tiene como propósito formar estudiantes éticos, responsables y comprometidos con el bienestar social. Esta formación impulsa la comprensión teórica de la responsabilidad social y el desarrollo de competencias prácticas a través de la participación en iniciativas que contribuyan al cumplimiento de los ODS.
+          </p>
+          <div class="c-academicos-intro__note">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <p>
+              Su enfoque pedagógico y de intervención se sustenta en la <strong>metodología de Aprendizaje - Servicio</strong>, articulando los contenidos académicos con la atención a necesidades sociales del territorio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros por Categoría de Iniciativas -->
+      <div class="c-academicos-filters c-transition-in">
+        <span class="c-academicos-filters__label">Iniciativas destacadas por área:</span>
+        <div class="c-filter-group" role="tablist" aria-label="Filtro de iniciativas académicas">
+          <button type="button" class="c-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+            Todas (11)
+          </button>
+          <button type="button" class="c-filter-btn" data-filter="salud" role="tab" aria-selected="false">
+            Salud y Bienestar
+          </button>
+          <button type="button" class="c-filter-btn" data-filter="comunidad" role="tab" aria-selected="false">
+            Comunidad y Nutrición
+          </button>
+          <button type="button" class="c-filter-btn" data-filter="sociojuridico" role="tab" aria-selected="false">
+            Derecho y Convivencia
+          </button>
+          <button type="button" class="c-filter-btn" data-filter="ambiente" role="tab" aria-selected="false">
+            Ambiente
+          </button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Iniciativas Destacadas (Brief Oficial) -->
+      <div class="c-academicos-grid" id="academicos-list">
+
+        <!-- 1. Eco acción: unidos por el ambiente -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-1" data-category="ambiente">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Eco acción: unidos por el ambiente - Brigada ecológica en acción">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Eco acción: unidos por el ambiente</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--green">Gestión Ambiental</span>
+            <h4 class="c-academico-card__title">Eco acción: unidos por el ambiente</h4>
+            <p class="c-academico-card__desc">Acciones ecológicas formativas, reforestación y sensibilización de segregación de residuos en campus y comunidades.</p>
+          </div>
+        </article>
+
+        <!-- 2. Obstetras sin Fronteras -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-2" data-category="salud">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Obstetras sin Fronteras - Orientación de salud materna">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Obstetras sin Fronteras</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--teal">Salud Materna</span>
+            <h4 class="c-academico-card__title">Obstetras sin Fronteras</h4>
+            <p class="c-academico-card__desc">Atención y consejería preventiva en salud sexual y reproductiva orientada a gestantes y adolescentes.</p>
+          </div>
+        </article>
+
+        <!-- 3. Nutrición que transforma: educación alimentaria para ollas comunes -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-3" data-category="comunidad">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Nutrición que transforma - Capacitación en ollas comunes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Nutrición que transforma: ollas comunes</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--orange">Seguridad Alimentaria</span>
+            <h4 class="c-academico-card__title">Nutrición que transforma: educación alimentaria para ollas comunes</h4>
+            <p class="c-academico-card__desc">Buenas prácticas de manipulación, diseño de menús nutritivos económicos y balance alimentario para comedores populares.</p>
+          </div>
+        </article>
+
+        <!-- 4. Fortalecimiento de capacidades para el emprendimiento de adultos mayores -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-4" data-category="comunidad">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Emprendimiento para Adultos Mayores">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Emprendimiento de adultos mayores</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--blue">Inclusión Productiva</span>
+            <h4 class="c-academico-card__title">Fortalecimiento de capacidades para el emprendimiento de adultos mayores</h4>
+            <p class="c-academico-card__desc">Capacitación en desarrollo de negocios, habilidades digitales e independencia económica para adultos mayores.</p>
+          </div>
+        </article>
+
+        <!-- 5. Clínica Jurídica -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-1" data-category="sociojuridico">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Clínica Jurídica de la Escuela de Derecho UNW">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Clínica Jurídica</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--teal">Acceso a la Justicia</span>
+            <h4 class="c-academico-card__title">Clínica Jurídica</h4>
+            <p class="c-academico-card__desc">Patrocinio legal y asesoramiento formativo en casos sociales prioritarios con acompañamiento docente.</p>
+          </div>
+        </article>
+
+        <!-- 6. Intervención Comunitaria para la recuperación de la salud bucal -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-2" data-category="salud">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Salud bucal comunitaria - Odontología UNW">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Recuperación de la salud bucal</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--blue">Odontología Social</span>
+            <h4 class="c-academico-card__title">Intervención Comunitaria para la recuperación de la salud bucal</h4>
+            <p class="c-academico-card__desc">Campañas de diagnóstico bucal, aplicación de flúor y profilaxis en escolares de zonas vulnerables.</p>
+          </div>
+        </article>
+
+        <!-- 7. Campaña de donación de sangre: Sé un héroe para mí, para ti, para todos -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-3" data-category="salud">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Campaña de Donación Voluntaria de Sangre UNW">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Campaña de donación de sangre</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--red">Solidaridad en Salud</span>
+            <h4 class="c-academico-card__title">Campaña de donación de sangre: Sé un héroe para mí, para ti, para todos</h4>
+            <p class="c-academico-card__desc">Jornadas universitarias de donación voluntaria en alianza con institutos de salud y bancos de sangre.</p>
+          </div>
+        </article>
+
+        <!-- 8. Estrategias psicoeducativas para una mejor convivencia escolar -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-4" data-category="sociojuridico">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Talleres de Convivencia Escolar y Psicología">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Convivencia escolar</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--orange">Psicología y Educación</span>
+            <h4 class="c-academico-card__title">Estrategias psicoeducativas para una mejor convivencia escolar</h4>
+            <p class="c-academico-card__desc">Prevención del acoso escolar (bullying), desarrollo de habilidades socioemocionales y mediación en colegios.</p>
+          </div>
+        </article>
+
+        <!-- 9. Quien Cuida También se Cuida mejor -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-1" data-category="salud">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Quien Cuida También se Cuida mejor - Autocuidado en cuidadores">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Quien Cuida También se Cuida mejor</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--teal">Enfermería & Cuidado</span>
+            <h4 class="c-academico-card__title">Quien Cuida También se Cuida mejor</h4>
+            <p class="c-academico-card__desc">Fortalecimiento del bienestar físico y mental de cuidadores primarios de personas dependientes o con discapacidad.</p>
+          </div>
+        </article>
+
+        <!-- 10. El Hierro es un impulso de tu vida para crecer -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-2" data-category="comunidad">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Campaña contra la anemia infantil">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>El Hierro es un impulso para crecer</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--orange">Lucha contra la Anemia</span>
+            <h4 class="c-academico-card__title">El Hierro es un impulso de tu vida para crecer</h4>
+            <p class="c-academico-card__desc">Despistaje de hemoglobina, recetarios ricos en hierro y orientación para madres en etapa de crecimiento infantil.</p>
+          </div>
+        </article>
+
+        <!-- 11. Corazones Fuertes, Vidas Sanas: Uniendo Ciencia y Comunidad contra la Anemia -->
+        <article class="c-card c-card--interactive c-academico-card c-transition-in stagger-3" data-category="salud">
+          <div class="c-img-placeholder c-academico-card__media" data-placeholder-label="Foto: Corazones Fuertes, Vidas Sanas - Ciencia y Comunidad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Ciencia y Comunidad contra la Anemia</span>
+          </div>
+          <div class="c-academico-card__body">
+            <span class="c-badge c-badge--blue">Ciencias de la Salud</span>
+            <h4 class="c-academico-card__title">Corazones Fuertes, Vidas Sanas: Uniendo Ciencia y Comunidad contra la Anemia</h4>
+            <p class="c-academico-card__desc">Abordaje multidisciplinario combinando laboratorio clínico, nutrición y educación sanitaria integral.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>

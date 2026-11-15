@@ -124,6 +124,12 @@ export function initHeader() {
     // Accesibilidad por Teclado / Clic
     if (trigger) {
       trigger.addEventListener('click', (e) => {
+        const href = trigger.getAttribute('href');
+        // Si el elemento padre tiene un href válido, permitir la navegación a la página/sección
+        if (href && href !== '#' && !href.startsWith('javascript:')) {
+          return;
+        }
+
         e.preventDefault();
         const isOpen = item.classList.contains('is-open');
         if (isOpen) {

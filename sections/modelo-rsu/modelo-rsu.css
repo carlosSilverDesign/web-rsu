@@ -1,0 +1,335 @@
+/**
+ * NUESTRO MODELO RSU (4 PILARES Y POLÍTICAS) - ESTILOS
+ * Proyecto: Web RSU - Universidad Norbert Wiener
+ * Características: Bloque institucional de Dirección, 4 cuadrantes interactivos con zoom suave y descarga de políticas
+ */
+
+/* ==========================================================================
+   1. CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.c-modelo-rsu {
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+/* ==========================================================================
+   2. BLOQUE INTRODUCTORIO DE LA DIRECCIÓN DE RSU
+   ========================================================================== */
+.c-rsu-intro {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  margin-bottom: var(--space-4xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.c-rsu-intro__desc {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  color: var(--color-text-gray);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-xl);
+}
+
+.c-rsu-intro__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.c-rsu-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-dark);
+}
+
+.c-rsu-feature__icon {
+  color: var(--color-primary-teal);
+  flex-shrink: 0;
+}
+
+.c-rsu-intro__photo {
+  height: 320px;
+  border-radius: var(--radius-card-lg);
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   3. REJILLA DE 4 CUADRANTES DEL MODELO RSU (2x2)
+   ========================================================================== */
+.c-modelo-quadrants-wrap {
+  margin-bottom: var(--space-4xl);
+}
+
+.c-quadrants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  align-items: stretch;
+}
+
+/* Tarjeta Cuadrante (.c-quadrant-card) */
+.c-quadrant-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-bg-card);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform var(--duration-hover) var(--ease-in-out-quad),
+              box-shadow var(--duration-hover) var(--ease-in-out-quad),
+              border-color var(--duration-hover) var(--ease-in-out-quad);
+}
+
+.c-quadrant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover-card);
+  border-color: var(--color-primary-teal);
+}
+
+/* Contenedor de Imagen con Zoom Sutil al estilo ANZSOG */
+.c-quadrant-card__media-wrap {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: #E2E8F0;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.c-quadrant-card__media {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.6s var(--ease-out-cubic);
+}
+
+.c-quadrant-card:hover .c-quadrant-card__media {
+  transform: scale(1.05);
+}
+
+/* Cuerpo de la Tarjeta */
+.c-quadrant-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  flex-grow: 1;
+}
+
+.c-quadrant-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.c-quadrant-card__meta {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.c-quadrant-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem; /* 20px */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+.c-quadrant-card__desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-gray);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+/* Etiquetas y chips de temas dentro del cuadrante */
+.c-quadrant-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.c-quadrant-card__tags li {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-slate-dark);
+  background-color: #F1F5F9;
+  padding: 4px 10px;
+  border-radius: var(--radius-btn);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   4. BLOQUE DE POLÍTICAS INSTITUCIONALES (DESCARGA DE PDFS)
+   ========================================================================== */
+.c-policies-banner {
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.c-policies-banner__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-base);
+  margin-bottom: var(--space-xl);
+}
+
+.c-policies-banner__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-teal);
+  flex-shrink: 0;
+}
+
+.c-policies-banner__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.c-policies-banner__desc {
+  font-size: 14px;
+  color: var(--color-text-gray);
+  margin: 0;
+}
+
+.c-policies-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.c-policy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  transition: transform var(--duration-hover) var(--ease-in-out-quad),
+              box-shadow var(--duration-hover) var(--ease-in-out-quad),
+              border-color var(--duration-hover) var(--ease-in-out-quad);
+}
+
+.c-policy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-teal);
+}
+
+.c-policy-card__content {
+  margin-bottom: var(--space-md);
+}
+
+.c-policy-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  line-height: 1.35;
+}
+
+.c-policy-card__desc {
+  font-size: 13px;
+  color: var(--color-text-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.c-policy-card__download {
+  align-self: flex-start;
+  gap: var(--space-xs);
+}
+
+/* Microinteracción de descarga con leve rebote vertical al hover */
+.c-policy-card__download svg {
+  transition: transform 0.25s var(--ease-out-cubic);
+}
+
+.c-policy-card:hover .c-policy-card__download svg {
+  transform: translateY(2px);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .c-rsu-intro {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .c-rsu-intro__photo {
+    height: 260px;
+  }
+
+  .c-quadrants-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .c-policies-cards {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .c-modelo-rsu {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .c-policies-banner {
+    padding: var(--space-lg);
+  }
+
+  .c-policies-banner__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .c-policy-card__download {
+    width: 100%;
+    justify-content: center;
+  }
+}
