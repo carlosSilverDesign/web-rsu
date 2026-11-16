@@ -19,46 +19,69 @@
    2. BLOQUE INTRODUCTORIO DE LA DIRECCIÓN DE RSU
    ========================================================================== */
 .c-rsu-intro {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   gap: var(--space-3xl);
-  align-items: center;
-  margin-bottom: var(--space-4xl);
-  padding-bottom: var(--space-3xl);
-  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.c-rsu-intro__col-title {
+  flex: 1 1 52%;
+  max-width: 620px;
+}
+
+.c-rsu-intro__col-title .c-section-title {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   COMBINACIÓN TIPOGRÁFICA EDITORIAL (LATO + SOURCE SERIF 4)
+   En los titles de la sección 'Quiénes Somos', los textos con color Teal
+   usan la versión Itálica de 'Source Serif 4'.
+   Controlable con --title-serif-scale, --title-serif-weight y --title-serif-color.
+   ========================================================================== */
+.c-modelo-rsu .c-section-title .c-text-emphasis,
+.c-rsu-intro .c-section-title .c-text-emphasis,
+.c-modelo-quadrants-wrap .c-section-title .c-text-emphasis {
+  font-family: var(--font-serif);
+  font-size: var(--title-serif-scale, 1.08em);
+  font-weight: var(--title-serif-weight, 500);
+  font-style: italic;
+  color: var(--title-serif-color, var(--color-primary-teal));
+  letter-spacing: -0.01em;
+}
+
+.c-rsu-intro__col-desc {
+  flex: 1 1 45%;
+  max-width: 520px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .c-rsu-intro__desc {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
   color: var(--color-text-gray);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-xl);
+  margin-bottom: 0;
+  text-align: left;
 }
 
-.c-rsu-intro__features {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.c-rsu-feature {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-body);
-  font-size: 14.5px;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-dark);
-}
-
-.c-rsu-feature__icon {
-  color: var(--color-primary-teal);
-  flex-shrink: 0;
+/* Banner de fotografía del equipo debajo de c-rsu-intro */
+.c-rsu-team-banner {
+  width: 100%;
+  margin-bottom: var(--space-4xl);
 }
 
 .c-rsu-intro__photo {
-  height: 320px;
+  width: 100%;
+  height: 480px;
+  max-height: 520px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: var(--radius-card-lg);
   border: 1px solid var(--color-border-default);
   box-shadow: var(--shadow-md);
@@ -69,6 +92,43 @@
    ========================================================================== */
 .c-modelo-quadrants-wrap {
   margin-bottom: var(--space-4xl);
+}
+
+/* Fila de cabecera con ilustración a la izquierda y títulos a la derecha */
+.c-modelo-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.c-modelo-illustration-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 120px;
+}
+
+.c-modelo-header-row .c-section-header {
+  margin-bottom: 0;
+  margin-left: auto;
+  text-align: left;
+  max-width: 580px;
+  width: 100%;
+}
+
+.c-modelo-header-row .c-section-title,
+.c-modelo-quadrants-wrap .c-section-title {
+  text-align: left;
+}
+
+.c-modelo-header-row .c-section-subtitle,
+.c-modelo-quadrants-wrap .c-section-subtitle {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c-quadrants-grid {
@@ -99,11 +159,12 @@
   border-color: var(--color-primary-teal);
 }
 
-/* Contenedor de Imagen con Zoom Sutil al estilo ANZSOG */
+/* Contenedor de Imagen con Proporción 16:9 */
 .c-quadrant-card__media-wrap {
   position: relative;
   width: 100%;
-  height: 210px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
   background-color: #E2E8F0;
   border-bottom: 1px solid var(--color-border-default);
@@ -112,6 +173,8 @@
 .c-quadrant-card__media {
   width: 100%;
   height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border: none;
   border-radius: 0;
   transition: transform 0.6s var(--ease-out-cubic);
@@ -147,8 +210,8 @@
 
 .c-quadrant-card__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem; /* 20px */
-  font-weight: var(--font-weight-bold);
+  font-size: 1.35rem; /* 21.6px con mayor presencia */
+  font-weight: 900 !important; /* Mayor peso tipográfico (Lato Black 900) */
   color: var(--color-text-dark);
   margin-bottom: var(--space-sm);
   line-height: 1.3;
@@ -260,16 +323,16 @@
 
 .c-policy-card__title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: var(--font-weight-bold);
+  font-size: 1.15rem;
+  font-weight: 900;
   color: var(--color-text-dark);
-  margin-top: var(--space-sm);
+  margin-top: 0;
   margin-bottom: var(--space-xs);
   line-height: 1.35;
 }
 
 .c-policy-card__desc {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--color-text-gray);
   line-height: 1.5;
   margin: 0;
@@ -294,12 +357,24 @@
    ========================================================================== */
 @media (max-width: 992px) {
   .c-rsu-intro {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .c-rsu-intro__col-title,
+  .c-rsu-intro__col-desc {
+    max-width: 100%;
+    flex: 1 1 100%;
   }
 
   .c-rsu-intro__photo {
-    height: 260px;
+    height: 280px;
+  }
+
+  .c-modelo-header-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .c-quadrants-grid {

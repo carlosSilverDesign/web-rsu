@@ -22,10 +22,10 @@
   text-decoration: none;
   cursor: pointer;
   transition: background-color var(--duration-fast) var(--ease-in-out-quad),
-              border-color var(--duration-fast) var(--ease-in-out-quad),
-              color var(--duration-fast) var(--ease-in-out-quad),
-              box-shadow var(--duration-fast) var(--ease-in-out-quad),
-              transform var(--duration-fast) var(--ease-in-out-quad);
+    border-color var(--duration-fast) var(--ease-in-out-quad),
+    color var(--duration-fast) var(--ease-in-out-quad),
+    box-shadow var(--duration-fast) var(--ease-in-out-quad),
+    transform var(--duration-fast) var(--ease-in-out-quad);
   white-space: nowrap;
 }
 
@@ -149,6 +149,16 @@
   font-weight: var(--font-weight-black);
 }
 
+/* Variante con serifa editorial (Source Serif 4, Italic) */
+.c-text-emphasis--serif,
+.is-editorial-serif .c-text-emphasis {
+  font-family: var(--font-serif);
+  font-size: var(--title-serif-scale, 1.08em);
+  font-weight: var(--title-serif-weight, 500);
+  font-style: italic;
+  color: var(--title-serif-color, var(--color-primary-teal));
+}
+
 .c-section-subtitle {
   font-family: var(--font-body);
   font-size: var(--font-size-md);
@@ -217,8 +227,8 @@
 
 .c-card--interactive {
   transition: transform var(--duration-hover) var(--ease-in-out-quad),
-              box-shadow var(--duration-hover) var(--ease-in-out-quad),
-              border-color var(--duration-hover) var(--ease-in-out-quad);
+    box-shadow var(--duration-hover) var(--ease-in-out-quad),
+    border-color var(--duration-hover) var(--ease-in-out-quad);
 }
 
 .c-card--interactive:hover {
@@ -303,6 +313,7 @@
    7. CABECERA DE PÁGINAS INTERNAS (.c-page-header)
    ========================================================================== */
 .c-page-header {
+  display: none !important;
   background-color: var(--color-slate-dark, #16202E);
   color: var(--color-text-inverse, #FFFFFF);
   padding: var(--space-3xl) 0 var(--space-2xl);
