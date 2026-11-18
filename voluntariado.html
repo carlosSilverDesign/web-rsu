@@ -347,67 +347,89 @@
 
     <!-- SECCIÓN MODULAR DE VOLUNTARIADO -->
     <!--#include sections/voluntariado/voluntariado.html -->
+    <!-- ==========================================================================
+         SECCIÓN: VOLUNTARIADO WIENER (GRID TEMÁTICO EDITORIAL)
+         Proyecto: Web RSU - Universidad Norbert Wiener
+         Brief Oficial: Sección 8.4
+         Características:
+         - Cabecera editorial con presentación institucional de voluntariado
+         - Título destacado: Nuestras principales temáticas
+         - Grid de 4 tarjetas en dark background con texto en blanco, acentos Teal y fotos 16:9
+         - Bloque destacado de la Brigada Ambiental Wiener (sin badges y sin botón)
+         - Módulo de Convocatoria institucional (#convocatoria)
+         ========================================================================== -->
+
     <section id="voluntariado-section" class="c-voluntariado-section section-wrap" aria-label="Voluntariado Wiener">
       <div class="container">
 
-        <!-- 1. CABECERA EDITORIAL INSTITUCIONAL -->
-        <header class="c-section-header text-center c-transition-in">
-          <span class="c-eyebrow">VOCACIÓN, ÉTICA Y ACCIÓN CIUDADANA</span>
-          <h2 class="c-section-title">
-            Voluntariado <span class="c-text-emphasis">Wiener</span>
-          </h2>
-          <p class="c-section-subtitle c-voluntariado-lead">
-            Nuestra comunidad universitaria realiza acciones frente a problemáticas específicas del entorno, poniendo su conocimiento y vocación de servicio al cuidado de las personas y del planeta.
-          </p>
+        <!-- ========================================================================
+             1. CABECERA EDITORIAL INSTITUCIONAL
+             ======================================================================== -->
+        <header class="c-section-intro c-transition-in">
+          <div class="c-section-intro__title-col">
+            <h2 class="c-section-title">
+              Voluntariado <span class="c-text-emphasis">Wiener</span>
+            </h2>
+          </div>
+          <div class="c-section-intro__desc-col">
+            <p class="c-section-subtitle c-voluntariado-lead">
+              Nuestra comunidad universitaria realiza acciones frente a problemáticas específicas del entorno, poniendo su conocimiento y vocación de servicio al cuidado de las personas y del planeta.
+            </p>
+          </div>
         </header>
 
-        <!-- 2. FILTROS INTERACTIVOS POR TEMÁTICA -->
-        <div class="c-voluntariado-filter-bar c-transition-in">
-          <span class="c-voluntariado-filter-bar__label">Filtrar líneas de acción:</span>
-          <div class="c-filter-group" role="tablist" aria-label="Filtro por temáticas de voluntariado">
-            <button type="button" class="c-filter-btn is-active" data-voluntariado-filter="all" role="tab" aria-selected="true">
-              Todas las iniciativas (5)
-            </button>
-            <button type="button" class="c-filter-btn" data-voluntariado-filter="educativo" role="tab" aria-selected="false">
-              Educativo
-            </button>
-            <button type="button" class="c-filter-btn" data-voluntariado-filter="cultural" role="tab" aria-selected="false">
-              Intercambio Cultural
-            </button>
-            <button type="button" class="c-filter-btn" data-voluntariado-filter="ambiental" role="tab" aria-selected="false">
-              Ambiental
-            </button>
-            <button type="button" class="c-filter-btn" data-voluntariado-filter="salud" role="tab" aria-selected="false">
-              Salud
-            </button>
-            <button type="button" class="c-filter-btn" data-voluntariado-filter="brigada" role="tab" aria-selected="false">
-              Brigada Ambiental
-            </button>
+        <!-- Fotografía de la comunidad de voluntarios (ancho completo del container) -->
+        <div class="c-section-banner c-transition-in">
+          <div class="c-img-placeholder c-section-banner__media"
+            data-placeholder-label="Fotografía: Comunidad de voluntarios Wiener en acción comunitaria">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Fotografía: Comunidad de Voluntarios Wiener en Acción</span>
           </div>
         </div>
 
-        <!-- 3. GRID INTERACTIVO DE VOLUNTARIADO -->
+        <!-- ========================================================================
+             2. TÍTULO DE LÍNEAS DE ACCIÓN / TEMÁTICAS
+             ======================================================================== -->
+        <div class="c-voluntariado-tematicas-header c-transition-in">
+          <h3 class="c-voluntariado-tematicas-title">Nuestras principales temáticas:</h3>
+        </div>
+
+        <!-- ========================================================================
+             3. GRID DE 4 TEMÁTICAS (DARK THEME EDITORIAL CON DECORACIÓN TEAL & 16:9)
+             ======================================================================== -->
         <div class="c-voluntariado-grid" id="voluntariado-cards-container">
 
-          <!-- TARJETA 1: VOLUNTARIADO EDUCATIVO -->
-          <article class="c-card c-voluntariado-card c-transition-in stagger-1" data-category="educativo">
+          <!-- ====================================================================
+               TARJETA 1: VOLUNTARIADO EDUCATIVO
+               ==================================================================== -->
+          <article class="c-card c-voluntariado-card c-voluntariado-card--dark c-transition-in stagger-1" data-category="educativo">
+            <!-- Decoración de ondas topográficas estilo editorial en Teal -->
+            <div class="c-voluntariado-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 220 130" fill="none" preserveAspectRatio="none">
+                <path d="M40 0 C80 35, 140 35, 220 0" stroke="rgba(15, 132, 143, 0.45)" stroke-width="2.5"/>
+                <path d="M15 0 C65 50, 130 50, 220 18" stroke="rgba(9, 165, 177, 0.35)" stroke-width="2"/>
+                <path d="M0 12 C50 70, 120 70, 220 40" stroke="rgba(45, 212, 191, 0.25)" stroke-width="1.8"/>
+                <path d="M0 38 C60 92, 130 92, 220 65" stroke="rgba(15, 132, 143, 0.2)" stroke-width="1.5"/>
+              </svg>
+            </div>
+
             <div class="c-voluntariado-card__media-wrap">
               <div class="c-img-placeholder c-voluntariado-card__media" data-placeholder-label="Fotografía de Reforzamiento Escolar y Acompañamiento a Escolares">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                 </svg>
-                <span>Fotografía de Reforzamiento Escolar</span>
+                <span>Fotografía: Reforzamiento Escolar</span>
               </div>
-              <span class="c-badge c-badge--teal c-voluntariado-card__badge-floating">Línea Educativa</span>
             </div>
 
             <div class="c-voluntariado-card__body">
-              <div class="c-voluntariado-card__meta">
-                <span class="c-badge c-badge--outline">ODS 4: Educación de Calidad</span>
-                <span class="c-voluntariado-card__tag">Comunidad & Escolares</span>
-              </div>
-              <h3 class="c-voluntariado-card__title">Voluntariado Educativo</h3>
+              <h4 class="c-voluntariado-card__title">Voluntariado Educativo</h4>
               <p class="c-voluntariado-card__desc">
                 Desarrollamos actividades de reforzamiento escolar y acompañamiento para fortalecer los conocimientos y aprendizajes de los participantes, promoviendo el hábito de lectura y habilidades lógicas.
               </p>
@@ -422,18 +444,23 @@
                   <span>Talleres socioemocionales para escolares de zonas vulnerables.</span>
                 </li>
               </ul>
-
-              <div class="c-voluntariado-card__footer">
-                <a href="#convocatoria" class="c-btn c-btn--outline c-btn--sm c-voluntariado-card__cta">
-                  <span>Postular a esta línea</span>
-                  <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
-              </div>
             </div>
           </article>
 
-          <!-- TARJETA 2: INTERCAMBIO CULTURAL -->
-          <article class="c-card c-voluntariado-card c-transition-in stagger-2" data-category="cultural">
+          <!-- ====================================================================
+               TARJETA 2: INTERCAMBIO CULTURAL (TRADUCTORES EN INGLÉS)
+               ==================================================================== -->
+          <article class="c-card c-voluntariado-card c-voluntariado-card--dark c-transition-in stagger-2" data-category="cultural">
+            <!-- Decoración de ondas topográficas estilo editorial en Teal -->
+            <div class="c-voluntariado-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 220 130" fill="none" preserveAspectRatio="none">
+                <path d="M40 0 C80 35, 140 35, 220 0" stroke="rgba(15, 132, 143, 0.45)" stroke-width="2.5"/>
+                <path d="M15 0 C65 50, 130 50, 220 18" stroke="rgba(9, 165, 177, 0.35)" stroke-width="2"/>
+                <path d="M0 12 C50 70, 120 70, 220 40" stroke="rgba(45, 212, 191, 0.25)" stroke-width="1.8"/>
+                <path d="M0 38 C60 92, 130 92, 220 65" stroke="rgba(15, 132, 143, 0.2)" stroke-width="1.5"/>
+              </svg>
+            </div>
+
             <div class="c-voluntariado-card__media-wrap">
               <div class="c-img-placeholder c-voluntariado-card__media c-voluntariado-card__media--video" data-placeholder-label="Video / Fotografía de Voluntariado de Traducción con Delegaciones Internacionales">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -442,15 +469,10 @@
                 </svg>
                 <span>Video / Fotografía: Voluntariado de Traducción</span>
               </div>
-              <span class="c-badge c-badge--blue c-voluntariado-card__badge-floating">Idiomas & Delegaciones</span>
             </div>
 
             <div class="c-voluntariado-card__body">
-              <div class="c-voluntariado-card__meta">
-                <span class="c-badge c-badge--outline">ODS 17: Alianzas</span>
-                <span class="c-voluntariado-card__tag">Misiones Internacionales</span>
-              </div>
-              <h3 class="c-voluntariado-card__title">Intercambio Cultural y Traducción</h3>
+              <h4 class="c-voluntariado-card__title">Intercambio Cultural y Traducción</h4>
               <p class="c-voluntariado-card__desc">
                 Nuestros estudiantes con dominio avanzado del inglés participan como traductores en iniciativas sociales de delegaciones internacionales, facilitando la comunicación y el desarrollo de sus intervenciones en territorio.
               </p>
@@ -465,18 +487,23 @@
                   <span>Intercambio de saberes y experiencia multicultural universitaria.</span>
                 </li>
               </ul>
-
-              <div class="c-voluntariado-card__footer">
-                <a href="#convocatoria" class="c-btn c-btn--outline c-btn--sm c-voluntariado-card__cta">
-                  <span>Postular a esta línea</span>
-                  <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
-              </div>
             </div>
           </article>
 
-          <!-- TARJETA 3: VOLUNTARIADO AMBIENTAL -->
-          <article class="c-card c-voluntariado-card c-transition-in stagger-3" data-category="ambiental">
+          <!-- ====================================================================
+               TARJETA 3: VOLUNTARIADO AMBIENTAL
+               ==================================================================== -->
+          <article class="c-card c-voluntariado-card c-voluntariado-card--dark c-transition-in stagger-3" data-category="ambiental">
+            <!-- Decoración de ondas topográficas estilo editorial en Teal -->
+            <div class="c-voluntariado-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 220 130" fill="none" preserveAspectRatio="none">
+                <path d="M40 0 C80 35, 140 35, 220 0" stroke="rgba(15, 132, 143, 0.45)" stroke-width="2.5"/>
+                <path d="M15 0 C65 50, 130 50, 220 18" stroke="rgba(9, 165, 177, 0.35)" stroke-width="2"/>
+                <path d="M0 12 C50 70, 120 70, 220 40" stroke="rgba(45, 212, 191, 0.25)" stroke-width="1.8"/>
+                <path d="M0 38 C60 92, 130 92, 220 65" stroke="rgba(15, 132, 143, 0.2)" stroke-width="1.5"/>
+              </svg>
+            </div>
+
             <div class="c-voluntariado-card__media-wrap">
               <div class="c-img-placeholder c-voluntariado-card__media" data-placeholder-label="Fotografía de Jornada de Limpieza de Playas y Arborización Comunitaria">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -484,15 +511,10 @@
                 </svg>
                 <span>Fotografía: Limpieza de Playas y Arborización</span>
               </div>
-              <span class="c-badge c-badge--green c-voluntariado-card__badge-floating">Acción Ecológica</span>
             </div>
 
             <div class="c-voluntariado-card__body">
-              <div class="c-voluntariado-card__meta">
-                <span class="c-badge c-badge--outline">ODS 13 & 15: Clima y Vida</span>
-                <span class="c-voluntariado-card__tag">Espacios Públicos</span>
-              </div>
-              <h3 class="c-voluntariado-card__title">Voluntariado Ambiental</h3>
+              <h4 class="c-voluntariado-card__title">Voluntariado Ambiental</h4>
               <p class="c-voluntariado-card__desc">
                 Promovemos el cuidado del ambiente mediante jornadas de limpieza de playas, arborización y recuperación de espacios públicos, reduciendo la contaminación y fomentando la biodiversidad urbana.
               </p>
@@ -507,18 +529,23 @@
                   <span>Plantación de más de 2,700 árboles y biohuertos escolares.</span>
                 </li>
               </ul>
-
-              <div class="c-voluntariado-card__footer">
-                <a href="#convocatoria" class="c-btn c-btn--outline c-btn--sm c-voluntariado-card__cta">
-                  <span>Postular a esta línea</span>
-                  <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
-              </div>
             </div>
           </article>
 
-          <!-- TARJETA 4: VOLUNTARIADO DE SALUD -->
-          <article class="c-card c-voluntariado-card c-transition-in stagger-4" data-category="salud">
+          <!-- ====================================================================
+               TARJETA 4: VOLUNTARIADO DE SALUD
+               ==================================================================== -->
+          <article class="c-card c-voluntariado-card c-voluntariado-card--dark c-transition-in stagger-4" data-category="salud">
+            <!-- Decoración de ondas topográficas estilo editorial en Teal -->
+            <div class="c-voluntariado-card__decor" aria-hidden="true">
+              <svg viewBox="0 0 220 130" fill="none" preserveAspectRatio="none">
+                <path d="M40 0 C80 35, 140 35, 220 0" stroke="rgba(15, 132, 143, 0.45)" stroke-width="2.5"/>
+                <path d="M15 0 C65 50, 130 50, 220 18" stroke="rgba(9, 165, 177, 0.35)" stroke-width="2"/>
+                <path d="M0 12 C50 70, 120 70, 220 40" stroke="rgba(45, 212, 191, 0.25)" stroke-width="1.8"/>
+                <path d="M0 38 C60 92, 130 92, 220 65" stroke="rgba(15, 132, 143, 0.2)" stroke-width="1.5"/>
+              </svg>
+            </div>
+
             <div class="c-voluntariado-card__media-wrap">
               <div class="c-img-placeholder c-voluntariado-card__media" data-placeholder-label="Fotografía en Campaña Médica y Preventiva en Comunidad">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -526,15 +553,10 @@
                 </svg>
                 <span>Fotografía: Campaña Preventiva de Salud</span>
               </div>
-              <span class="c-badge c-badge--red c-voluntariado-card__badge-floating">Salud Comunitaria</span>
             </div>
 
             <div class="c-voluntariado-card__body">
-              <div class="c-voluntariado-card__meta">
-                <span class="c-badge c-badge--outline">ODS 3: Salud y Bienestar</span>
-                <span class="c-voluntariado-card__tag">Prevención Integral</span>
-              </div>
-              <h3 class="c-voluntariado-card__title">Voluntariado en Salud</h3>
+              <h4 class="c-voluntariado-card__title">Voluntariado en Salud</h4>
               <p class="c-voluntariado-card__desc">
                 Nuestra comunidad universitaria participa en campañas de promoción de la salud y prevención de enfermedades, acercando servicios multidisciplinarios y orientación preventiva directa a la población más necesitada.
               </p>
@@ -549,22 +571,18 @@
                   <span>Campañas masivas de salud bucal, triaje y educación preventiva.</span>
                 </li>
               </ul>
-
-              <div class="c-voluntariado-card__footer">
-                <a href="#convocatoria" class="c-btn c-btn--outline c-btn--sm c-voluntariado-card__cta">
-                  <span>Postular a esta línea</span>
-                  <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
-              </div>
             </div>
           </article>
 
         </div>
 
-        <!-- 4. BLOQUE DESTACADO: BRIGADA AMBIENTAL WIENER -->
+        <!-- ========================================================================
+             4. BLOQUE DESTACADO: BRIGADA AMBIENTAL WIENER (Brief Oficial)
+             ======================================================================== -->
         <div id="brigada-ambiental" class="c-brigada-banner c-card c-transition-in">
           <div class="c-brigada-banner__grid">
-            
+
+            <!-- Columna Multimedia (Foto/Video) -->
             <div class="c-brigada-banner__media-col">
               <div class="c-img-placeholder c-brigada-photo" data-placeholder-label="Fotografía o Video Institucional de la Brigada Ambiental Wiener en Acción">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -576,12 +594,8 @@
               </div>
             </div>
 
+            <!-- Columna Informativa (Sin badges y sin botón) -->
             <div class="c-brigada-banner__content">
-              <div class="c-brigada-banner__badge-group">
-                <span class="c-badge c-badge--green">Programa Formativo Insignia</span>
-                <span class="c-badge c-badge--teal">Premio Lima Verde 2024</span>
-              </div>
-
               <h3 class="c-brigada-banner__title">
                 Brigada Ambiental <span class="c-text-emphasis">Wiener</span>
               </h3>
@@ -622,19 +636,14 @@
                 </div>
               </div>
 
-              <div class="c-brigada-banner__cta-wrap">
-                <a href="#convocatoria" class="c-btn c-btn--primary">
-                  <span>Postular a la Brigada Ambiental</span>
-                  <svg class="c-btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </a>
-              </div>
-
             </div>
 
           </div>
         </div>
 
-        <!-- 5. MÓDULO DE CONVOCATORIA ABIERTA -->
+        <!-- ========================================================================
+             5. MÓDULO DE CONVOCATORIA Y COMPROMISO (#convocatoria)
+             ======================================================================== -->
         <div id="convocatoria" class="c-voluntariado-convocatoria c-transition-in">
           <div class="c-convocatoria-card">
             <div class="c-convocatoria-card__text">

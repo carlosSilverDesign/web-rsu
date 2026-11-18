@@ -14,47 +14,21 @@
     <!-- ========================================================================
          1. CABECERA EDITORIAL INSTITUCIONAL
          ======================================================================== -->
-    <header class="c-section-header text-center c-transition-in">
-      <span class="c-eyebrow">ACTUALIDAD, COMUNIDAD & SOSTENIBILIDAD</span>
-      <h2 class="c-section-title">
-        Noticias de <span class="c-text-emphasis">Responsabilidad Social</span>
-      </h2>
-      <p class="c-section-subtitle c-noticias-lead">
-        Conoce las últimas notas informativas, coberturas de voluntariado, reconocimientos y avances en los proyectos que transforman vidas y comunidades en el Perú.
-      </p>
+    <header class="c-section-intro c-transition-in">
+      <div class="c-section-intro__title-col">
+        <h2 class="c-section-title">
+          Noticias de <span class="c-text-emphasis">Responsabilidad Social</span>
+        </h2>
+      </div>
+      <div class="c-section-intro__desc-col">
+        <p class="c-section-subtitle c-noticias-lead">
+          Conoce las últimas notas informativas, coberturas de voluntariado, reconocimientos y avances en los proyectos que transforman vidas y comunidades en el Perú.
+        </p>
+      </div>
     </header>
 
-    <!-- ========================================================================
-         2. BARRA DE FILTROS POR ETIQUETAS (Magazine Filter Tabs)
-         ======================================================================== -->
-    <div class="c-noticias-filter-wrap c-transition-in">
-      <div class="c-noticias-filter-bar" role="tablist" aria-label="Filtrar notas de prensa por temática">
-        <button type="button" class="c-noticias-filter-btn is-active" data-noticias-filter="all" role="tab" aria-selected="true">
-          <span>Todas las notas</span>
-          <span class="c-filter-count">16</span>
-        </button>
-        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="voluntariado" role="tab" aria-selected="false">
-          <span class="c-filter-dot c-filter-dot--teal"></span>
-          <span>Voluntariado</span>
-          <span class="c-filter-count">5</span>
-        </button>
-        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="proyectos" role="tab" aria-selected="false">
-          <span class="c-filter-dot c-filter-dot--orange"></span>
-          <span>Proyectos</span>
-          <span class="c-filter-count">4</span>
-        </button>
-        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="reconocimientos" role="tab" aria-selected="false">
-          <span class="c-filter-dot c-filter-dot--gold"></span>
-          <span>Reconocimientos</span>
-          <span class="c-filter-count">4</span>
-        </button>
-        <button type="button" class="c-noticias-filter-btn" data-noticias-filter="eventos" role="tab" aria-selected="false">
-          <span class="c-filter-dot c-filter-dot--blue"></span>
-          <span>Eventos</span>
-          <span class="c-filter-count">3</span>
-        </button>
-      </div>
-    </div>
+    <!-- Línea estática verde continua estilo institucional -->
+    <div class="c-section-static-line" aria-hidden="true"></div>
 
     <!-- ========================================================================
          3. MAGAZINE HERO FEATURED BLOCK (ESTILO VULTURE LEAD)
@@ -546,15 +520,6 @@
           </div>
         </article>
 
-      </div>
-
-      <!-- Barra de Estado / Paginación -->
-      <div class="c-noticias-pagination text-center">
-        <p class="c-noticias-counter" id="noticias-counter">Mostrando <strong id="visible-count">16</strong> de <strong>16</strong> notas informativas publicadas</p>
-        <button type="button" class="c-btn c-btn--outline c-btn--sm" id="btn-load-more" style="display: none;">
-          <span>Cargar más notas</span>
-          <svg class="c-btn__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
       </div>
 
     </div>

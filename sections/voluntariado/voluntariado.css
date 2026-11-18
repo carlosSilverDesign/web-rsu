@@ -29,29 +29,23 @@
 }
 
 /* ==========================================================================
-   2. BARRA DE FILTROS POR TEMÁTICA
+   2. TÍTULO DE LÍNEAS DE ACCIÓN / TEMÁTICAS
    ========================================================================== */
-.c-voluntariado-filter-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  margin-top: var(--space-2xl);
-  margin-bottom: var(--space-2xl);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--color-border, #E2E8F0);
+.c-voluntariado-tematicas-header {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-xl);
 }
 
-.c-voluntariado-filter-bar__label {
+.c-voluntariado-tematicas-title {
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 800;
   color: var(--color-slate-dark, #1E293B);
+  margin: 0;
 }
 
 /* ==========================================================================
-   3. GRID DE TARJETAS DE VOLUNTARIADO
+   3. GRID DE 4 TEMÁTICAS (DARK THEME EDITORIAL CON DECORACIÓN TEAL & 16:9)
    ========================================================================== */
 .c-voluntariado-grid {
   display: grid;
@@ -68,154 +62,145 @@
 }
 
 .c-voluntariado-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-card-bg, #FFFFFF);
-  border: 1px solid var(--color-border, #E2E8F0);
-  border-radius: var(--radius-lg, 12px);
+  background-color: #0F172A; /* Fondo oscuro inspirado en la referencia */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: transform var(--duration-fast, 0.2s) ease,
-              box-shadow var(--duration-fast, 0.2s) ease,
-              border-color var(--duration-fast, 0.2s) ease,
-              opacity 0.25s ease;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.22);
+  transition: transform var(--duration-fast, 0.25s) ease,
+              box-shadow var(--duration-fast, 0.25s) ease,
+              border-color var(--duration-fast, 0.25s) ease;
 }
 
 .c-voluntariado-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary-teal, #0F848F);
-  box-shadow: 0 12px 28px rgba(15, 132, 143, 0.09);
+  transform: translateY(-5px);
+  border-color: rgba(15, 132, 143, 0.55);
+  box-shadow: 0 18px 40px rgba(15, 132, 143, 0.16);
 }
 
-.c-voluntariado-card.is-hidden {
-  display: none;
-}
-
-/* Multimedia de la Tarjeta */
-.c-voluntariado-card__media-wrap {
-  position: relative;
+/* Decoración superior de curvas topográficas en Teal */
+.c-voluntariado-card__decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 130px;
+  pointer-events: none;
+  z-index: 2;
   overflow: hidden;
 }
 
+.c-voluntariado-card__decor svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Multimedia en proporción 16:9 con marco oscuro */
+.c-voluntariado-card__media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #1E293B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .c-voluntariado-card__media {
-  height: 240px;
-  background-color: #E2E8F0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #1E293B;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 16px;
   text-align: center;
-  color: #64748B;
+  color: #94A3B8;
   transition: transform 0.4s ease;
 }
 
 .c-voluntariado-card:hover .c-voluntariado-card__media {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .c-voluntariado-card__media svg {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   stroke: var(--color-primary-teal, #0F848F);
-  opacity: 0.7;
+  opacity: 0.85;
   margin-bottom: 8px;
 }
 
 .c-voluntariado-card__media--video svg {
-  fill: rgba(15, 132, 143, 0.15);
+  fill: rgba(15, 132, 143, 0.25);
 }
 
 .c-voluntariado-card__media span {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  color: #475569;
+  color: #CBD5E1;
 }
 
-.c-voluntariado-card__badge-floating {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-}
-
-/* Cuerpo de la Tarjeta */
+/* Cuerpo de la Tarjeta en tono oscuro con tipografía en blanco y Teal */
 .c-voluntariado-card__body {
   padding: var(--space-xl);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  position: relative;
+  z-index: 3;
 }
 
-.c-voluntariado-card__meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: var(--space-sm);
-}
-
-.c-voluntariado-card__tag {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #64748B;
+@media (max-width: 580px) {
+  .c-voluntariado-card__body {
+    padding: 20px 16px;
+  }
 }
 
 .c-voluntariado-card__title {
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-size: clamp(1.3rem, 1.8vw, 1.6rem);
   font-weight: 800;
-  color: var(--color-slate-dark, #1E293B);
+  color: #FFFFFF; /* Texto blanco */
   line-height: 1.3;
+  margin-top: 0;
   margin-bottom: var(--space-sm);
+  letter-spacing: -0.01em;
 }
 
 .c-voluntariado-card__desc {
   font-size: 0.98rem;
   line-height: 1.6;
-  color: var(--color-text-secondary, #64748B);
-  margin-bottom: var(--space-md);
+  color: #CBD5E1; /* Gris plata suave */
+  margin-bottom: var(--space-lg);
 }
 
 .c-voluntariado-card__checklist {
   list-style: none;
   padding: 0;
-  margin: 0 0 var(--space-lg) 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .c-voluntariado-card__checklist li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 0.9rem;
-  line-height: 1.45;
-  color: var(--color-slate-dark, #1E293B);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #F1F5F9;
 }
 
 .c-voluntariado-card__checklist svg {
   flex-shrink: 0;
-  stroke: var(--color-primary-teal, #0F848F);
-  margin-top: 2px;
-}
-
-.c-voluntariado-card__footer {
-  margin-top: auto;
-  padding-top: var(--space-sm);
-}
-
-.c-voluntariado-card__cta {
-  width: auto;
-}
-
-@media (max-width: 580px) {
-  .c-voluntariado-card__cta {
-    width: 100%;
-    text-align: center;
-  }
+  stroke: var(--color-primary-alt, #09A5B1); /* Acento Teal brillante */
+  margin-top: 3px;
 }
 
 /* ==========================================================================

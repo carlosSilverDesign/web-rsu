@@ -346,54 +346,45 @@
 
     <!-- SECCIÓN MODULAR DE NOTICIAS -->
     <!--#include sections/noticias/noticias.html -->
+    <!-- ==========================================================================
+         SECCIÓN: NOTICIAS RSU (FEED EDITORIAL ESTILO MAGAZINE - LOOK & FEEL VULTURE)
+         Proyecto: Web RSU - Universidad Norbert Wiener
+         Brief Oficial:
+         - Sección dinámica en orden cronológico
+         - Filtros por etiquetas: Voluntariado, Proyectos, Reconocimientos, Eventos
+         - 16 Notas de prensa elaboradas con enlaces oficiales
+         - Grid magazine con Lead Story prominente + Feed editorial
+         ========================================================================== -->
+
     <section id="noticias-section" class="c-noticias-section section-wrap" aria-label="Noticias e Información RSU">
       <div class="container">
 
-        <!-- 1. CABECERA EDITORIAL INSTITUCIONAL -->
-        <header class="c-section-header text-center c-transition-in">
-          <span class="c-eyebrow">ACTUALIDAD, COMUNIDAD & SOSTENIBILIDAD</span>
-          <h2 class="c-section-title">
-            Noticias de <span class="c-text-emphasis">Responsabilidad Social</span>
-          </h2>
-          <p class="c-section-subtitle c-noticias-lead">
-            Conoce las últimas notas informativas, coberturas de voluntariado, reconocimientos y avances en los proyectos que transforman vidas y comunidades en el Perú.
-          </p>
+        <!-- ========================================================================
+             1. CABECERA EDITORIAL INSTITUCIONAL
+             ======================================================================== -->
+        <header class="c-section-intro c-transition-in">
+          <div class="c-section-intro__title-col">
+            <h2 class="c-section-title">
+              Noticias de <span class="c-text-emphasis">Responsabilidad Social</span>
+            </h2>
+          </div>
+          <div class="c-section-intro__desc-col">
+            <p class="c-section-subtitle c-noticias-lead">
+              Conoce las últimas notas informativas, coberturas de voluntariado, reconocimientos y avances en los proyectos que transforman vidas y comunidades en el Perú.
+            </p>
+          </div>
         </header>
 
-        <!-- 2. BARRA DE FILTROS POR ETIQUETAS (Magazine Filter Tabs) -->
-        <div class="c-noticias-filter-wrap c-transition-in">
-          <div class="c-noticias-filter-bar" role="tablist" aria-label="Filtrar notas de prensa por temática">
-            <button type="button" class="c-noticias-filter-btn is-active" data-noticias-filter="all" role="tab" aria-selected="true">
-              <span>Todas las notas</span>
-              <span class="c-filter-count">16</span>
-            </button>
-            <button type="button" class="c-noticias-filter-btn" data-noticias-filter="voluntariado" role="tab" aria-selected="false">
-              <span class="c-filter-dot c-filter-dot--teal"></span>
-              <span>Voluntariado</span>
-              <span class="c-filter-count">5</span>
-            </button>
-            <button type="button" class="c-noticias-filter-btn" data-noticias-filter="proyectos" role="tab" aria-selected="false">
-              <span class="c-filter-dot c-filter-dot--orange"></span>
-              <span>Proyectos</span>
-              <span class="c-filter-count">4</span>
-            </button>
-            <button type="button" class="c-noticias-filter-btn" data-noticias-filter="reconocimientos" role="tab" aria-selected="false">
-              <span class="c-filter-dot c-filter-dot--gold"></span>
-              <span>Reconocimientos</span>
-              <span class="c-filter-count">4</span>
-            </button>
-            <button type="button" class="c-noticias-filter-btn" data-noticias-filter="eventos" role="tab" aria-selected="false">
-              <span class="c-filter-dot c-filter-dot--blue"></span>
-              <span>Eventos</span>
-              <span class="c-filter-count">3</span>
-            </button>
-          </div>
-        </div>
+        <!-- Línea estática verde continua estilo institucional -->
+        <div class="c-section-static-line" aria-hidden="true"></div>
 
-        <!-- 3. MAGAZINE HERO FEATURED BLOCK (ESTILO VULTURE LEAD) -->
+        <!-- ========================================================================
+             3. MAGAZINE HERO FEATURED BLOCK (ESTILO VULTURE LEAD)
+             1 Noticia Principal Gigante + 2 Sub-destacadas en Columna Lateral
+             ======================================================================== -->
         <div class="c-vulture-lead-block c-transition-in" id="noticias-destacadas">
           <div class="c-vulture-lead-grid">
-            
+
             <!-- NOTICIA 1: LEAD HERO PRINCIPAL -->
             <article class="c-vulture-main-card c-noticia-item" data-category="voluntariado">
               <a href="https://www.uwiener.edu.pe/noticias/voluntarios-de-la-universidad-norbert-wiener-participaron-en-campana-de-responsabilidad-social-organizada-por-el-congreso-de-la-republica-en-coordinacion-con-nuestra-casa-de-estudios-y-el-inabif/" target="_blank" rel="noopener noreferrer" class="c-vulture-main-card__media-link" aria-label="Leer nota: Voluntarios de la Universidad Norbert Wiener participaron en campaña de responsabilidad social organizada por el Congreso de la República y el INABIF">
@@ -500,9 +491,12 @@
           </div>
         </div>
 
-        <!-- 4. MAGAZINE FEED GRID (NOTICIAS CRONOLÓGICAS) -->
+        <!-- ========================================================================
+             4. MAGAZINE FEED GRID (NOTICIAS CRONOLÓGICAS)
+             Grid editorial de 3 columnas estilo Vulture Magazine Feed
+             ======================================================================== -->
         <div class="c-noticias-feed-section">
-          
+
           <div class="c-noticias-feed-header">
             <h3 class="c-noticias-feed-header__title">Todas las notas informativas</h3>
             <span class="c-noticias-feed-header__rule"></span>
@@ -876,14 +870,11 @@
 
           </div>
 
-          <!-- Barra de Estado / Paginación -->
-          <div class="c-noticias-pagination text-center">
-            <p class="c-noticias-counter" id="noticias-counter">Mostrando <strong id="visible-count">16</strong> de <strong>16</strong> notas informativas publicadas</p>
-          </div>
-
         </div>
 
-        <!-- 5. NEWSLETTER / SUSCRIPCIÓN INFORMATIVA RSU -->
+        <!-- ========================================================================
+             5. NEWSLETTER / SUSCRIPCIÓN INFORMATIVA RSU
+             ======================================================================== -->
         <div class="c-noticias-newsletter-card c-transition-in">
           <div class="c-noticias-newsletter-grid">
             <div class="c-noticias-newsletter-content">
@@ -913,42 +904,51 @@
        3. FOOTER INSTITUCIONAL (GLOBAL)
        ========================================================================== -->
   <footer id="site-footer" class="c-footer" role="contentinfo">
-    <div class="container c-footer__container">
-      
-      <!-- Grid de 4 Columnas -->
+    <div class="container">
+
       <div class="c-footer__grid">
-        
-        <!-- Columna 1: Identidad y Contacto -->
+        <!-- Columna 1: Marca y Contacto -->
         <div class="c-footer__col c-footer__col--brand">
-          <a href="index.html" class="c-footer__brand" aria-label="Volver al inicio - Dirección de Responsabilidad Social">
+          <a href="index.html" class="c-footer__brand" aria-label="Inicio - Dirección de Responsabilidad Social Wiener">
             <img src="assets/images/logo-wiener-h.svg" alt="Universidad Norbert Wiener" class="c-footer__logo" width="160" height="30">
+            <div class="c-footer__tagline">
+              <span class="c-footer__subname">DIRECCIÓN DE</span>
+              <span class="c-footer__dept">Responsabilidad Social</span>
+            </div>
           </a>
           <p class="c-footer__desc">
-            Dirección de Responsabilidad Social Universitaria. Formando líderes comprometidos con el desarrollo sostenible del país.
+            Impulsamos el impacto académico, social y ambiental sostenible de la comunidad universitaria al servicio del país.
           </p>
-          <div class="c-footer__contact-info">
-            <p><strong>Campus Central:</strong> Av. Arequipa 440, Lima, Perú</p>
-            <p><strong>Contacto:</strong> <a href="mailto:responsabilidad.social@uwiener.edu.pe" class="c-link-animated">responsabilidad.social@uwiener.edu.pe</a></p>
-          </div>
-        </div>
-
-        <!-- Columna 2: Navegación Rápida -->
-        <div class="c-footer__col">
-          <h4 class="c-footer__col-title">Iniciativas RSU</h4>
-          <ul class="c-footer__links">
-            <li><a href="proyectos.html#emblematicos" class="c-link-animated">Proyectos Emblemáticos</a></li>
-            <li><a href="proyectos.html#academicos" class="c-link-animated">Proyectos de Programas Académicos</a></li>
-            <li><a href="voluntariado.html" class="c-link-animated">Voluntariado Wiener</a></li>
-            <li><a href="campus-sostenible.html" class="c-link-animated">Campus Sostenible</a></li>
-            <li><a href="semana-sostenibilidad.html" class="c-link-animated">Semana de la Sostenibilidad</a></li>
-            <li><a href="noticias.html" class="c-link-animated">Noticias RSU</a></li>
+          <ul class="c-footer__contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Av. Arequipa 440, Lima - Perú</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:responsabilidad.social@uwiener.edu.pe">responsabilidad.social@uwiener.edu.pe</a>
+            </li>
           </ul>
         </div>
 
-        <!-- Columna 3: Transparencia y Políticas -->
+        <!-- Columna 2: Secciones del Sitio -->
         <div class="c-footer__col">
-          <h4 class="c-footer__col-title">Transparencia</h4>
-          <ul class="c-footer__links">
+          <h4 class="c-footer__col-title">Secciones</h4>
+          <ul class="c-footer__nav-list">
+            <li><a href="index.html" class="c-link-animated">Inicio</a></li>
+            <li><a href="quienes-somos.html" class="c-link-animated">Quiénes somos</a></li>
+            <li><a href="proyectos.html" class="c-link-animated">Proyectos</a></li>
+            <li><a href="voluntariado.html" class="c-link-animated">Voluntariado</a></li>
+            <li><a href="campus-sostenible.html" class="c-link-animated">Campus sostenible</a></li>
+            <li><a href="semana-sostenibilidad.html" class="c-link-animated">Semana de la Sostenibilidad</a></li>
+            <li><a href="noticias.html" class="c-link-animated">Noticias</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Normativa y Políticas -->
+        <div class="c-footer__col">
+          <h4 class="c-footer__col-title">Normativa y Políticas</h4>
+          <ul class="c-footer__nav-list">
             <li><a href="quienes-somos.html#politicas" class="c-link-animated">Política de Responsabilidad Social</a></li>
             <li><a href="quienes-somos.html#politicas" class="c-link-animated">Política de Protección Ambiental</a></li>
             <li><a href="quienes-somos.html#modelo-rsu" class="c-link-animated">Modelo RSU y 4 Pilares</a></li>

@@ -2,13 +2,33 @@
  * HOJA DE ESTILOS: SECCIÓN PROYECTOS (EMBLEMÁTICOS & PROGRAMAS ACADÉMICOS)
  * Proyecto: Web RSU - Universidad Norbert Wiener
  * Brief: Sección 8.3
+ * 
  * Incluye:
  * - 4 Áreas de intervención en grid responsive
- * - Carrusel Swiper v11 interactivo con progressbar continua de 2px
- * - Galería de 2 fotos por proyecto emblemático
- * - Metodología Aprendizaje - Servicio y catálogo de 11 iniciativas académicas
- * - Filtro interactivo por temática
+ * - Carrusel Swiper v11 con peek (vista previa del siguiente slide) y desvanecimiento controlado
+ * - Galería 16:9 con auto-slide y transición suave (crossfade)
+ * - Subtítulo Programas Académicos con estilo editorial c-section-intro y línea verde estática
+ * - Tarjetas académicas estáticas (no clickeables) con radio aumentado, 16:9 y titulares con fuerza
+ * - Barra de filtros sticky y horizontal con scroll táctil en mobile que respeta el menú superior
  */
+
+/* ==========================================================================
+   0. VARIABLES EDITABLES: CONTROL DEL DESVANECIMIENTO (SLIDER EMBLEMÁTICOS)
+   ========================================================================== */
+:root {
+  /* Opacidad del slide que asoma al lado (Ajusta este valor entre 0.1 y 0.9 para controlar el desvanecimiento) */
+  --proyecto-peek-opacity: 0.35;
+
+  /* Opacidad al pasar el cursor sobre el proyecto asomado */
+  --proyecto-peek-hover-opacity: 0.70;
+
+  /* Escala sutil del slide inactivo para generar sensación de profundidad */
+  --proyecto-peek-scale: 0.985;
+
+  /* Duración y curva de transición del desvanecimiento */
+  --proyecto-fade-duration: 0.4s;
+  --proyecto-fade-easing: cubic-bezier(0.25, 1, 0.5, 1);
+}
 
 /* ==========================================================================
    1. CONTENEDOR GENERAL Y LEAD
@@ -18,6 +38,12 @@
   padding: var(--space-4xl) 0;
   position: relative;
   overflow-x: clip;
+}
+
+@media (max-width: 768px) {
+  .c-proyectos-section {
+    padding: var(--space-xl) 0;
+  }
 }
 
 .c-proyectos-lead {
@@ -37,6 +63,13 @@
   margin-bottom: var(--space-4xl);
 }
 
+@media (max-width: 768px) {
+  .c-areas-intervencion {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+}
+
 .c-areas-intervencion__title {
   font-family: var(--font-heading);
   font-size: 1.15rem;
@@ -48,52 +81,98 @@
   text-align: center;
 }
 
+@media (max-width: 580px) {
+  .c-areas-intervencion__title {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+  }
+}
+
 .c-areas-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 @media (max-width: 1024px) {
   .c-areas-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 }
 
 @media (max-width: 580px) {
   .c-areas-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 }
 
+/* Tarjeta de Área: Alineación vertical, centrada y con espacio generoso para SVG animado */
 .c-area-card {
   background: var(--color-card-bg, #FFFFFF);
   border: 1px solid var(--color-border, #E2E8F0);
-  border-radius: var(--radius-md, 8px);
-  padding: var(--space-lg);
+  border-radius: var(--radius-lg, 14px);
+  padding: var(--space-xl) var(--space-lg);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 230px;
   gap: var(--space-md);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: transform var(--duration-fast, 0.2s) ease,
-              box-shadow var(--duration-fast, 0.2s) ease,
-              border-color var(--duration-fast, 0.2s) ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform var(--duration-fast, 0.25s) ease,
+              box-shadow var(--duration-fast, 0.25s) ease,
+              border-color var(--duration-fast, 0.25s) ease;
+}
+
+@media (max-width: 580px) {
+  .c-area-card {
+    padding: var(--space-lg) var(--space-md);
+    min-height: auto;
+  }
 }
 
 .c-area-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(15, 132, 143, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 132, 143, 0.12);
   border-color: var(--color-primary-teal, #0F848F);
 }
 
+/* Espacio ampliado para icono / SVG animado */
 .c-area-card__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-bottom: 4px;
+  transition: transform var(--duration-fast, 0.25s) ease,
+              box-shadow var(--duration-fast, 0.25s) ease;
+}
+
+.c-area-card:hover .c-area-card__icon {
+  transform: scale(1.06);
+}
+
+.c-area-card__icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 580px) {
+  .c-area-card__icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
+  }
+  .c-area-card__icon svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .c-area-card__icon--teal {
@@ -118,11 +197,12 @@
 
 .c-area-card__name {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--color-slate-dark, #1E293B);
   margin: 0;
+  max-width: 240px;
 }
 
 /* ==========================================================================
@@ -132,6 +212,12 @@
   scroll-margin-top: 100px;
   margin-bottom: var(--space-4xl);
   overflow-x: clip;
+}
+
+@media (max-width: 768px) {
+  .c-emblematicos-block {
+    margin-bottom: var(--space-2xl);
+  }
 }
 
 .c-emblematicos-header {
@@ -144,8 +230,10 @@
 
 @media (max-width: 768px) {
   .c-emblematicos-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
   }
 }
 
@@ -154,7 +242,7 @@
   font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   font-weight: 900;
   color: var(--color-slate-dark, #1E293B);
-  margin-top: 6px;
+  margin-top: 0;
   margin-bottom: 6px;
 }
 
@@ -165,11 +253,18 @@
   max-width: 600px;
 }
 
+@media (max-width: 768px) {
+  .c-subheading-desc {
+    font-size: 0.95rem;
+  }
+}
+
 /* Controles de Navegación del Carrusel */
 .c-slider-controls {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .c-slider-btn {
@@ -184,6 +279,17 @@
   justify-content: center;
   cursor: pointer;
   transition: all var(--duration-fast, 0.2s) ease;
+}
+
+@media (max-width: 580px) {
+  .c-slider-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .c-slider-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .c-slider-btn:hover:not(:disabled) {
@@ -213,6 +319,12 @@
   margin-bottom: var(--space-xl);
 }
 
+@media (max-width: 768px) {
+  .c-swiper-progressbar-wrapper {
+    margin-bottom: var(--space-md);
+  }
+}
+
 .c-swiper-progressbar-wrapper .swiper-pagination-progressbar {
   position: relative;
   width: 100%;
@@ -228,61 +340,100 @@
 }
 
 /* ==========================================================================
-   5. TARJETAS DEL CARRUSEL DE PROYECTOS EMBLEMÁTICOS
+   5. CARRUSEL DE PROYECTOS EMBLEMÁTICOS (PEEK & DESVANECIMIENTO)
    ========================================================================== */
 .c-proyectos-swiper {
   overflow: hidden;
-  padding: 8px 4px 16px;
-  margin: -8px -4px -16px;
+  padding: 8px 0 16px;
 }
 
 .c-proyecto-slide {
   height: auto;
+  opacity: var(--proyecto-peek-opacity, 0.35);
+  transform: scale(var(--proyecto-peek-scale, 0.985));
+  transition: opacity var(--proyecto-fade-duration, 0.4s) var(--proyecto-fade-easing),
+              transform var(--proyecto-fade-duration, 0.4s) var(--proyecto-fade-easing);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Slide activo: plenamente opaco y a escala 1 */
+.c-proyecto-slide.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  cursor: default;
+}
+
+/* Hover en slide inactivo asomado: aclara sutilmente para invitar al click */
+.c-proyecto-slide:not(.swiper-slide-active):hover {
+  opacity: var(--proyecto-peek-hover-opacity, 0.70);
 }
 
 .c-proyecto-card {
   background-color: var(--color-card-bg, #FFFFFF);
   border: 1px solid var(--color-border, #E2E8F0);
-  border-radius: var(--radius-lg, 12px);
+  border-radius: var(--radius-lg, 14px);
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  transition: box-shadow var(--duration-normal, 0.3s) ease;
+  transition: box-shadow var(--duration-normal, 0.3s) ease,
+              border-color var(--duration-normal, 0.3s) ease;
+  height: 100%;
 }
 
 .c-proyecto-card:hover {
-  box-shadow: 0 12px 30px rgba(15, 132, 143, 0.08);
+  box-shadow: 0 10px 28px rgba(15, 132, 143, 0.08);
 }
 
 .c-proyecto-card__grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: stretch;
+  grid-template-columns: 1.18fr 1fr;
+  align-items: center;
+  height: 100%;
 }
 
 @media (max-width: 900px) {
   .c-proyecto-card__grid {
     grid-template-columns: 1fr;
+    align-items: stretch;
   }
 }
 
-/* Galería de 2 Fotos por Proyecto */
+/* ==========================================================================
+   5.1 GALERÍA DE FOTOS 16:9 CON AUTO-SLIDE Y TRANSICIÓN SUAVE (CROSSFADE)
+   ========================================================================== */
 .c-proyecto-card__gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  padding: 16px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   background-color: #F1F5F9;
+  border-radius: var(--radius-lg, 14px) 0 0 var(--radius-lg, 14px);
 }
 
-@media (max-width: 580px) {
+@media (max-width: 900px) {
   .c-proyecto-card__gallery {
-    grid-template-columns: 1fr;
+    border-radius: var(--radius-lg, 14px) var(--radius-lg, 14px) 0 0;
   }
+}
+
+.c-proyecto-card__gallery .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.c-proyecto-card__gallery .swiper-slide {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  transform: none !important;
+  cursor: default;
 }
 
 .c-proyecto-photo {
-  height: 260px;
-  border-radius: var(--radius-md, 8px);
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,92 +441,115 @@
   padding: 16px;
   text-align: center;
   background-color: #E2E8F0;
-  border: 1.5px dashed #CBD5E1;
+  border: none;
   color: #64748B;
-  transition: transform var(--duration-fast, 0.2s) ease;
-}
-
-.c-proyecto-photo:hover {
-  transform: scale(1.02);
 }
 
 .c-proyecto-photo svg {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   margin-bottom: 8px;
   stroke: var(--color-primary-teal, #0F848F);
   opacity: 0.7;
 }
 
+@media (max-width: 580px) {
+  .c-proyecto-photo svg {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 6px;
+  }
+}
+
 .c-proyecto-photo span {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #475569;
 }
 
-/* Cuerpo de Contenido del Proyecto */
+@media (max-width: 580px) {
+  .c-proyecto-photo span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Indicadores sutiles de la galería 16:9 */
+.c-gallery-pagination {
+  position: absolute;
+  bottom: 10px !important;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.c-gallery-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  margin: 0 !important;
+  transition: all 0.25s ease;
+}
+
+.c-gallery-pagination .swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 4px;
+  background-color: var(--color-primary-teal, #0F848F);
+}
+
+/* ==========================================================================
+   5.2 CUERPO DE CONTENIDO DEL PROYECTO (LIMPIO & EQUILIBRADO)
+   ========================================================================== */
 .c-proyecto-card__body {
-  padding: var(--space-xl);
+  padding: clamp(1.25rem, 2.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.c-proyecto-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: var(--space-sm);
+@media (max-width: 768px) {
+  .c-proyecto-card__body {
+    padding: 16px 14px;
+  }
 }
 
 .c-proyecto-card__title {
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
   font-weight: 800;
   color: var(--color-slate-dark, #1E293B);
-  line-height: 1.3;
+  line-height: 1.25;
+  margin-top: 0;
   margin-bottom: var(--space-sm);
 }
 
+@media (max-width: 768px) {
+  .c-proyecto-card__title {
+    font-size: 1.22rem;
+    margin-bottom: 6px;
+  }
+}
+
 .c-proyecto-card__desc {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   line-height: 1.6;
   color: var(--color-text-secondary, #64748B);
-  margin-bottom: var(--space-md);
+  margin: 0;
 }
 
-.c-proyecto-card__highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: var(--space-lg);
-  padding: var(--space-md);
-  background-color: #F8FAFC;
-  border-radius: var(--radius-md, 8px);
-  border-left: 3px solid var(--color-primary-teal, #0F848F);
-}
-
-.c-highlight-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.92rem;
-  color: var(--color-slate-dark, #1E293B);
-  line-height: 1.4;
-}
-
-.c-highlight-item__icon {
-  flex-shrink: 0;
-  margin-top: 2px;
-  stroke: var(--color-primary-teal, #0F848F);
-}
-
-.c-proyecto-card__footer {
-  margin-top: auto;
+@media (max-width: 768px) {
+  .c-proyecto-card__desc {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
 }
 
 /* ==========================================================================
-   6. SUBTÍTULO: PROYECTOS DE PROGRAMAS ACADÉMICOS
+   6. SUBTÍTULO: PROYECTOS DE PROGRAMAS ACADÉMICOS (CABECERA EDITORIAL)
    ========================================================================== */
 .c-academicos-block {
   scroll-margin-top: 100px;
@@ -383,50 +557,147 @@
   overflow-x: clip;
 }
 
-.c-academicos-intro {
-  background-color: var(--color-card-bg, #FFFFFF);
-  border: 1px solid var(--color-border, #E2E8F0);
-  border-radius: var(--radius-lg, 12px);
-  padding: var(--space-xl);
-  margin-bottom: var(--space-2xl);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+@media (max-width: 768px) {
+  .c-academicos-block {
+    padding-top: var(--space-md);
+  }
 }
 
-.c-academicos-intro__header {
-  margin-bottom: var(--space-md);
+/* Cabecera estilo c-section-intro con alineación vertical centrada */
+.c-academicos-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Title y Subtitle centrados verticalmente */
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-lg);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+@media (max-width: 992px) {
+  .c-academicos-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+}
+
+.c-academicos-title {
+  display: flex;
+  flex-direction: column; /* Texto negro arriba, texto personalizado abajo */
+  gap: 2px;
+  margin: 0;
+  text-align: left;
+}
+
+.c-academicos-title__black {
+  color: var(--color-slate-dark, #1E293B);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  display: block;
+}
+
+.c-academicos-title__custom {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3.4vw, 2.7rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-primary-teal, #0F848F);
+  line-height: 1.15;
+  display: block;
 }
 
 .c-academicos-intro__lead {
-  font-size: 1.05rem;
+  font-size: clamp(0.98rem, 1.15vw, 1.1rem);
   line-height: 1.65;
-  color: var(--color-slate-dark, #1E293B);
-  margin-bottom: var(--space-md);
-}
-
-.c-academicos-intro__note {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background-color: rgba(15, 132, 143, 0.06);
-  border-left: 3px solid var(--color-primary-teal, #0F848F);
-  border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
-  padding: var(--space-md) var(--space-lg);
-}
-
-.c-academicos-intro__note svg {
-  flex-shrink: 0;
-  stroke: var(--color-primary-teal, #0F848F);
-  margin-top: 2px;
-}
-
-.c-academicos-intro__note p {
-  font-size: 0.98rem;
-  line-height: 1.55;
-  color: var(--color-slate-dark, #1E293B);
+  color: var(--color-text-secondary, #64748B);
   margin: 0;
 }
 
-/* Barra de Filtros de Iniciativas */
+/* ==========================================================================
+   6.1 BLOQUE ENMARCADO Y DESTACADO: METODOLOGÍA APRENDIZAJE - SERVICIO
+   ========================================================================== */
+.c-academicos-featured-callout {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.c-academicos-featured-callout__inner {
+  background: linear-gradient(135deg, rgba(15, 132, 143, 0.08) 0%, #FFFFFF 100%);
+  border: 2px solid var(--color-primary-teal, #0F848F);
+  border-radius: var(--radius-lg, 16px);
+  padding: var(--space-lg) var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  box-shadow: 0 6px 20px rgba(15, 132, 143, 0.08);
+}
+
+@media (max-width: 680px) {
+  .c-academicos-featured-callout__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-md) var(--space-lg);
+    gap: var(--space-md);
+  }
+}
+
+.c-academicos-featured-callout__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background-color: var(--color-primary-teal, #0F848F);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(15, 132, 143, 0.3);
+}
+
+.c-academicos-featured-callout__icon svg {
+  stroke: #FFFFFF;
+}
+
+.c-academicos-featured-callout__text {
+  font-size: clamp(1.12rem, 1.4vw, 1.28rem); /* Mayor tamaño de texto */
+  line-height: 1.65;
+  color: var(--color-slate-dark, #1E293B);
+  font-weight: 500;
+  margin: 0;
+}
+
+.c-academicos-featured-callout__text .c-text-highlight {
+  color: var(--color-primary-teal, #0F848F);
+  font-weight: 700;
+}
+
+/* Línea estática verde estilo swiper-pagination-progressbar-fill (sin transición) */
+.c-academicos-static-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary-teal, #0F848F);
+  border-radius: 3px;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  .c-academicos-static-line {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* ==========================================================================
+   6.1 BARRA DE FILTROS DE INICIATIVAS ACADÉMICAS (STICKY & SCROLL HORIZONTAL)
+   ========================================================================== */
 .c-academicos-filters {
   display: flex;
   align-items: center;
@@ -477,6 +748,57 @@
   font-weight: 700;
 }
 
+/* En mobile: Fijo en la parte superior, con scroll horizontal y sin conflicto con el menú */
+@media (max-width: 768px) {
+  .c-academicos-filters {
+    position: sticky;
+    top: var(--header-visible-offset, 68px);
+    z-index: 90;
+    background-color: rgba(248, 250, 252, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: top 0.35s var(--ease-out-cubic, cubic-bezier(0.33, 1, 0.68, 1));
+    margin-left: calc(-1 * var(--container-padding, 16px));
+    margin-right: calc(-1 * var(--container-padding, 16px));
+    padding: 10px var(--container-padding, 16px);
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Cuando el menú se oculta al bajar, el filtro se ubica en top: 0 sin espacios */
+  body:has(.c-header--hidden) .c-academicos-filters {
+    top: 0px;
+  }
+
+  /* Ocultar etiqueta en mobile para optimizar el espacio vertical */
+  .c-academicos-filters__label {
+    display: none;
+  }
+
+  .c-filter-group {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 8px;
+    width: 100%;
+    padding: 2px 0;
+  }
+
+  .c-filter-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .c-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 6px 14px;
+    font-size: 0.84rem;
+  }
+}
+
 /* ==========================================================================
    7. CUADRÍCULA DE 11 INICIATIVAS ACADÉMICAS DESTACADAS
    ========================================================================== */
@@ -489,40 +811,43 @@
 @media (max-width: 1024px) {
   .c-academicos-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 }
 
 @media (max-width: 640px) {
   .c-academicos-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
+/* Tarjetas estáticas (no clickeables) con radio aumentado */
 .c-academico-card {
   display: flex;
   flex-direction: column;
   background-color: var(--color-card-bg, #FFFFFF);
   border: 1px solid var(--color-border, #E2E8F0);
-  border-radius: var(--radius-md, 8px);
+  border-radius: 14px; /* Aumento del borde redondeado */
   overflow: hidden;
-  transition: transform var(--duration-fast, 0.2s) ease,
-              box-shadow var(--duration-fast, 0.2s) ease,
-              border-color var(--duration-fast, 0.2s) ease,
-              opacity 0.25s ease;
+  cursor: default; /* No son clickeables */
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .c-academico-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary-teal, #0F848F);
-  box-shadow: 0 10px 24px rgba(15, 132, 143, 0.08);
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .c-academico-card.is-hidden {
   display: none;
 }
 
+/* Imágenes proporcionales a 16:9 */
 .c-academico-card__media {
-  height: 160px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
   background-color: #E2E8F0;
   border-bottom: 1px solid var(--color-border, #E2E8F0);
   display: flex;
@@ -555,18 +880,33 @@
   flex-grow: 1;
 }
 
+@media (max-width: 580px) {
+  .c-academico-card__body {
+    padding: 14px;
+  }
+}
+
 .c-academico-card__body .c-badge {
   align-self: flex-start;
   margin-bottom: 10px;
 }
 
+/* Titulares con mayor fuerza tipográfica (Lato Black 900) */
 .c-academico-card__title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 900;
   color: var(--color-slate-dark, #1E293B);
-  line-height: 1.35;
+  line-height: 1.3;
+  margin-top: 0;
   margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 580px) {
+  .c-academico-card__title {
+    font-size: 1.08rem;
+  }
 }
 
 .c-academico-card__desc {
@@ -575,4 +915,10 @@
   color: var(--color-text-secondary, #64748B);
   margin: 0;
   margin-top: auto;
+}
+
+/* Soporte de tag rojo institucional si no se cargó globalmente */
+.c-badge--red {
+  background-color: var(--color-danger-light, #FFEBEE);
+  color: var(--color-danger, #D32F2F);
 }

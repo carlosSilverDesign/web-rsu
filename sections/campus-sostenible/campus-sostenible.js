@@ -13,7 +13,35 @@ export function initCampusSostenible() {
   const section = document.getElementById('campus-sostenible-section');
   if (!section) return;
 
-  // Interacción suave para enlaces internos a subsecciones de Campus
+  // 1. Galería de Fotos Biciwiener 16:9 con Auto-Slide y Transición Suave (Crossfade)
+  const biciwienerGalleryEl = section.querySelector('.js-biciwiener-gallery-swiper');
+  if (biciwienerGalleryEl && typeof window.Swiper !== 'undefined') {
+    try {
+      new window.Swiper(biciwienerGalleryEl, {
+        slidesPerView: 1,
+        loop: true,
+        speed: 800, // Transición suave entre imágenes
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
+        autoplay: {
+          delay: 3500, // Pasa automáticamente cada 3.5 segundos
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        pagination: {
+          el: biciwienerGalleryEl.querySelector('.js-biciwiener-pagination'),
+          clickable: true,
+        },
+      });
+      console.log('✅ Biciwiener: Slider automático 16:9 inicializado.');
+    } catch (err) {
+      console.warn('⚠️ Error al inicializar Swiper en Biciwiener:', err);
+    }
+  }
+
+  // 2. Interacción suave para enlaces internos a subsecciones de Campus
   const hashLinks = section.querySelectorAll('a[href^="#"]');
   hashLinks.forEach(link => {
     link.addEventListener('click', (e) => {

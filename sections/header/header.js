@@ -25,6 +25,17 @@ export function initHeader() {
   /* ==========================================================================
      1. SMART SCROLL (Ocultar al bajar / Mostrar al subir / Compactar)
      ========================================================================== */
+  function updateHeaderOffset(isHidden) {
+    const headerHeight = header.offsetHeight || 68;
+    document.documentElement.style.setProperty(
+      '--header-visible-offset',
+      isHidden ? '0px' : `${headerHeight}px`
+    );
+  }
+
+  // Inicializar offset visible para elementos sticky dependientes (como filtros móviles)
+  updateHeaderOffset(false);
+
   function handleScroll() {
     const currentScrollY = window.scrollY;
 
@@ -43,10 +54,16 @@ export function initHeader() {
     if (!hasOpenDropdown && !isMobileNavOpen) {
       if (currentScrollY > 80 && currentScrollY > lastScrollY) {
         // Scroll hacia abajo -> ocultar
-        header.classList.add('c-header--hidden');
+        if (!header.classList.contains('c-header--hidden')) {
+          header.classList.add('c-header--hidden');
+          updateHeaderOffset(true);
+        }
       } else if (currentScrollY < lastScrollY) {
         // Scroll hacia arriba -> mostrar
-        header.classList.remove('c-header--hidden');
+        if (header.classList.contains('c-header--hidden')) {
+          header.classList.remove('c-header--hidden');
+          updateHeaderOffset(false);
+        }
       }
     }
 

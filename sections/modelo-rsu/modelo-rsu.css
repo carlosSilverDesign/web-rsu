@@ -21,7 +21,7 @@
 .c-rsu-intro {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: var(--space-3xl);
   margin-bottom: var(--space-2xl);
   padding-bottom: 0;
@@ -106,9 +106,26 @@
 .c-modelo-illustration-slot {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  min-height: 120px;
+}
+
+.c-modelo-illustration-placeholder {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  background-color: #F1F5F9;
+  border: none;
+  border-radius: var(--radius-card-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  color: #64748B;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
 }
 
 .c-modelo-header-row .c-section-header {
@@ -190,6 +207,56 @@
   flex-direction: column;
   padding: 28px 24px;
   flex-grow: 1;
+}
+
+/* Fila Principal: Número grande a la izquierda, título y subtítulo agrupados a la derecha */
+.c-quadrant-card__main-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.c-quadrant-card__num {
+  flex-shrink: 0;
+  font-family: var(--font-heading, "Lato", sans-serif);
+  font-size: clamp(2.4rem, 3.4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 0.95;
+  color: rgba(15, 132, 143, 0.4); /* Color Teal suave */
+  letter-spacing: -0.03em;
+  user-select: none;
+  padding-top: 2px;
+  transition: color var(--duration-fast, 0.25s) ease;
+}
+
+.c-quadrant-card:hover .c-quadrant-card__num {
+  color: var(--color-primary-teal, #0F848F);
+}
+
+.c-quadrant-card__content-col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.c-quadrant-card__content-col .c-quadrant-card__title {
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+}
+
+.c-quadrant-card__content-col .c-quadrant-card__desc {
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  .c-quadrant-card__main-row {
+    gap: 14px;
+  }
+
+  .c-quadrant-card__num {
+    font-size: 2.2rem;
+  }
 }
 
 .c-quadrant-card__header {

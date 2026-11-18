@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
 
+  <!-- Swiper v11 (Carruseles y Sliders) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
   <!-- Hojas de Estilo Base y Globales -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/reset.css">
@@ -346,76 +349,58 @@
     </section>
 
     <!-- SECCIÓN MODULAR DE CAMPUS SOSTENIBLE -->
+    <!-- ==========================================================================
+         SECCIÓN: CAMPUS SOSTENIBLE (CAMPAÑAS AMBIENTALES & HUELLA DE CARBONO)
+         Proyecto: Web RSU - Universidad Norbert Wiener
+         Brief Oficial: Sección 8.5
+         Características:
+         - Cabecera editorial y presentación institucional de gestión ambiental
+         - Grid editorial de las 6 campañas ambientales y de convivencia (placeholders de fotos)
+         - Bloque especializado de Biciwiener (movilidad sostenible + estacionamientos)
+         - Showcase oficial de Huella de Carbono Perú - MINAM (1era estrella)
+         ========================================================================== -->
+
+    <!-- ==========================================================================
+         SECCIÓN: CAMPUS SOSTENIBLE (CAMPAÑAS AMBIENTALES & HUELLA DE CARBONO)
+         Proyecto: Web RSU - Universidad Norbert Wiener
+         Brief Oficial: Sección 8.5
+         Características:
+         - Cabecera editorial y presentación institucional de gestión ambiental
+         - Grid editorial de las 6 campañas ambientales y de convivencia (placeholders de fotos)
+         - Bloque especializado de Biciwiener (movilidad sostenible + estacionamientos)
+         - Showcase oficial de Huella de Carbono Perú - MINAM (1era estrella)
+         ========================================================================== -->
+
     <section id="campus-sostenible-section" class="c-campus-section section-wrap" aria-label="Campus Sostenible">
       <div class="container">
 
-        <!-- 1. CABECERA EDITORIAL INSTITUCIONAL -->
-        <header class="c-section-header text-center c-transition-in">
-          <span class="c-eyebrow">GESTIÓN AMBIENTAL & CONVIVENCIA RESPETUOSA</span>
-          <h2 class="c-section-title">
-            Campus <span class="c-text-emphasis">Sostenible</span>
-          </h2>
-          <p class="c-section-subtitle c-campus-lead">
-            Desarrollamos acciones de cuidado ambiental y promoción de una convivencia respetuosa, a través de la gestión ambiental y campañas sociales dirigidas a nuestra comunidad universitaria.
-          </p>
+        <!-- ========================================================================
+             1. CABECERA EDITORIAL INSTITUCIONAL
+             ======================================================================== -->
+        <header class="c-section-intro c-transition-in">
+          <div class="c-section-intro__title-col">
+            <h2 class="c-section-title">
+              Campus <span class="c-text-emphasis">Sostenible</span>
+            </h2>
+          </div>
+          <div class="c-section-intro__desc-col">
+            <p class="c-section-subtitle c-campus-lead">
+              Desarrollamos acciones de cuidado ambiental y promoción de una convivencia respetuosa, a través de la gestión ambiental y campañas sociales dirigidas a nuestra comunidad universitaria.
+            </p>
+          </div>
         </header>
 
-        <!-- 2. INDICADORES CLAVE DE GESTIÓN DE CAMPUS -->
-        <div class="c-campus-metrics-bar c-transition-in">
-          <div class="c-campus-metric-item">
-            <div class="c-campus-metric-item__icon c-campus-metric-item__icon--teal" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a2 2 0 0 0-2-2h-1v-2a1 1 0 0 1 1-1h3a2 2 0 0 0 2-2V9.5a.5.5 0 0 1 .5-.5h.42A8.01 8.01 0 0 1 13 19.93z"></path></svg>
-            </div>
-            <div>
-              <span class="c-campus-metric-item__title">Ecoeficiencia Activa</span>
-              <p class="c-campus-metric-item__sub">Uso responsable de energía y agua en sedes</p>
-            </div>
-          </div>
+        <!-- Línea estática verde continua estilo institucional -->
+        <div class="c-section-static-line" aria-hidden="true"></div>
 
-          <div class="c-campus-metric-item">
-            <div class="c-campus-metric-item__icon c-campus-metric-item__icon--green" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-            </div>
-            <div>
-              <span class="c-campus-metric-item__title">Puntos Ecológicos</span>
-              <p class="c-campus-metric-item__sub">Segregación diferenciada de residuos sólidos</p>
-            </div>
-          </div>
-
-          <div class="c-campus-metric-item">
-            <div class="c-campus-metric-item__icon c-campus-metric-item__icon--blue" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-            </div>
-            <div>
-              <span class="c-campus-metric-item__title">Campus Libre de Humo</span>
-              <p class="c-campus-metric-item__sub">Espacio 100% saludable para la comunidad</p>
-            </div>
-          </div>
-
-          <div class="c-campus-metric-item">
-            <div class="c-campus-metric-item__icon c-campus-metric-item__icon--orange" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <div>
-              <span class="c-campus-metric-item__title">1era Estrella MINAM</span>
-              <p class="c-campus-metric-item__sub">Huella de Carbono Perú verificada</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. GRID EDITORIAL DE CAMPAÑAS INSTITUCIONALES (Brief Oficial 8.5) -->
+        <!-- ========================================================================
+             2. GRID EDITORIAL DE CAMPAÑAS INSTITUCIONALES (Brief Oficial 8.5)
+             ======================================================================== -->
         <div class="c-campaigns-block" id="campanas">
-          <div class="c-section-header c-transition-in">
-            <span class="c-eyebrow c-eyebrow--teal">CAMPAÑAS DE ACCIÓN PERMANENTE</span>
-            <h3 class="c-subheading-title">
-              Iniciativas de Sostenibilidad y <span class="c-text-emphasis">Convivencia en Campus</span>
-            </h3>
-          </div>
-
           <div class="c-campaigns-grid">
 
             <!-- CAMPAÑA 1: ECOEFICIENTES -->
-            <article class="c-card c-card--interactive c-campaign-card c-transition-in stagger-1">
+            <article class="c-card c-campaign-card c-transition-in stagger-1">
               <div class="c-campaign-card__media-wrap">
                 <div class="c-img-placeholder c-campaign-card__media" data-placeholder-label="Fotografía: Campaña En Wiener somos ecoeficientes">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -423,25 +408,17 @@
                   </svg>
                   <span>Foto: Campaña Ecoeficientes</span>
                 </div>
-                <span class="c-badge c-badge--teal c-campaign-card__badge">Ecoeficiencia</span>
               </div>
               <div class="c-campaign-card__body">
-                <div class="c-campaign-card__meta">
-                  <span class="c-badge c-badge--outline">ODS 12: Producción Responsable</span>
-                </div>
                 <h4 class="c-campaign-card__title">Campaña: En Wiener somos ecoeficientes</h4>
                 <p class="c-campaign-card__desc">
                   Promovemos prácticas responsables de ahorro de energía eléctrica, optimización del recurso hídrico y reducción de consumo de papel y plásticos de un solo uso en todas las instalaciones universitarias.
                 </p>
-                <div class="c-campaign-card__points">
-                  <span>Optimización de luminarias LED inteligentes.</span>
-                  <span>Monitoreo del consumo hídrico en campus.</span>
-                </div>
               </div>
             </article>
 
             <!-- CAMPAÑA 2: YO SEGREGO -->
-            <article class="c-card c-card--interactive c-campaign-card c-transition-in stagger-2">
+            <article class="c-card c-campaign-card c-transition-in stagger-2">
               <div class="c-campaign-card__media-wrap">
                 <div class="c-img-placeholder c-campaign-card__media" data-placeholder-label="Fotografía: Campaña En Wiener, yo segrego en estaciones ecológicas">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -451,25 +428,17 @@
                   </svg>
                   <span>Foto: Campaña En Wiener, yo segrego</span>
                 </div>
-                <span class="c-badge c-badge--green c-campaign-card__badge">Segregación</span>
               </div>
               <div class="c-campaign-card__body">
-                <div class="c-campaign-card__meta">
-                  <span class="c-badge c-badge--outline">ODS 12 & 13: Acción por el Clima</span>
-                </div>
                 <h4 class="c-campaign-card__title">Campaña: En Wiener, yo segrego</h4>
                 <p class="c-campaign-card__desc">
                   Sensibilizamos a la comunidad en la correcta clasificación de residuos según la norma técnica peruana: aprovechables (papel, cartón, plástico), orgánicos, no aprovechables y residuos peligrosos.
                 </p>
-                <div class="c-campaign-card__points">
-                  <span>Estaciones de tachos ecológicos estandarizados.</span>
-                  <span>Alianzas con recicladores formales acreditados.</span>
-                </div>
               </div>
             </article>
 
             <!-- CAMPAÑA 3: INCLUSIÓN Y NO DISCRIMINACIÓN -->
-            <article class="c-card c-card--interactive c-campaign-card c-transition-in stagger-3">
+            <article class="c-card c-campaign-card c-transition-in stagger-3">
               <div class="c-campaign-card__media-wrap">
                 <div class="c-img-placeholder c-campaign-card__media" data-placeholder-label="Fotografía: Campaña de Inclusión y No Discriminación en la Comunidad">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -480,25 +449,17 @@
                   </svg>
                   <span>Foto: Campaña de Inclusión</span>
                 </div>
-                <span class="c-badge c-badge--orange c-campaign-card__badge">Convivencia</span>
               </div>
               <div class="c-campaign-card__body">
-                <div class="c-campaign-card__meta">
-                  <span class="c-badge c-badge--outline">ODS 10: Reducción de Desigualdades</span>
-                </div>
                 <h4 class="c-campaign-card__title">Campaña de Inclusión y No Discriminación</h4>
                 <p class="c-campaign-card__desc">
                   Fomentamos un ambiente académico y laboral seguro, plural y respetuoso de la diversidad, con cero tolerancia al acoso y accesibilidad universal para personas con discapacidad o necesidades específicas.
                 </p>
-                <div class="c-campaign-card__points">
-                  <span>Infraestructura accesible y señalética braille.</span>
-                  <span>Capacitaciones continuas en enfoque de derechos.</span>
-                </div>
               </div>
             </article>
 
             <!-- CAMPAÑA 4: LIBRE DE HUMO -->
-            <article class="c-card c-card--interactive c-campaign-card c-transition-in stagger-4">
+            <article class="c-card c-campaign-card c-transition-in stagger-4">
               <div class="c-campaign-card__media-wrap">
                 <div class="c-img-placeholder c-campaign-card__media" data-placeholder-label="Fotografía: Campaña Universidad Libre de Humo de Tabaco">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -507,25 +468,17 @@
                   </svg>
                   <span>Foto: Universidad Libre de Humo</span>
                 </div>
-                <span class="c-badge c-badge--blue c-campaign-card__badge">Salud en Campus</span>
               </div>
               <div class="c-campaign-card__body">
-                <div class="c-campaign-card__meta">
-                  <span class="c-badge c-badge--outline">ODS 3: Salud y Bienestar</span>
-                </div>
                 <h4 class="c-campaign-card__title">Campaña: Universidad Libre de Humo</h4>
                 <p class="c-campaign-card__desc">
                   Mantenemos nuestros campus como espacios 100% libres de humo de tabaco y cigarrillos electrónicos (vapeadores), protegiendo la salud cardiovascular y respiratoria de toda la comunidad universitaria.
                 </p>
-                <div class="c-campaign-card__points">
-                  <span>Cero consumo de tabaco en áreas abiertas y cerradas.</span>
-                  <span>Charlas preventivas de cesación tabáquica.</span>
-                </div>
               </div>
             </article>
 
             <!-- CAMPAÑA 5: TALKS DE SOSTENIBILIDAD -->
-            <article class="c-card c-card--interactive c-campaign-card c-transition-in stagger-1">
+            <article class="c-card c-campaign-card c-transition-in stagger-1">
               <div class="c-campaign-card__media-wrap">
                 <div class="c-img-placeholder c-campaign-card__media" data-placeholder-label="Fotografía: Talks sobre Sostenibilidad y Ciudadanía con Expertos">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -533,60 +486,55 @@
                   </svg>
                   <span>Foto: Talks sobre Sostenibilidad</span>
                 </div>
-                <span class="c-badge c-badge--teal c-campaign-card__badge">Diálogo Formativo</span>
               </div>
               <div class="c-campaign-card__body">
-                <div class="c-campaign-card__meta">
-                  <span class="c-badge c-badge--outline">ODS 4 & 16: Conciencia Crítica</span>
-                </div>
                 <h4 class="c-campaign-card__title">Talks sobre Sostenibilidad y Ciudadanía</h4>
                 <p class="c-campaign-card__desc">
                   Espacios de diálogo e intercambio con especialistas líderes de los sectores público, privado y sociedad civil sobre gobernanza ambiental, economía circular, acción climática y ética profesional.
                 </p>
-                <div class="c-campaign-card__points">
-                  <span>Conferencias magistrales mensuales híbridas.</span>
-                  <span>Paneles de debate con participación estudiantil.</span>
-                </div>
               </div>
             </article>
 
           </div>
         </div>
 
-        <!-- 4. SECCIÓN ESPECIAL: MOVILIDAD SOSTENIBLE - BICIWIENER (#biciwiener) -->
+        <!-- ========================================================================
+             4. SECCIÓN ESPECIAL: MOVILIDAD SOSTENIBLE - BICIWIENER (#biciwiener)
+             ======================================================================== -->
         <div id="biciwiener" class="c-biciwiener-block c-card c-transition-in">
           <div class="c-biciwiener-block__grid">
-            
-            <!-- Galería de 2 Fotos: Biciwiener + Estacionamientos -->
-            <div class="c-biciwiener-gallery">
-              <div class="c-img-placeholder c-biciwiener-photo" data-placeholder-label="Fotografía: Campaña de Movilidad Sostenible Biciwiener en ruta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <circle cx="5.5" cy="17.5" r="3.5"></circle>
-                  <circle cx="18.5" cy="17.5" r="3.5"></circle>
-                  <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h4"></path>
-                </svg>
-                <span class="c-biciwiener-photo__title">Foto 1: Campaña Biciwiener</span>
-                <span class="c-biciwiener-photo__sub">Movilidad no motorizada en campus</span>
-              </div>
 
-              <div class="c-img-placeholder c-biciwiener-photo" data-placeholder-label="Fotografía: Red de Estacionamientos Seguros de Bicicletas y Scooters">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                  <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-                <span class="c-biciwiener-photo__title">Foto 2: Estacionamientos Seguros</span>
-                <span class="c-biciwiener-photo__sub">Zona equipada y vigilada para ciclistas</span>
+            <!-- Galería 16:9 con Auto-Slide y Transición Suave (Crossfade) -->
+            <div class="c-biciwiener-gallery swiper js-biciwiener-gallery-swiper" aria-label="Galería Campaña Biciwiener">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="c-img-placeholder c-biciwiener-photo" data-placeholder-label="Fotografía: Campaña de Movilidad Sostenible Biciwiener en ruta">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                      <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                      <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h4"></path>
+                    </svg>
+                    <span class="c-biciwiener-photo__title">Foto 1: Campaña Biciwiener</span>
+                    <span class="c-biciwiener-photo__sub">Movilidad no motorizada en campus</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="c-img-placeholder c-biciwiener-photo" data-placeholder-label="Fotografía: Red de Estacionamientos Seguros de Bicicletas y Scooters">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span class="c-biciwiener-photo__title">Foto 2: Estacionamientos Seguros</span>
+                    <span class="c-biciwiener-photo__sub">Zona equipada y vigilada para ciclistas</span>
+                  </div>
+                </div>
               </div>
+              <div class="swiper-pagination js-biciwiener-pagination c-gallery-pagination"></div>
             </div>
 
             <!-- Contenido Informativo de Biciwiener -->
             <div class="c-biciwiener-content">
-              <div class="c-biciwiener-content__badges">
-                <span class="c-badge c-badge--green">Movilidad Activa</span>
-                <span class="c-badge c-badge--teal">ODS 11: Ciudades Sostenibles</span>
-              </div>
-
               <h3 class="c-biciwiener-content__title">
                 Campaña de Movilidad Sostenible: <span class="c-text-emphasis">Biciwiener</span>
               </h3>
@@ -614,10 +562,12 @@
           </div>
         </div>
 
-        <!-- 5. HUELLA DE CARBONO INSTITUCIONAL - 1ERA ESTRELLA MINAM (#huella-carbono) -->
+        <!-- ========================================================================
+             5. HUELLA DE CARBONO INSTITUCIONAL - 1ERA ESTRELLA MINAM (#huella-carbono)
+             ======================================================================== -->
         <div id="huella-carbono" class="c-carbon-banner c-transition-in">
           <div class="c-carbon-banner__container">
-            
+
             <!-- Columna de Texto Institucional -->
             <div class="c-carbon-banner__info">
               <div class="c-carbon-banner__badge-group">
@@ -671,42 +621,53 @@
        3. FOOTER INSTITUCIONAL (GLOBAL)
        ========================================================================== -->
   <footer id="site-footer" class="c-footer" role="contentinfo">
-    <div class="container c-footer__container">
-      
-      <!-- Grid de 4 Columnas -->
+    <div class="container">
+
+      <!-- Rejilla Principal del Footer (4 Columnas) -->
       <div class="c-footer__grid">
-        
-        <!-- Columna 1: Identidad y Contacto -->
+
+        <!-- Columna 1: Marca y Contacto -->
         <div class="c-footer__col c-footer__col--brand">
-          <a href="index.html" class="c-footer__brand" aria-label="Volver al inicio - Dirección de Responsabilidad Social">
+          <a href="index.html" class="c-footer__brand" aria-label="Inicio - Dirección de Responsabilidad Social Wiener">
             <img src="assets/images/logo-wiener-h.svg" alt="Universidad Norbert Wiener" class="c-footer__logo" width="160" height="30">
+            <div class="c-footer__tagline">
+              <span class="c-footer__subname">DIRECCIÓN DE</span>
+              <span class="c-footer__dept">Responsabilidad Social</span>
+            </div>
           </a>
           <p class="c-footer__desc">
-            Dirección de Responsabilidad Social Universitaria. Formando líderes comprometidos con el desarrollo sostenible del país.
+            Impulsamos el impacto académico, social y ambiental sostenible de la comunidad universitaria al servicio del país.
           </p>
-          <div class="c-footer__contact-info">
-            <p><strong>Campus Central:</strong> Av. Arequipa 440, Lima, Perú</p>
-            <p><strong>Contacto:</strong> <a href="mailto:responsabilidad.social@uwiener.edu.pe" class="c-link-animated">responsabilidad.social@uwiener.edu.pe</a></p>
-          </div>
-        </div>
-
-        <!-- Columna 2: Navegación Rápida -->
-        <div class="c-footer__col">
-          <h4 class="c-footer__col-title">Iniciativas RSU</h4>
-          <ul class="c-footer__links">
-            <li><a href="proyectos.html#emblematicos" class="c-link-animated">Proyectos Emblemáticos</a></li>
-            <li><a href="proyectos.html#academicos" class="c-link-animated">Proyectos de Programas Académicos</a></li>
-            <li><a href="voluntariado.html" class="c-link-animated">Voluntariado Wiener</a></li>
-            <li><a href="voluntariado.html#brigada-ambiental" class="c-link-animated">Brigada Ambiental</a></li>
-            <li><a href="campus-sostenible.html" class="c-link-animated">Campus Sostenible</a></li>
-            <li><a href="campus-sostenible.html#biciwiener" class="c-link-animated">Biciwiener</a></li>
+          <ul class="c-footer__contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Av. Arequipa 440, Lima - Perú</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:responsabilidad.social@uwiener.edu.pe">responsabilidad.social@uwiener.edu.pe</a>
+            </li>
           </ul>
         </div>
 
-        <!-- Columna 3: Transparencia y Políticas -->
+        <!-- Columna 2: Secciones del Sitio -->
         <div class="c-footer__col">
-          <h4 class="c-footer__col-title">Transparencia</h4>
-          <ul class="c-footer__links">
+          <h4 class="c-footer__col-title">Secciones</h4>
+          <ul class="c-footer__nav-list">
+            <li><a href="index.html" class="c-link-animated">Inicio</a></li>
+            <li><a href="quienes-somos.html" class="c-link-animated">Quiénes somos</a></li>
+            <li><a href="proyectos.html" class="c-link-animated">Proyectos</a></li>
+            <li><a href="voluntariado.html" class="c-link-animated">Voluntariado</a></li>
+            <li><a href="campus-sostenible.html" class="c-link-animated">Campus sostenible</a></li>
+            <li><a href="semana-sostenibilidad.html" class="c-link-animated">Semana de la Sostenibilidad</a></li>
+            <li><a href="noticias.html" class="c-link-animated">Noticias</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Normativa y Políticas -->
+        <div class="c-footer__col">
+          <h4 class="c-footer__col-title">Normativa y Políticas</h4>
+          <ul class="c-footer__nav-list">
             <li><a href="quienes-somos.html#politicas" class="c-link-animated">Política de Responsabilidad Social</a></li>
             <li><a href="quienes-somos.html#politicas" class="c-link-animated">Política de Protección Ambiental</a></li>
             <li><a href="quienes-somos.html#modelo-rsu" class="c-link-animated">Modelo RSU y 4 Pilares</a></li>
@@ -752,8 +713,9 @@
     </div>
   </footer>
 
-  <!-- Scripts: Lenis (Smooth Scroll) y Orquestador Modular ES6 -->
+  <!-- Scripts: Lenis (Smooth Scroll), Swiper v11 y Orquestador Modular ES6 -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
